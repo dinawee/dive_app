@@ -37,7 +37,6 @@ const DiveOperators = sequelize.import('./../models/dive_operators.js');
 
 function postOne(object) {
     // insert req, res
-    // pre-fix with db.DiveOperators when you do
     return DiveOperators // return the promise 
         .create({
             fb_id: object.id,

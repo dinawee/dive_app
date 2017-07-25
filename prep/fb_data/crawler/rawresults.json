@@ -2862,5 +2862,38 @@
             "longitude": 115.511079
         },
         "id": "292667934174197"
+    },
+    "1709140686031815": {
+        "name": "Mahkota Bali Wisata Bahari PT",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.720861,
+            "longitude": 115.199018,
+            "street": "Jalan By Pass I Gusti Ngurah Rai 198"
+        },
+        "id": "1709140686031815"
+    },
+    "340975822707271": {
+        "name": "Cagar Alam Panajung, Pangandaran",
+        "location": {
+            "city": "Pangandaran",
+            "country": "Indonesia",
+            "latitude": -7.701003,
+            "longitude": 108.6578317
+        },
+        "id": "340975822707271"
+    },
+    "352393238218034": {
+        "name": "Mola Mola Bali Diving Safari",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.695999,
+            "longitude": 115.263528,
+            "street": "Danau Tamblingan",
+            "zip": "80228"
+        },
+        "id": "352393238218034"
     }
 }
