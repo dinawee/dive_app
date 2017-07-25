@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+client/bower_components/
+
+
+prep/fb_data/config/development-cloud.js
+
+*.sql

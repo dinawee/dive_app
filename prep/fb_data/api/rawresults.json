@@ -1,0 +1,2866 @@
+{
+    "1000136723406281": {
+        "name": "Lumba-Lumba Diving",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.47483,
+            "longitude": 124.842079
+        },
+        "id": "1000136723406281"
+    },
+    "107781539253775": {
+        "name": "Bali Scuba Masters",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7810499595905,
+            "longitude": 115.22566354492,
+            "street": "Jalan Pratama 85",
+            "zip": "80363"
+        },
+        "id": "107781539253775"
+    },
+    "446179255535545": {
+        "name": "Uber Scuba Komodo",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.4921520805837,
+            "longitude": 119.8771905899,
+            "street": "Jl. Soekarno Hatta Komodo National Park",
+            "zip": "86554"
+        },
+        "id": "446179255535545"
+    },
+    "123367707727435": {
+        "name": "D Scuba Club",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.705675355,
+            "longitude": 115.260807,
+            "street": "Jalan Kesuma Sari 4",
+            "zip": "80228"
+        },
+        "id": "123367707727435"
+    },
+    "448949455161988": {
+        "name": "Bali Paradise Scuba",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.70197,
+            "longitude": 115.2322,
+            "street": "Bucuku 18 Jalan sidakarya ,Gang Drawati Sidakarya",
+            "zip": "802224"
+        },
+        "id": "448949455161988"
+    },
+    "185923963360": {
+        "name": "Oceans5Dive",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3633363015125,
+            "longitude": 116.08275195075,
+            "street": "Harbor Gili Air, Lombok",
+            "zip": "83325"
+        },
+        "id": "185923963360"
+    },
+    "139646576076119": {
+        "name": "Bali Dive Travel",
+        "location": {
+            "city": "Kuta",
+            "country": "Indonesia",
+            "latitude": -8.7215058105136,
+            "longitude": 115.18671217728,
+            "street": "Jalan By Pass Gusti Ngurah Rai 90, SIMPANG SIUR-KUTA",
+            "zip": "80223"
+        },
+        "id": "139646576076119"
+    },
+    "793196504081616": {
+        "name": "OlympDive Komodo",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.48333,
+            "longitude": 119.9,
+            "street": "Lang VII",
+            "zip": "86554"
+        },
+        "id": "793196504081616"
+    },
+    "161358597321157": {
+        "name": "Reef Seen Divers Resort",
+        "location": {
+            "city": "Buleleng",
+            "country": "Indonesia",
+            "latitude": -8.1435819977672,
+            "longitude": 114.65536366481
+        },
+        "id": "161358597321157"
+    },
+    "263308267343473": {
+        "name": "Bali Fun Tour",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.818667,
+            "longitude": 115.190363,
+            "street": "Jalan Perumahan Nusa Puri E64 Nusadua",
+            "zip": "80361"
+        },
+        "id": "263308267343473"
+    },
+    "1436748606600007": {
+        "name": "Dragon Dive Komodo",
+        "location": {
+            "city": "Komodo",
+            "country": "Indonesia",
+            "latitude": -8.488767090887,
+            "longitude": 119.87696528435,
+            "street": "Jalan mutiara",
+            "zip": "86554"
+        },
+        "id": "1436748606600007"
+    },
+    "1744286199119805": {
+        "name": "Koranu Fyak Bungalows & Wobbegong Dive Adventures",
+        "location": {
+            "city": "Sorong",
+            "country": "Indonesia",
+            "latitude": -6.2586244,
+            "longitude": 106.87016880667,
+            "street": "Kri Island"
+        },
+        "id": "1744286199119805"
+    },
+    "700338596691255": {
+        "name": "Sea World Club Beach & Diving Resort",
+        "location": {
+            "city": "Maumere",
+            "country": "Indonesia",
+            "latitude": -8.624877,
+            "longitude": 122.221111
+        },
+        "id": "700338596691255"
+    },
+    "275614379175789": {
+        "name": "Bali Diving Academy Lembongan",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.67762352,
+            "longitude": 115.44629081,
+            "street": "Jungut Batu"
+        },
+        "id": "275614379175789"
+    },
+    "766536546787852": {
+        "name": "Mv.bajo Baji-Dive & Cruise",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.3881166,
+            "longitude": 119.7967631,
+            "street": "Waerana Jatty",
+            "zip": "86554"
+        },
+        "id": "766536546787852"
+    },
+    "188830681131553": {
+        "name": "Bali International Diving Professionals, Sanur, Bali",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7055607762782,
+            "longitude": 115.25122476886,
+            "street": "Jalan Danau Poso 26",
+            "zip": "80238"
+        },
+        "id": "188830681131553"
+    },
+    "426363607385819": {
+        "name": "Geko Dive Bali",
+        "location": {
+            "city": "Padangbai",
+            "country": "Indonesia",
+            "latitude": -8.5304916933401,
+            "longitude": 115.51074959556,
+            "street": "Jalan Silayukti",
+            "zip": "80872"
+        },
+        "id": "426363607385819"
+    },
+    "914907125295667": {
+        "name": "Bali Spice Dive",
+        "location": {
+            "city": "Buleleng",
+            "country": "Indonesia",
+            "latitude": -8.163703,
+            "longitude": 115.021466,
+            "zip": "81152"
+        },
+        "id": "914907125295667"
+    },
+    "594941283930345": {
+        "name": "Fadhila Cottages Togean Dive Resort",
+        "location": {
+            "city": "Ampana",
+            "country": "Indonesia",
+            "latitude": -0.871389,
+            "longitude": 121.571,
+            "street": "DESA KATUPAT ~ TOGIAN ISLANDS",
+            "zip": "94683"
+        },
+        "id": "594941283930345"
+    },
+    "1560285170968584": {
+        "name": "Aquaddiction Dive",
+        "location": {
+            "city": "Mataram",
+            "country": "Indonesia",
+            "latitude": -8.348492,
+            "longitude": 116.04428,
+            "street": "Jl Pantai",
+            "zip": "83352"
+        },
+        "id": "1560285170968584"
+    },
+    "1487314714864545": {
+        "name": "Bali Diving",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.7044549131457,
+            "longitude": 115.25333046913,
+            "street": "Jalan By Pass Ngurah Rai no.46",
+            "zip": "80226"
+        },
+        "id": "1487314714864545"
+    },
+    "1664715813806330": {
+        "name": "Pandawa Beach",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.8436441681464,
+            "longitude": 115.18834590912,
+            "street": "kuta selatan",
+            "zip": "80000"
+        },
+        "id": "1664715813806330"
+    },
+    "673708566101431": {
+        "name": "Diving Tour Of Bali",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.62183,
+            "longitude": 115.25046,
+            "street": "Jalan Siulan Gg.Pacah 5",
+            "zip": "80237"
+        },
+        "id": "673708566101431"
+    },
+    "867296263417265": {
+        "name": "Lembeh Diving",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.462558,
+            "longitude": 124.82668,
+            "street": "Lembeh and Bangka islands"
+        },
+        "id": "867296263417265"
+    },
+    "267288383406746": {
+        "name": "MatahariKu diving cruise",
+        "location": {
+            "city": "Mentok",
+            "country": "Indonesia",
+            "latitude": -2.0236066666667,
+            "longitude": 105.16017
+        },
+        "id": "267288383406746"
+    },
+    "131352493701119": {
+        "name": "Kapal Tambora Dive Cruises",
+        "location": {
+            "city": "Sorong",
+            "country": "Indonesia",
+            "latitude": -0.88554361853832,
+            "longitude": 131.24604146168
+        },
+        "id": "131352493701119"
+    },
+    "306819779522380": {
+        "name": "Dive Shop, Dive Course & Dive Trip",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.4925,
+            "longitude": 124.838,
+            "street": "Jl. Sudirman"
+        },
+        "id": "306819779522380"
+    },
+    "1081970961909459": {
+        "name": "Archipelago Dive Sarana Diving Operator, PT",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.725752,
+            "longitude": 115.170646,
+            "street": "Jalan Kartika Plaza Kuta Paradiso Hotel, Shop 4",
+            "zip": "80361"
+        },
+        "id": "1081970961909459"
+    },
+    "466117190076251": {
+        "name": "Q-Dive Bali",
+        "location": {
+            "city": "Manggis",
+            "country": "Indonesia",
+            "latitude": -8.5303394666667,
+            "longitude": 115.51005493333,
+            "street": "Jalan Silayukti 7",
+            "zip": "80871"
+        },
+        "id": "466117190076251"
+    },
+    "592007657616211": {
+        "name": "Bali Dive Expedition",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.77439,
+            "longitude": 115.222979,
+            "street": "Jalan Pratama 95-A, Kerobokan, Kuta, Denpasar",
+            "zip": "80361"
+        },
+        "id": "592007657616211"
+    },
+    "867533913355269": {
+        "name": "Dive Alor Dive",
+        "location": {
+            "city": "Kupang",
+            "country": "Indonesia",
+            "latitude": -10.17062,
+            "longitude": 123.58593,
+            "street": "Jl Diponegoro 34"
+        },
+        "id": "867533913355269"
+    },
+    "259060334427664": {
+        "name": "Bali Dive Expedition",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.61605,
+            "longitude": 115.20226,
+            "street": "Jalan Pratama 95",
+            "zip": "80361"
+        },
+        "id": "259060334427664"
+    },
+    "892604147484568": {
+        "name": "Togean tours and Dive resort",
+        "location": {
+            "city": "Ampana",
+            "country": "Indonesia",
+            "latitude": -0.871389,
+            "longitude": 121.571,
+            "street": "Jl. Moh hatta"
+        },
+        "id": "892604147484568"
+    },
+    "1737368956554021": {
+        "name": "Bali Inter Dive PT",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.740449,
+            "longitude": 115.178616,
+            "street": "Jalan Raya Tuban 15XY BL-A7",
+            "zip": "80361"
+        },
+        "id": "1737368956554021"
+    },
+    "1478674759102260": {
+        "name": "Enadive Bali Diving",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7038504126867,
+            "longitude": 115.25619506836,
+            "street": "Jl. Tirta No.1 Sanur",
+            "zip": "80227"
+        },
+        "id": "1478674759102260"
+    },
+    "138353649564003": {
+        "name": "Blue Corner Dive",
+        "location": {
+            "city": "Klungkung",
+            "country": "Indonesia",
+            "latitude": -8.666391351614,
+            "longitude": 115.44893586362,
+            "street": "Jungutbatu Village Nusa Lembongan Island"
+        },
+        "id": "138353649564003"
+    },
+    "863827613744173": {
+        "name": "Bali Hai Diving",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.64073,
+            "longitude": 115.252737,
+            "street": "Benoa Harbour"
+        },
+        "id": "863827613744173"
+    },
+    "192198830934261": {
+        "name": "KLM. Tambora Dive Cruises",
+        "location": {
+            "city": "Ternate",
+            "country": "Indonesia",
+            "latitude": 0.7844995854063,
+            "longitude": 127.38405070481
+        },
+        "id": "192198830934261"
+    },
+    "161770797318214": {
+        "name": "KLM. Tambora Dive Cruises",
+        "location": {
+            "city": "Sorong",
+            "country": "Indonesia",
+            "latitude": -0.8820756223176,
+            "longitude": 131.2675316166
+        },
+        "id": "161770797318214"
+    },
+    "121684888231219": {
+        "name": "Global Dive Centre",
+        "location": {
+            "city": "Buleleng",
+            "country": "Indonesia",
+            "latitude": -8.1629,
+            "longitude": 114.4372,
+            "street": "Jalan Raya Seririt-Gilimanuk",
+            "zip": "81155"
+        },
+        "id": "121684888231219"
+    },
+    "521147568056578": {
+        "name": "Sea Star Dive Center",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.712269,
+            "longitude": 115.171033,
+            "street": "Jalan Benesari 7",
+            "zip": "80361"
+        },
+        "id": "521147568056578"
+    },
+    "1698077703748301": {
+        "name": "Oile",
+        "location": {
+            "city": "Gorontalo",
+            "country": "Indonesia",
+            "latitude": 0.54509549333333,
+            "longitude": 123.06467648,
+            "street": "Tanjung Oile"
+        },
+        "id": "1698077703748301"
+    },
+    "116913184987819": {
+        "name": "Lumbalumba Diving - Manado",
+        "location": {
+            "city": "Mokupa",
+            "country": "Indonesia",
+            "latitude": 1.4231195833393,
+            "longitude": 124.71922159195
+        },
+        "id": "116913184987819"
+    },
+    "544078918981968": {
+        "name": "Diversia Diving",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3538467823412,
+            "longitude": 116.04313412923,
+            "street": "jalan raya trawangan",
+            "zip": "83125"
+        },
+        "id": "544078918981968"
+    },
+    "745851158795531": {
+        "name": "Watersport Tanjung Benoa",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7618992020217,
+            "longitude": 115.22273182869,
+            "street": "Jalan Segara Geni No 3 Tanjung Benoa,Nusa Dua,Bali,Indonesia",
+            "zip": "80361"
+        },
+        "id": "745851158795531"
+    },
+    "1739987856244402": {
+        "name": "Neptune Scuba Diving",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.7069858766667,
+            "longitude": 115.24577634667,
+            "street": "Jalan Suka Merta",
+            "zip": "80228"
+        },
+        "id": "1739987856244402"
+    },
+    "450709051942230": {
+        "name": "Siren Diving Lembongan",
+        "location": {
+            "city": "Klungkung",
+            "country": "Indonesia",
+            "latitude": -8.6923116905012,
+            "longitude": 115.44072031975,
+            "street": "Lembongan Village",
+            "zip": "80771"
+        },
+        "id": "450709051942230"
+    },
+    "344688798950787": {
+        "name": "Diving Resort Noble Bali Tulamben",
+        "location": {
+            "city": "Bali",
+            "country": "Indonesia",
+            "latitude": -8.2801716252936,
+            "longitude": 115.59436398602,
+            "street": "tulamben kubu karangasem",
+            "zip": "80853"
+        },
+        "id": "344688798950787"
+    },
+    "254390704646019": {
+        "name": "AquaMarine Diving - Bali",
+        "location": {
+            "city": "Kuta",
+            "country": "Indonesia",
+            "latitude": -8.6727512074359,
+            "longitude": 115.16294393921,
+            "street": "Jl Petitenget 2A",
+            "zip": "80361"
+        },
+        "id": "254390704646019"
+    },
+    "381505961873982": {
+        "name": "Nusantara Diving Center (NDC) Resort And Spa-Manado",
+        "location": {
+            "city": "Molas",
+            "country": "Indonesia",
+            "latitude": 1.529418,
+            "longitude": 124.838804,
+            "street": "Batusaiki",
+            "zip": "95242"
+        },
+        "id": "381505961873982"
+    },
+    "853749808003855": {
+        "name": "Wicked Diving Komodo",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.4957402754545,
+            "longitude": 119.87866529909,
+            "street": "Jalan Soekarno Hatta",
+            "zip": "86554"
+        },
+        "id": "853749808003855"
+    },
+    "455132051240306": {
+        "name": "Adventure Scuba Diving Bali",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.68529,
+            "longitude": 115.17049,
+            "street": "Jl Dewi Saraswati No.50 Seminyak",
+            "zip": "80361"
+        },
+        "id": "455132051240306"
+    },
+    "1687922718117792": {
+        "name": "Zero Gravity Diving - Bali - Diving Indo",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.7054747,
+            "longitude": 115.2524701,
+            "street": "Zero Gravity Diving, C/O Diving Indo, Jl. Danau Poso 53A",
+            "zip": "80228"
+        },
+        "id": "1687922718117792"
+    },
+    "1640434922891949": {
+        "name": "Pulau abang diving spot",
+        "location": {
+            "city": "Batam",
+            "country": "Indonesia",
+            "latitude": 1.131691,
+            "longitude": 104.03135095,
+            "street": "pulau abang, galang",
+            "zip": "29481"
+        },
+        "id": "1640434922891949"
+    },
+    "1734576176857175": {
+        "name": "Diving Tour Indonesia",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -7.0136679275666,
+            "longitude": 115.3125,
+            "street": "Jalan penyaringan"
+        },
+        "id": "1734576176857175"
+    },
+    "427159154121447": {
+        "name": "Mikumba Diving",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.6819,
+            "longitude": 115.20411,
+            "street": "Jalan Pulau"
+        },
+        "id": "427159154121447"
+    },
+    "244120655694148": {
+        "name": "Pulau Kera, Beach n Diving Area, Kupang, NTT",
+        "location": {
+            "city": "Kupang",
+            "country": "Indonesia",
+            "latitude": -10.1861,
+            "longitude": 123.54865,
+            "street": "MESS BA MACAN KUMBANG TNI AL OSMOK - KUPANG"
+        },
+        "id": "244120655694148"
+    },
+    "1061539973867999": {
+        "name": "Diving Charter Komodo",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.7060667,
+            "longitude": 115.2560121,
+            "zip": "0385"
+        },
+        "id": "1061539973867999"
+    },
+    "171213296244323": {
+        "name": "Komodo Resort & Diving Club",
+        "location": {
+            "city": "Komodo",
+            "country": "Indonesia",
+            "latitude": -8.5163466001092,
+            "longitude": 119.71437242478,
+            "street": "Sebayur  Island, Komodo National Park",
+            "zip": "86754"
+        },
+        "id": "171213296244323"
+    },
+    "721681041209048": {
+        "name": "Diving Holiday Bintan",
+        "location": {
+            "city": "Riau",
+            "country": "Indonesia",
+            "latitude": 0.783333,
+            "longitude": 104.55,
+            "street": "KM40 Desa Teluk Bakau Bintan",
+            "zip": "29153"
+        },
+        "id": "721681041209048"
+    },
+    "227840470619047": {
+        "name": "King Neptune Scuba Diving & Water Sport - Batam",
+        "location": {
+            "city": "Batam",
+            "country": "Indonesia",
+            "latitude": 1.1069202282913,
+            "longitude": 104.04524283524,
+            "zip": "29463"
+        },
+        "id": "227840470619047"
+    },
+    "589249327840186": {
+        "name": "Diving Resort Bintan",
+        "location": {
+            "city": "Riau",
+            "country": "Indonesia",
+            "latitude": 0.783333,
+            "longitude": 104.55,
+            "street": "bintan",
+            "zip": "29153"
+        },
+        "id": "589249327840186"
+    },
+    "256367251202574": {
+        "name": "Arina Diving Accessories",
+        "location": {
+            "city": "Batam",
+            "country": "Indonesia",
+            "latitude": 1.08333,
+            "longitude": 104.033,
+            "street": "Batu Aji, Riau",
+            "zip": "29432"
+        },
+        "id": "256367251202574"
+    },
+    "1390485471251078": {
+        "name": "Bali Diving Paradise",
+        "location": {
+            "city": "Manggis",
+            "country": "Indonesia",
+            "latitude": -8.5075963801758,
+            "longitude": 115.56350648403,
+            "street": "Jalan Raya Candidasa Nyuh Tebel",
+            "zip": "80871"
+        },
+        "id": "1390485471251078"
+    },
+    "1447243648636450": {
+        "name": "Ihasia Diving Komodo",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.4970332043726,
+            "longitude": 119.87950801849,
+            "street": "Jl. Soekarno Hatta",
+            "zip": "86554"
+        },
+        "id": "1447243648636450"
+    },
+    "278899412298040": {
+        "name": "Bali Secrets Diving Safaris",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.6820354,
+            "longitude": 115.2588272,
+            "street": "Jln Danau Buyan no 47",
+            "zip": "80228"
+        },
+        "id": "278899412298040"
+    },
+    "373032286102307": {
+        "name": "OK Divers",
+        "location": {
+            "city": "Padangbai",
+            "country": "Indonesia",
+            "latitude": -8.5325839481622,
+            "longitude": 115.50754487514,
+            "street": "Jl. Silayukti 6",
+            "zip": "80872"
+        },
+        "id": "373032286102307"
+    },
+    "118120234963482": {
+        "name": "Atlantis International Bali",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.7044938766045,
+            "longitude": 115.25700311918,
+            "street": "Jalan By Pass I Gusti Ngurah Rai 96",
+            "zip": "80228"
+        },
+        "id": "118120234963482"
+    },
+    "774735009319724": {
+        "name": "Kinaari Resort",
+        "location": {
+            "city": "Tarabitan",
+            "country": "Indonesia",
+            "latitude": 1.7498380141791,
+            "longitude": 124.99020010791,
+            "street": "Tarabitan, Likupang,North Minahasa"
+        },
+        "id": "774735009319724"
+    },
+    "313339892040009": {
+        "name": "Underwater Tribe",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.6821176230648,
+            "longitude": 115.25839283503,
+            "street": "Jalan Danau Buyan 47",
+            "zip": "80228"
+        },
+        "id": "313339892040009"
+    },
+    "1607207569594069": {
+        "name": "Gili Scuba Diving",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.5,
+            "longitude": 116.667,
+            "street": "Jl. Bangsal"
+        },
+        "id": "1607207569594069"
+    },
+    "1008730789196686": {
+        "name": "BMR Dive And Water Sports",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.758029,
+            "longitude": 115.221615,
+            "street": "Jl. Pratama No. 99X, Tanjung Benoa, Bali",
+            "zip": "80361"
+        },
+        "id": "1008730789196686"
+    },
+    "109954452417513": {
+        "name": "Trawangan Dive, Gili Trawangan",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3494885786111,
+            "longitude": 116.04323095597,
+            "street": "Trawangan Dive, Gili Trawangan",
+            "zip": "83352"
+        },
+        "id": "109954452417513"
+    },
+    "126253320897010": {
+        "name": "North Coast BMR Dive And Water Sport",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.7535735362268,
+            "longitude": 115.21988195109,
+            "street": "Jalan Segara Lor 15",
+            "zip": "80361"
+        },
+        "id": "126253320897010"
+    },
+    "808909475832668": {
+        "name": "Tauch Terminal Tulamben",
+        "location": {
+            "city": "Karangasem",
+            "country": "Indonesia",
+            "latitude": -8.2515000925959,
+            "located_in": "223088221036126",
+            "longitude": 115.57574272156,
+            "street": "Tulamben beach",
+            "zip": "80853"
+        },
+        "id": "808909475832668"
+    },
+    "1400431116857500": {
+        "name": "Benoa Tirta Harum Dive & Watersport",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.7841453112796,
+            "longitude": 115.22614837732,
+            "street": "Jl. Pratama No. 36X Nusa Dua",
+            "zip": "80363"
+        },
+        "id": "1400431116857500"
+    },
+    "395818573847256": {
+        "name": "\"Boboca Diving Club\" Pantai Malalayang",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.45868295,
+            "longitude": 124.839352355,
+            "street": "malalayang"
+        },
+        "id": "395818573847256"
+    },
+    "412630515458948": {
+        "name": "Bali Hai Diving Adventures - Map Location",
+        "location": {
+            "city": "Benoa",
+            "country": "Indonesia",
+            "latitude": -8.741676,
+            "longitude": 115.212354,
+            "street": "Jalan Wisata Tirta",
+            "zip": "80001"
+        },
+        "id": "412630515458948"
+    },
+    "218760708294185": {
+        "name": "BALI Diving & snorkling at menjangan island",
+        "location": {
+            "city": "Jimbaran",
+            "country": "Indonesia",
+            "latitude": -8.766043,
+            "longitude": 115.196974,
+            "street": "bali kencana resort 111 c4",
+            "zip": "80361"
+        },
+        "id": "218760708294185"
+    },
+    "488776457868858": {
+        "name": "Blue Marine Dive Resort",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3452607477255,
+            "longitude": 116.0476886673,
+            "street": "Gili Air",
+            "zip": "83352"
+        },
+        "id": "488776457868858"
+    },
+    "479370405439995": {
+        "name": "Lembongan Discovery Dive",
+        "location": {
+            "city": "Lembongan",
+            "country": "Indonesia",
+            "latitude": -8.6652027808085,
+            "longitude": 115.46098709106,
+            "street": "Mangrove Beach ( Paradise beach)",
+            "zip": "80771"
+        },
+        "id": "479370405439995"
+    },
+    "1312009262220568": {
+        "name": "Red Diving",
+        "location": {
+            "city": "Bogor",
+            "country": "Indonesia",
+            "latitude": -6.58702,
+            "longitude": 106.78771,
+            "street": "Ciwaringin tanah sewa Jln. Ardio Gg. Madrasah No.12",
+            "zip": "16124"
+        },
+        "id": "1312009262220568"
+    },
+    "958810627549173": {
+        "name": "Tuke Menjangan guest house and Diving buddy",
+        "location": {
+            "city": "Singaraja",
+            "country": "Indonesia",
+            "latitude": -8.1435,
+            "longitude": 114.54094,
+            "street": "Toke Menjangan, jalan Garuda, desa Pejarakan, Grokgak, Banyuwedang North west Bali, Indonesia",
+            "zip": "81155"
+        },
+        "id": "958810627549173"
+    },
+    "1653096608352637": {
+        "name": "Mola Scuba Dive Wakatobi",
+        "location": {
+            "city": "Wanci",
+            "country": "Indonesia",
+            "latitude": -5.31667,
+            "longitude": 123.533,
+            "street": "Jl.Dusun Bunging Desa Mola Bahari",
+            "zip": "93791"
+        },
+        "id": "1653096608352637"
+    },
+    "875154059178516": {
+        "name": "Fisheries Diving Club UPS Tegal",
+        "location": {
+            "city": "Adiwerna",
+            "country": "Indonesia",
+            "latitude": -6.86667,
+            "longitude": 109.133,
+            "street": "Jl. halmahera Dusun Mintaragen 1Km dari kota Tegal"
+        },
+        "id": "875154059178516"
+    },
+    "762824107150709": {
+        "name": "Bali Aqua Diving",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.707039,
+            "longitude": 115.25423,
+            "street": "Jalan Sekar Waru",
+            "zip": "80228"
+        },
+        "id": "762824107150709"
+    },
+    "106604054620": {
+        "name": "CUSTOMS DIVING CLUB",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.6658384,
+            "longitude": 115.2390844,
+            "street": "Jln. Dewi Madri X Blok B No. 3",
+            "zip": "80235"
+        },
+        "id": "106604054620"
+    },
+    "206425332718774": {
+        "name": "Bali Tec Diving",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.704241,
+            "longitude": 115.251759,
+            "street": "Jl. Danau Poso 40",
+            "zip": "80228"
+        },
+        "id": "206425332718774"
+    },
+    "103757731586": {
+        "name": "401 DIVES Pemuteran Bali",
+        "location": {
+            "city": "Singaraja",
+            "country": "Indonesia",
+            "latitude": -8.144992250024,
+            "longitude": 114.65887248516,
+            "street": "Adirahayu Dive Center",
+            "zip": "81155"
+        },
+        "id": "103757731586"
+    },
+    "161946313831811": {
+        "name": "Joe's Gone Diving",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.6897535,
+            "longitude": 115.2585373,
+            "street": "Jalan Bypass Ngurah Rai 44a",
+            "zip": "80228"
+        },
+        "id": "161946313831811"
+    },
+    "1791478894405482": {
+        "name": "Bali IDC with Joe's Gone Diving",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.6897538,
+            "longitude": 115.2585351,
+            "street": "Jl. By Pass Ngurah Rai 44A",
+            "zip": "80228"
+        },
+        "id": "1791478894405482"
+    },
+    "569424726427613": {
+        "name": "Dive Indonesia",
+        "location": {
+            "city": "Jakarta",
+            "country": "Indonesia",
+            "latitude": -6.2961941149724,
+            "longitude": 106.87093377113,
+            "street": "Jl. Raya Bogor Km 17 Uniko D2 No.26-27, Pasar Induk Kramat Jati, Kp Tengah, Kramat Jati, Jakarta Timur",
+            "zip": "13540"
+        },
+        "id": "569424726427613"
+    },
+    "331941550173594": {
+        "name": "Manta Dive, Gili Air, Lombok, Indonesia",
+        "location": {
+            "city": "Mataram",
+            "country": "Indonesia",
+            "latitude": -8.3621858561567,
+            "longitude": 116.08724072239,
+            "street": "Gili Air"
+        },
+        "id": "331941550173594"
+    },
+    "782788381857247": {
+        "name": "Dive Indonesia",
+        "location": {
+            "city": "Mataram",
+            "country": "Indonesia",
+            "latitude": -8.572046,
+            "longitude": 116.107228,
+            "street": "Jalan Gili Trawangan",
+            "zip": "83123"
+        },
+        "id": "782788381857247"
+    },
+    "320944054589012": {
+        "name": "Dive Komodo",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.4932556444387,
+            "longitude": 119.87783432007,
+            "street": "Jalan Soekarno Hatta",
+            "zip": "86554"
+        },
+        "id": "320944054589012"
+    },
+    "405538062828725": {
+        "name": "Dive Dream Indonesia",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7035534647353,
+            "longitude": 115.24604558945,
+            "street": "Jl. Tucked Balian No.888, Ds. Sidakarya",
+            "zip": "80224"
+        },
+        "id": "405538062828725"
+    },
+    "1087940814612049": {
+        "name": "Ocean Dive Indonesia",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.5484297818819,
+            "longitude": 115.14770507812,
+            "street": "Jalan Raya Sanur",
+            "zip": "80361"
+        },
+        "id": "1087940814612049"
+    },
+    "1696089050657517": {
+        "name": "Dive Indonesia",
+        "location": {
+            "city": "Mataram",
+            "country": "Indonesia",
+            "latitude": -8.531709,
+            "longitude": 116.072359,
+            "street": "Jalan Raya Senggigi"
+        },
+        "id": "1696089050657517"
+    },
+    "602432256572971": {
+        "name": "Dive Indonesia",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.72224,
+            "longitude": 115.174077,
+            "street": "Jalan Pantai Kuta 7",
+            "zip": "80361"
+        },
+        "id": "602432256572971"
+    },
+    "748743585193320": {
+        "name": "Dive Central Gili",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3572388415262,
+            "longitude": 116.04188919067,
+            "street": "Jalan Raya Trawangan",
+            "zip": "Indonesia"
+        },
+        "id": "748743585193320"
+    },
+    "435496869882628": {
+        "name": "Octopus Dive Indonesia",
+        "location": {
+            "city": "Cimahi",
+            "country": "Indonesia",
+            "latitude": -8.678392,
+            "longitude": 115.517702,
+            "street": "Banjar Bodong, Desa Ped, Nusa Penida"
+        },
+        "id": "435496869882628"
+    },
+    "114527021956617": {
+        "name": "Dive Concepts",
+        "location": {
+            "city": "Kubu",
+            "country": "Indonesia",
+            "latitude": -8.2785532360984,
+            "longitude": 115.59243679047,
+            "street": "Dive Concepts Tulamben"
+        },
+        "id": "114527021956617"
+    },
+    "267353723369432": {
+        "name": "Dabirahe Dive, Spa and Leisure Resort - Lembeh",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.4845097146379,
+            "longitude": 125.23863889925,
+            "zip": "95517"
+        },
+        "id": "267353723369432"
+    },
+    "640347186024926": {
+        "name": "Labengki Dive",
+        "location": {
+            "city": "Kendari",
+            "country": "Indonesia",
+            "latitude": -3.61160948,
+            "longitude": 122.1998339,
+            "street": "Tolitoli - Labengki Island"
+        },
+        "id": "640347186024926"
+    },
+    "1727328390878704": {
+        "name": "Kali Lemon Dive Resort - Nabire",
+        "location": {
+            "city": "Nabire",
+            "country": "Indonesia",
+            "latitude": -3.36625,
+            "longitude": 135.49927,
+            "street": "Kusuma Bangsa St. No. 11",
+            "zip": "98816"
+        },
+        "id": "1727328390878704"
+    },
+    "214019042314104": {
+        "name": "Bali Elite Scuba",
+        "location": {
+            "city": "Karangasem",
+            "country": "Indonesia",
+            "latitude": -8.280676638164,
+            "longitude": 115.59659957886,
+            "street": "Jl. Kubu,Tulamben, Kubu",
+            "zip": "80852"
+        },
+        "id": "214019042314104"
+    },
+    "217938088679649": {
+        "name": "Alor Nusa Dive",
+        "location": {
+            "city": "Alor-kecil",
+            "country": "Indonesia",
+            "latitude": -8.2345198025,
+            "longitude": 124.40174481,
+            "street": "Alor Eco Resort"
+        },
+        "id": "217938088679649"
+    },
+    "132517720231599": {
+        "name": "Bastianos Lembeh Dive Resort",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.4447537593088,
+            "longitude": 125.23792108542,
+            "street": "Mawali Village, Lembeh Island"
+        },
+        "id": "132517720231599"
+    },
+    "152806821565565": {
+        "name": "Puri madha DIVE Resort",
+        "location": {
+            "city": "Kubu",
+            "country": "Indonesia",
+            "latitude": -8.2739552897368,
+            "longitude": 115.59155228737,
+            "street": "jalan raya kubu amlapura",
+            "zip": "80853"
+        },
+        "id": "152806821565565"
+    },
+    "332663163815375": {
+        "name": "Sea Souls Dive Resort, Bangka Island, North Sulawesi, Indonesia",
+        "location": {
+            "city": "Likupang",
+            "country": "Indonesia",
+            "latitude": 1.804787367584,
+            "longitude": 125.11759517726
+        },
+        "id": "332663163815375"
+    },
+    "186887148435601": {
+        "name": "DiveHub.id",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.6944540168958,
+            "longitude": 115.25842666626,
+            "street": "Jl. Bypass Sanur 376",
+            "zip": "80228"
+        },
+        "id": "186887148435601"
+    },
+    "107395272643752": {
+        "name": "Ocean Sun Dive Resort Tulamben",
+        "location": {
+            "city": "Kubu",
+            "country": "Indonesia",
+            "latitude": -8.2785547366464,
+            "longitude": 115.59303136897,
+            "street": "Jalan Raya Kubu Amlapura, Desa Tulamben",
+            "zip": "80853"
+        },
+        "id": "107395272643752"
+    },
+    "378725425527911": {
+        "name": "Tasik Ria Resort  Manado",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.4137289481853,
+            "longitude": 124.70851142205,
+            "street": "Jalan Trans Sulawesi, Mokupa",
+            "zip": "95661"
+        },
+        "id": "378725425527911"
+    },
+    "1227525484037657": {
+        "name": "Family House, Dodoku Dive Center",
+        "location": {
+            "city": "Ternate",
+            "country": "Indonesia",
+            "latitude": 0.76089655514877,
+            "longitude": 127.3103092612
+        },
+        "id": "1227525484037657"
+    },
+    "126727010812237": {
+        "name": "Manta Dive Gili Trawangan",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3534829225139,
+            "longitude": 116.0432805072,
+            "street": "Gili Trawangan"
+        },
+        "id": "126727010812237"
+    },
+    "133435150356030": {
+        "name": "Dive Professional Indonesia",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.4941,
+            "longitude": 119.87842,
+            "street": "Jl Soekarno Hatta in front Gradena",
+            "zip": "86554"
+        },
+        "id": "133435150356030"
+    },
+    "439872489414550": {
+        "name": "Bira Dive Camp",
+        "location": {
+            "city": "Bulukumba",
+            "country": "Indonesia",
+            "latitude": -5.6074405266667,
+            "longitude": 120.44124353933,
+            "street": "Pasir Putih, Bira, Sulawesi Selatan",
+            "zip": "92735"
+        },
+        "id": "439872489414550"
+    },
+    "226071894259209": {
+        "name": "Dive Bluemotion Ambon",
+        "location": {
+            "city": "Laha",
+            "country": "Indonesia",
+            "latitude": -3.7209315587688,
+            "longitude": 128.07822704315,
+            "street": "Jl. Sultan Khairun Djamil , RT 001 RW 001 , Desa Laha, Teluk Ambon",
+            "zip": "97236"
+        },
+        "id": "226071894259209"
+    },
+    "435436286799515": {
+        "name": "Bmr Gwd Dive & Water Sport Banyuwangi",
+        "location": {
+            "city": "Kapuran",
+            "country": "Indonesia",
+            "latitude": -8.0851328372955,
+            "longitude": 114.41733956337,
+            "street": "Ds. Bangsring Kec. Wongsorejo Banyuwangi"
+        },
+        "id": "435436286799515"
+    },
+    "42757829012": {
+        "name": "Murex Dive Resorts",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.45949,
+            "longitude": 124.77807,
+            "street": "Jalan Trans Sulawesi, Desa Kalasey 1",
+            "zip": "95361"
+        },
+        "id": "42757829012"
+    },
+    "248638322014098": {
+        "name": "DiveInn Bali",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.2471680198427,
+            "longitude": 115.56999206543,
+            "street": "Kubu Tulamben",
+            "zip": "80363"
+        },
+        "id": "248638322014098"
+    },
+    "367248220041174": {
+        "name": "Komodo Dive Center",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.4948897620093,
+            "longitude": 119.87854242325,
+            "street": "Jalan Soekarno Hatta",
+            "zip": "Nusa Tenggara Timur, Flores"
+        },
+        "id": "367248220041174"
+    },
+    "272009063006471": {
+        "name": "Zooka Dive and Water Sports Bali - offical page",
+        "location": {
+            "city": "Benoa",
+            "country": "Indonesia",
+            "latitude": -8.7534018853333,
+            "longitude": 115.21996975067,
+            "street": "Jl. Segara Lor No. 19"
+        },
+        "id": "272009063006471"
+    },
+    "136662076405894": {
+        "name": "Kasawari Lembeh Life Style Boutique Dive Resort",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.478839559026,
+            "longitude": 125.23403999205,
+            "street": "Kelurahan Makawidey Jaga1, Lingkungan1",
+            "zip": "95528"
+        },
+        "id": "136662076405894"
+    },
+    "141467842596580": {
+        "name": "Dive Explore Indonesia",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.6577782,
+            "longitude": 115.2407393,
+            "street": "Jl. Akasia IV no. 5"
+        },
+        "id": "141467842596580"
+    },
+    "1203987869658335": {
+        "name": "Dive GoPro Indonesia",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.5,
+            "longitude": 116.667,
+            "street": "Gili Trawangan"
+        },
+        "id": "1203987869658335"
+    },
+    "157785590909475": {
+        "name": "Prince John Dive Resort",
+        "location": {
+            "city": "Donggala",
+            "country": "Indonesia",
+            "latitude": -0.64821447249333,
+            "longitude": 119.73891261686,
+            "street": "tanjung karang",
+            "zip": "94351"
+        },
+        "id": "157785590909475"
+    },
+    "1571743579787135": {
+        "name": "Kalimaya Dive Resort",
+        "location": {
+            "city": "Sumbawa",
+            "country": "Indonesia",
+            "latitude": -8.5075167993272,
+            "longitude": 119.04982566833,
+            "street": "Poja Nae",
+            "zip": "8877"
+        },
+        "id": "1571743579787135"
+    },
+    "519166514900937": {
+        "name": "Dive & Travel Indonesia",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.69846,
+            "longitude": 115.2631,
+            "street": "Jl Danau Tamblingan",
+            "zip": "80228"
+        },
+        "id": "519166514900937"
+    },
+    "1503377503321257": {
+        "name": "Arborek Dive Shop",
+        "location": {
+            "city": "Waisai",
+            "country": "Indonesia",
+            "latitude": -0.233333,
+            "longitude": 130.517,
+            "street": "Arborek Village"
+        },
+        "id": "1503377503321257"
+    },
+    "1276944022413840": {
+        "name": "Gurara Dive Resort Raja Ampat",
+        "location": {
+            "city": "Saonek",
+            "country": "Indonesia",
+            "latitude": -0.44135,
+            "longitude": 130.76745333333
+        },
+        "id": "1276944022413840"
+    },
+    "913900055374698": {
+        "name": "Dive Indonesia. PT",
+        "location": {
+            "city": "Mataram",
+            "country": "Indonesia",
+            "latitude": -8.572046,
+            "longitude": 116.107228,
+            "street": "Jalan Gili Trawangan",
+            "zip": "83352"
+        },
+        "id": "913900055374698"
+    },
+    "540297312812454": {
+        "name": "Pandan Sari Dive & Water Sport",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.7565954065217,
+            "longitude": 115.22196947348,
+            "street": "Jl Pratama Tanjung Benoa",
+            "zip": "80363"
+        },
+        "id": "540297312812454"
+    },
+    "253370434797489": {
+        "name": "Blue Marlin Dive",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.4957539393694,
+            "longitude": 119.87862669438,
+            "street": "Jalan Soekarno-Hatta",
+            "zip": "86552"
+        },
+        "id": "253370434797489"
+    },
+    "250905381925291": {
+        "name": "Menjangan Dynasty Resort, Beach Glamping and Dive Centre",
+        "location": {
+            "city": "Buleleng",
+            "country": "Indonesia",
+            "latitude": -8.1341776667056,
+            "longitude": 114.56216812134,
+            "street": "Desa Pejarakan, Gerokgak",
+            "zip": "81155"
+        },
+        "id": "250905381925291"
+    },
+    "189664364524832": {
+        "name": "Kharisma Dive -  Indonesia",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.6783090873551,
+            "longitude": 115.25821050262,
+            "street": "Jl. Bypass Ngurah Rai no.208"
+        },
+        "id": "189664364524832"
+    },
+    "105908709478402": {
+        "name": "Blue Marlin Dive",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3554130731742,
+            "longitude": 116.04249000549,
+            "street": "Jalan Gili Trawangan",
+            "zip": "83355"
+        },
+        "id": "105908709478402"
+    },
+    "1038305426209448": {
+        "name": "Dive into Lembeh",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.5007094024194,
+            "longitude": 125.24115397581,
+            "street": "Kasawari Village",
+            "zip": "North Sulawesi"
+        },
+        "id": "1038305426209448"
+    },
+    "509483752551675": {
+        "name": "Sombu Dive Wakatobi",
+        "location": {
+            "city": "Wangi",
+            "country": "Indonesia",
+            "latitude": -6.11343,
+            "longitude": 106.70594
+        },
+        "id": "509483752551675"
+    },
+    "195692007115633": {
+        "name": "Cocotinos Manado, a Boutique Dive Resort & Spa",
+        "location": {
+            "city": "Wori",
+            "country": "Indonesia",
+            "latitude": 1.6009732404277,
+            "longitude": 124.86838470004,
+            "street": "Dusun Kima Bajo",
+            "zip": "95000"
+        },
+        "id": "195692007115633"
+    },
+    "245341672305554": {
+        "name": "PADI Divemaster Gili Islands, Trawangan Dive Center, Indonesia",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.5,
+            "longitude": 116.667,
+            "street": "Trawangan main beach road, Gili Trawangan,",
+            "zip": "83355"
+        },
+        "id": "245341672305554"
+    },
+    "124844064258987": {
+        "name": "Derawan Dive Resort",
+        "location": {
+            "city": "Tanjungredep",
+            "country": "Indonesia",
+            "latitude": 2.2828751676253,
+            "longitude": 118.24537270628,
+            "street": "Derawan island"
+        },
+        "id": "124844064258987"
+    },
+    "1429831397279423": {
+        "name": "Liberty Dive Resort Tulamben",
+        "location": {
+            "city": "Kubu",
+            "country": "Indonesia",
+            "latitude": -8.2419843988877,
+            "longitude": 115.56271208954,
+            "street": "Jalan Raya Tulamben - Kubu",
+            "zip": "80853"
+        },
+        "id": "1429831397279423"
+    },
+    "158316881181612": {
+        "name": "Bunaken Oasis Dive Resort",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.6200529091622,
+            "longitude": 124.76460456848,
+            "street": "Bunaken Oasis, Liang Beach",
+            "zip": "North Sulawesi"
+        },
+        "id": "158316881181612"
+    },
+    "1595299400755106": {
+        "name": "Bali Apollo Water Sports & Dive",
+        "location": {
+            "city": "Benoa",
+            "country": "Indonesia",
+            "latitude": -8.7813751,
+            "longitude": 115.2244969,
+            "street": "Jl. Pratama 70 Tanjung Benoa",
+            "zip": "80361"
+        },
+        "id": "1595299400755106"
+    },
+    "1344275365659484": {
+        "name": "Anambas Dive Resort",
+        "location": {
+            "city": "Tarempah",
+            "country": "Indonesia",
+            "latitude": 3.1721395826401,
+            "longitude": 106.28946304321,
+            "street": "Tanjung kumbek"
+        },
+        "id": "1344275365659484"
+    },
+    "417409698465183": {
+        "name": "Raja Ampat Dive Resort",
+        "location": {
+            "city": "Waisai",
+            "country": "Indonesia",
+            "latitude": -6.1610584,
+            "longitude": 106.8364473,
+            "street": "Jl. Raya Waisai",
+            "zip": "98482"
+        },
+        "id": "417409698465183"
+    },
+    "361336544002485": {
+        "name": "NBC Dive & Water Sport",
+        "location": {
+            "city": "Kuta",
+            "country": "Indonesia",
+            "latitude": -8.755376564208,
+            "longitude": 115.22153302155,
+            "street": "Jl. Pratama No. 12, Tanjung Benoa",
+            "zip": "80363"
+        },
+        "id": "361336544002485"
+    },
+    "111733712220942": {
+        "name": "Go Dive Indonesia",
+        "location": {
+            "city": "Balikpapan",
+            "country": "Indonesia",
+            "latitude": -1.2422791892664,
+            "longitude": 116.89030081169,
+            "street": "Jl Ruhui Rahayu 1 No. 11Ringroad"
+        },
+        "id": "111733712220942"
+    },
+    "154333917952845": {
+        "name": "Tulamben Wreck Divers",
+        "location": {
+            "city": "Amed",
+            "country": "Indonesia",
+            "latitude": -8.2776237350191,
+            "longitude": 115.59238019708,
+            "street": "Tulamben, Kubu",
+            "zip": "80853"
+        },
+        "id": "154333917952845"
+    },
+    "387641141290949": {
+        "name": "Kubu Indah Dive & Spa Resort",
+        "location": {
+            "city": "Kubu",
+            "country": "Indonesia",
+            "latitude": -8.2473519138895,
+            "longitude": 115.57156984846,
+            "street": "JALAN SIDA KARYA, KUBU VILLAGE",
+            "zip": "80853"
+        },
+        "id": "387641141290949"
+    },
+    "488898124633624": {
+        "name": "Tulamben Dive Resort",
+        "location": {
+            "city": "Karangasem",
+            "country": "Indonesia",
+            "latitude": -8.2755978066667,
+            "longitude": 115.59048358333,
+            "street": "Tulamben",
+            "zip": "80363"
+        },
+        "id": "488898124633624"
+    },
+    "1495512927419527": {
+        "name": "Cocotinos Lembeh A Boutique Dive Lodge",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.4822350951852,
+            "longitude": 125.23717208481,
+            "street": "Makawidey Bitung",
+            "zip": "95528"
+        },
+        "id": "1495512927419527"
+    },
+    "448498941848457": {
+        "name": "Papua Explorers Dive Resort, Raja Ampat",
+        "location": {
+            "city": "Waisai",
+            "country": "Indonesia",
+            "latitude": -0.54334594764916,
+            "longitude": 130.6026590271
+        },
+        "id": "448498941848457"
+    },
+    "403799510362": {
+        "name": "Bali Jet Set Dive and Marine Sports",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7629735325,
+            "longitude": 115.2161285225,
+            "street": "Jalan Setra Gandamayu, Nusa Dua",
+            "zip": "80361"
+        },
+        "id": "403799510362"
+    },
+    "112357615446250": {
+        "name": "Raja Ampat Islands",
+        "location": {
+            "city": "Waigeo",
+            "country": "Indonesia",
+            "latitude": -0.23333333,
+            "longitude": 130.51666667,
+            "street": "Kabupaten Raja Ampat",
+            "zip": "55551"
+        },
+        "id": "112357615446250"
+    },
+    "174604275951396": {
+        "name": "YOS Dive",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.790553,
+            "longitude": 115.22231758,
+            "street": "Jl. Pintas Tanjung Benoa No.3, Nusa Dua",
+            "zip": "80361"
+        },
+        "id": "174604275951396"
+    },
+    "1095396733839741": {
+        "name": "Water Sport Serangan",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.72648,
+            "longitude": 115.23031,
+            "street": "Jl tukad punggawa,pantai melasti Serangan",
+            "zip": "85361"
+        },
+        "id": "1095396733839741"
+    },
+    "831436240307754": {
+        "name": "Dive Travel Indonesia",
+        "location": {
+            "city": "Tomohon",
+            "country": "Indonesia",
+            "latitude": 1.6532,
+            "longitude": 125.0257568,
+            "street": "Paslaten 1 Lingk VI no 417, Tomohon Timur, Sulawesi Utara - Indonesia",
+            "zip": "95446"
+        },
+        "id": "831436240307754"
+    },
+    "84059700921": {
+        "name": "Black Marlin Dive Resort, Kadidiri & Una Una Islands, Togian Islands",
+        "location": {
+            "city": "Wakai",
+            "country": "Indonesia",
+            "latitude": 0.537935065,
+            "longitude": 123.062311975,
+            "street": "Kadidiri & Una Una Islands, Togian Islands,",
+            "zip": "80115"
+        },
+        "id": "84059700921"
+    },
+    "285065021883646": {
+        "name": "Ds Musir Kidul ,rejoso, Nganjuk",
+        "location": {
+            "city": "Rejoso",
+            "country": "Indonesia",
+            "latitude": -7.51543,
+            "longitude": 111.90537833333,
+            "street": "Jalan Bojonegoro"
+        },
+        "id": "285065021883646"
+    },
+    "398052086965698": {
+        "name": "YOS Dive Lembeh - Eco Beach Resort",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.4829638262164,
+            "longitude": 125.23750530053,
+            "street": "Kelurahan Makawidey, Kec Aertembaga – ,",
+            "zip": "95528"
+        },
+        "id": "398052086965698"
+    },
+    "1757074057915945": {
+        "name": "Samawa Dive Center",
+        "location": {
+            "city": "Sumbawa Besar",
+            "country": "Indonesia",
+            "latitude": -8.4137909587917,
+            "longitude": 117.45045661926,
+            "street": "Tanjung Menangis, Opposite Moyo Island"
+        },
+        "id": "1757074057915945"
+    },
+    "141003013847": {
+        "name": "Kungkungan Bay Resort & Spa",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.4650282431515,
+            "longitude": 125.23012710307,
+            "street": "Bitung",
+            "zip": "95527"
+        },
+        "id": "141003013847"
+    },
+    "369135273221332": {
+        "name": "Nusa Penida Dive Resort",
+        "location": {
+            "city": "Klungkung",
+            "country": "Indonesia",
+            "latitude": -8.6804632998465,
+            "longitude": 115.48826454654,
+            "street": "Monica & Pavel,Dive Resort,Toyapakeh,Nusa Penida",
+            "zip": "80 114"
+        },
+        "id": "369135273221332"
+    },
+    "663257577152377": {
+        "name": "Bali Taman Sari Dive & Marine Sports",
+        "location": {
+            "city": "Benoa",
+            "country": "Indonesia",
+            "latitude": -8.7539463949088,
+            "longitude": 115.22139072418,
+            "street": "Jl Nusa Dua Gg Konco Tanjung Benoa",
+            "zip": "80363"
+        },
+        "id": "663257577152377"
+    },
+    "215231575178831": {
+        "name": "Absolute SCUBA Bali - Indonesia",
+        "location": {
+            "city": "Padangbai",
+            "country": "Indonesia",
+            "latitude": -8.5307102,
+            "longitude": 115.509491,
+            "street": "Jalan Silayukti",
+            "zip": "80872"
+        },
+        "id": "215231575178831"
+    },
+    "278856115901524": {
+        "name": "Kolam Air Panas Tombasian Bawah",
+        "location": {
+            "city": "Kawangkoan",
+            "country": "Indonesia",
+            "latitude": 1.19892,
+            "longitude": 124.74637,
+            "street": "Tombasian Bawah"
+        },
+        "id": "278856115901524"
+    },
+    "101509023238399": {
+        "name": "Thalassa Dive Resort",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.5344888379158,
+            "longitude": 124.83368256785,
+            "street": "Jl. Raya Molas, Kecematan Bunaken",
+            "zip": "95242"
+        },
+        "id": "101509023238399"
+    },
+    "354519188064306": {
+        "name": "Suka Dive Indonesia",
+        "location": {
+            "city": "Yogyakarta City",
+            "country": "Indonesia",
+            "latitude": -7.8,
+            "longitude": 110.367,
+            "street": "Jl. S.Parman no 50",
+            "zip": "55226"
+        },
+        "id": "354519188064306"
+    },
+    "145716065490049": {
+        "name": "DSM Lombok & Gili Trawangan",
+        "location": {
+            "city": "Mataram",
+            "country": "Indonesia",
+            "latitude": -8.3515279795253,
+            "longitude": 116.04403495789,
+            "street": "Jalan Gili trawangan",
+            "zip": "83355"
+        },
+        "id": "145716065490049"
+    },
+    "1557463341201209": {
+        "name": "The Nutmeg Tree Hotel & Dive, Banda Neira,  Maluku,  Indonesia",
+        "location": {
+            "city": "Banda-Neira",
+            "country": "Indonesia",
+            "latitude": -4.52334211,
+            "longitude": 129.8978856,
+            "street": "Jl. Pelabuhan, Desa Nusantara",
+            "zip": "rezatuasikal@gmail.com"
+        },
+        "id": "1557463341201209"
+    },
+    "153670264998235": {
+        "name": "Cocotinos Lembeh, a boutique dive lodge",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.4397011878496,
+            "longitude": 125.15706539154,
+            "street": "Makawidey Village",
+            "zip": "95528"
+        },
+        "id": "153670264998235"
+    },
+    "561929037221639": {
+        "name": "Manta Rhei Dive Center",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.4954839848546,
+            "longitude": 119.87892866135,
+            "street": "Jalan Soekarno Hatta 16",
+            "zip": "86554"
+        },
+        "id": "561929037221639"
+    },
+    "1602375833362174": {
+        "name": "Belitung Dive Center",
+        "location": {
+            "city": "Tanjungpandan",
+            "country": "Indonesia",
+            "latitude": -2.73791,
+            "longitude": 107.63908,
+            "street": "Jl.Sriwijaya",
+            "zip": "33414"
+        },
+        "id": "1602375833362174"
+    },
+    "916448118499100": {
+        "name": "Pulau Sambori",
+        "location": {
+            "city": "Morowali",
+            "country": "Indonesia",
+            "latitude": -3.2737634181976,
+            "longitude": 122.39794921875,
+            "street": "Pulau Sambori island"
+        },
+        "id": "916448118499100"
+    },
+    "456411064426986": {
+        "name": "Kolam Renang Duta Mas",
+        "location": {
+            "city": "Batam",
+            "country": "Indonesia",
+            "latitude": 1.1079118302658,
+            "longitude": 104.04515869885,
+            "street": "batam"
+        },
+        "id": "456411064426986"
+    },
+    "270729423087949": {
+        "name": "Bastianos Bunaken Dive Resort",
+        "location": {
+            "city": "Bunaken",
+            "country": "Indonesia",
+            "latitude": 1.6177221457489,
+            "longitude": 124.76755664476,
+            "street": "Liang Beach"
+        },
+        "id": "270729423087949"
+    },
+    "1927757574167218": {
+        "name": "Blue Corner Dive - Nusa Penida",
+        "location": {
+            "city": "Klungkung",
+            "country": "Indonesia",
+            "latitude": -8.53333,
+            "longitude": 115.4,
+            "street": "Jalan Raya Toya Pakeh - PED",
+            "zip": "80771"
+        },
+        "id": "1927757574167218"
+    },
+    "143491962329025": {
+        "name": "USAT Liberty",
+        "location": {
+            "city": "Kubu",
+            "country": "Indonesia",
+            "latitude": -8.28417,
+            "longitude": 115.589,
+            "street": "JL. Tulamben, Kubu, 印尼",
+            "zip": "80853"
+        },
+        "id": "143491962329025"
+    },
+    "882762308509587": {
+        "name": "Lembata Dive Operator",
+        "location": {
+            "city": "Lewoleba",
+            "country": "Indonesia",
+            "latitude": -8.3716960773433,
+            "longitude": 123.40633392334,
+            "street": "Jetty Harbour",
+            "zip": "86612"
+        },
+        "id": "882762308509587"
+    },
+    "198938960162198": {
+        "name": "Living Colours Dive Resort",
+        "location": {
+            "city": "Bunaken",
+            "country": "Indonesia",
+            "latitude": 1.616749745827,
+            "longitude": 124.77953910828,
+            "street": "Pantai Pangalisang, Pulau Bunaken, Sulawesi Utara 95111"
+        },
+        "id": "198938960162198"
+    },
+    "1614199695497845": {
+        "name": "Tour Dive Bali",
+        "location": {
+            "city": "Karangasem Amlapura",
+            "country": "Indonesia",
+            "latitude": -8.25327,
+            "longitude": 115.57022,
+            "street": "Tulamben",
+            "zip": "80853"
+        },
+        "id": "1614199695497845"
+    },
+    "732990110106249": {
+        "name": "Nautica Bali DiveCenter",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.8044516782759,
+            "longitude": 115.21694512966,
+            "street": "Jl. Raya Siligita No. 99 - Nusa Dua",
+            "zip": "80363"
+        },
+        "id": "732990110106249"
+    },
+    "781844345247012": {
+        "name": "Blue Marine Dive Trawangan",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3482372961833,
+            "longitude": 116.04261875153,
+            "street": "Gili Trawangan",
+            "zip": "83352"
+        },
+        "id": "781844345247012"
+    },
+    "1511322259173607": {
+        "name": "La MegaDitta",
+        "location": {
+            "city": "Basiano",
+            "country": "Indonesia",
+            "latitude": 45.574473722632,
+            "longitude": 9.4691097736359,
+            "street": "Via S. Basilio, 7",
+            "zip": "20060"
+        },
+        "id": "1511322259173607"
+    },
+    "893264350787159": {
+        "name": "Sea World Club Beach Resort & Dive Centre",
+        "location": {
+            "city": "Maumere",
+            "country": "Indonesia",
+            "latitude": -8.6367607423529,
+            "longitude": 122.30807663706,
+            "street": "Waiara Beach",
+            "zip": "86181"
+        },
+        "id": "893264350787159"
+    },
+    "104390129599809": {
+        "name": "Siddhartha Ocean Front Resort & Spa",
+        "location": {
+            "city": "Kubu",
+            "country": "Indonesia",
+            "latitude": -8.2529747111905,
+            "longitude": 115.577680665,
+            "street": "Jalan Amlapura-Singaraja"
+        },
+        "id": "104390129599809"
+    },
+    "13150113201": {
+        "name": "Crystal Divers Bali",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.6963905192927,
+            "longitude": 115.26339781524,
+            "street": "Jl Tamblingan 168",
+            "zip": "80228"
+        },
+        "id": "13150113201"
+    },
+    "120451571443512": {
+        "name": "Villa Alba Resort & Dive Center",
+        "location": {
+            "city": "Bali",
+            "country": "Indonesia",
+            "latitude": -8.2652708096,
+            "longitude": 115.5874745,
+            "street": "Tulamben, Kubu",
+            "zip": "80853"
+        },
+        "id": "120451571443512"
+    },
+    "1510919205797879": {
+        "name": "Jiko port~Boltim",
+        "location": {
+            "city": "Kotabunan",
+            "country": "Indonesia",
+            "latitude": 0.62185305,
+            "longitude": 124.54659263333,
+            "zip": "95782"
+        },
+        "id": "1510919205797879"
+    },
+    "103080626453009": {
+        "name": "Alam Asmara Hotel * Dive Resort * Restaurant * Candidasa * Bali * Indonesia",
+        "location": {
+            "city": "Karangasem",
+            "country": "Indonesia",
+            "latitude": -8.50835,
+            "longitude": 115.5642,
+            "street": "Jalan Raya Candidasa * Candidasa",
+            "zip": "80871"
+        },
+        "id": "103080626453009"
+    },
+    "1651847371725499": {
+        "name": "Kharisma Dive - Deep Indonesia",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7041254,
+            "longitude": 115.2549133,
+            "street": "Jalan By-Pass Ngurah Rai No.208 Sanur"
+        },
+        "id": "1651847371725499"
+    },
+    "10150150984290241": {
+        "name": "MINAHASA LAGOON - DIVE & TOURS CLUB",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.3940550372951,
+            "longitude": 124.65625107097,
+            "street": "Mangatasik- Desa Ranowangko DS VII, Kec. Tombariri",
+            "zip": "95351"
+        },
+        "id": "10150150984290241"
+    },
+    "1441055436119899": {
+        "name": "Die Gardu",
+        "location": {
+            "city": "Pamarayan",
+            "country": "Indonesia",
+            "latitude": -6.221761,
+            "longitude": 106.291236,
+            "street": "Malabar"
+        },
+        "id": "1441055436119899"
+    },
+    "1756565594562369": {
+        "name": "IDive Shop Bali",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7171534,
+            "longitude": 115.204325,
+            "street": "Jl. Bypass Ngurah Rai 664, Pesanggaran",
+            "zip": "80222"
+        },
+        "id": "1756565594562369"
+    },
+    "225779204120322": {
+        "name": "Hot Dog  Water Sport and Dive Center",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.7770112721739,
+            "longitude": 115.22497245717,
+            "street": "Jln.Pratama no 62E",
+            "zip": "80361"
+        },
+        "id": "225779204120322"
+    },
+    "459079564147290": {
+        "name": "The Jungle Mall - Bogor Nirwana Residence",
+        "location": {
+            "city": "Bogor",
+            "country": "Indonesia",
+            "latitude": -6.58972,
+            "longitude": 106.791,
+            "street": "Jl. Pahlawan - Dreded",
+            "zip": "16136"
+        },
+        "id": "459079564147290"
+    },
+    "888443454593418": {
+        "name": "Bali Loisirs Dive 3",
+        "location": {
+            "city": "Amed",
+            "country": "Indonesia",
+            "latitude": -8.3347367121882,
+            "longitude": 115.64202117894,
+            "street": "jalan I Ketut Natih"
+        },
+        "id": "888443454593418"
+    },
+    "107755105981090": {
+        "name": "Planet Nomadas Dive Resort & Spanish Restaurant",
+        "location": {
+            "city": "Lembongan",
+            "country": "Indonesia",
+            "latitude": -8.7049543667628,
+            "longitude": 115.24960660768,
+            "street": "Jl. Jungut Batu Dusun Kaja II Desa Jungut Batu Nusa Lembongan",
+            "zip": "80771"
+        },
+        "id": "107755105981090"
+    },
+    "332720250161957": {
+        "name": "Biak Dive Resort",
+        "location": {
+            "city": "Biak",
+            "country": "Indonesia",
+            "latitude": -1.16667,
+            "longitude": 136.1,
+            "street": "Address"
+        },
+        "id": "332720250161957"
+    },
+    "309458672523218": {
+        "name": "Mantra Dive And Sail",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.67902899855,
+            "longitude": 115.190028988
+        },
+        "id": "309458672523218"
+    },
+    "793868340749553": {
+        "name": "Dive RAID S.E.A - Indonesia",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.7051317,
+            "longitude": 115.2575564,
+            "street": "Jalan Danau Poso No 41, Blanjong Sanur Bali - Indonesia",
+            "zip": "80228"
+        },
+        "id": "793868340749553"
+    },
+    "1444145345855718": {
+        "name": "IDC Gili Islands",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3633954392344,
+            "longitude": 116.08291625977,
+            "street": "Oceans 5 dive resort",
+            "zip": "83352"
+        },
+        "id": "1444145345855718"
+    },
+    "1720488197969186": {
+        "name": "Pristine Paradise Una Una Dive Resort",
+        "location": {
+            "city": "Unauna",
+            "country": "Indonesia",
+            "latitude": -0.16891455023785,
+            "longitude": 121.65573120117,
+            "street": "Pristine Paradise"
+        },
+        "id": "1720488197969186"
+    },
+    "407309789371936": {
+        "name": "Kintamani Bali Indonesia",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.805799,
+            "longitude": 115.231658,
+            "zip": "80361"
+        },
+        "id": "407309789371936"
+    },
+    "1769517880029142": {
+        "name": "Permandian Je'ne Tallasa Gowa",
+        "location": {
+            "city": "Makassar",
+            "country": "Indonesia",
+            "latitude": -5.13333,
+            "longitude": 119.417
+        },
+        "id": "1769517880029142"
+    },
+    "160159990720372": {
+        "name": "Padi Instructor development courses Indonesia",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3632256033603,
+            "longitude": 116.08300209045,
+            "street": "Oceans 5 Dive Resort Gili Air",
+            "zip": "83352"
+        },
+        "id": "160159990720372"
+    },
+    "389688324528101": {
+        "name": "Wakatobi Dive Trip",
+        "location": {
+            "city": "Kendari",
+            "country": "Indonesia",
+            "latitude": -3.9675,
+            "longitude": 122.595,
+            "street": "Jl. Tunggala II No.1",
+            "zip": "93117"
+        },
+        "id": "389688324528101"
+    },
+    "1492152281004130": {
+        "name": "Komodo Dive Liveaboards",
+        "location": {
+            "city": "Indo",
+            "country": "Indonesia",
+            "latitude": -4.67778,
+            "longitude": 122.431,
+            "street": "Online"
+        },
+        "id": "1492152281004130"
+    },
+    "755097504548239": {
+        "name": "Divemaster Internships Gilis",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3633105213066,
+            "longitude": 116.08287334442,
+            "street": "Oceans 5 dive resort",
+            "zip": "83352"
+        },
+        "id": "755097504548239"
+    },
+    "114659735371193": {
+        "name": "Diving Indonesia",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.4925,
+            "longitude": 124.838,
+            "street": "Indonesia",
+            "zip": "36118"
+        },
+        "id": "114659735371193"
+    },
+    "131003543648507": {
+        "name": "All 4 Diving Indonesia",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.6932468522755,
+            "longitude": 115.26366412061,
+            "street": "Jl Danau Tamblingan 53, Sanur Beach",
+            "zip": "80228"
+        },
+        "id": "131003543648507"
+    },
+    "1080440285306237": {
+        "name": "All4diving Indonesia",
+        "location": {
+            "city": "Badung",
+            "country": "Indonesia",
+            "latitude": -8.6875103,
+            "longitude": 115.1672472,
+            "street": "Jl. Raya Basangkasa No 3A Seminyak"
+        },
+        "id": "1080440285306237"
+    },
+    "1529802007253793": {
+        "name": "Morotai Shark Diving Indonesia",
+        "location": {
+            "city": "Daruba",
+            "country": "Indonesia",
+            "latitude": 2.06744816,
+            "longitude": 128.24908591
+        },
+        "id": "1529802007253793"
+    },
+    "220986831294525": {
+        "name": "Cave Diving Indonesia",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.70626546769,
+            "longitude": 115.25087197876,
+            "street": "Jl. Danau Poso Gg. Wanasari 3B"
+        },
+        "id": "220986831294525"
+    },
+    "219391724751925": {
+        "name": "Lemukutan island kab. Bengkayang",
+        "location": {
+            "city": "Bengkayang",
+            "country": "Indonesia",
+            "latitude": 0.759346,
+            "longitude": 108.713705
+        },
+        "id": "219391724751925"
+    },
+    "183877955080157": {
+        "name": "PT. Paradise Diving Indonesia Bali",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.70433638,
+            "longitude": 115.25429715,
+            "street": "Jalan Gunung Salak, Legian - Seminyak",
+            "zip": "80361"
+        },
+        "id": "183877955080157"
+    },
+    "179622189782": {
+        "name": "Critters at Lembeh Resort",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.45739973,
+            "longitude": 125.24312549333,
+            "street": "North Lembeh, Kota Bitung",
+            "zip": "95500"
+        },
+        "id": "179622189782"
+    },
+    "460257857343606": {
+        "name": "Bambu divers candidasa",
+        "location": {
+            "city": "Karangasem Amlapura",
+            "country": "Indonesia",
+            "latitude": -8.5083504,
+            "longitude": 115.5642014,
+            "street": "Jalan Raya Candidasa",
+            "zip": "80851"
+        },
+        "id": "460257857343606"
+    },
+    "246881528780321": {
+        "name": "Froggies Divers Lembe",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.4445495117073,
+            "longitude": 125.23612564195,
+            "street": "Mawali Village",
+            "zip": "95555"
+        },
+        "id": "246881528780321"
+    },
+    "407745069362148": {
+        "name": "@puncak lawang,,",
+        "location": {
+            "city": "Matur",
+            "country": "Indonesia",
+            "latitude": -0.26331215777778,
+            "longitude": 100.24248262222,
+            "street": "Matur",
+            "zip": "26162"
+        },
+        "id": "407745069362148"
+    },
+    "239119419486578": {
+        "name": "Matahari Tulamben Resort",
+        "location": {
+            "city": "Kubu",
+            "country": "Indonesia",
+            "latitude": -8.2780271889294,
+            "longitude": 115.59418000339,
+            "street": "Jalan Raya Singaraja-Amlapura, Tulamben, Bali",
+            "zip": "80853"
+        },
+        "id": "239119419486578"
+    },
+    "1811516232394138": {
+        "name": "Scuba Junkie Sangalaki",
+        "location": {
+            "city": "Tarakan",
+            "country": "Indonesia",
+            "latitude": 2.2838645603249,
+            "longitude": 118.24275970459,
+            "street": "Derawan Island"
+        },
+        "id": "1811516232394138"
+    },
+    "154200444631414": {
+        "name": "Mimpi Resort Menjangan",
+        "location": {
+            "city": "Buleleng",
+            "country": "Indonesia",
+            "latitude": -8.13857207286,
+            "longitude": 114.57096271441,
+            "street": "Banyuwedang, Buleleng",
+            "zip": "81155"
+        },
+        "id": "154200444631414"
+    },
+    "1486747761631160": {
+        "name": "The Aman",
+        "location": {
+            "city": "Bitung",
+            "country": "Indonesia",
+            "latitude": 1.4409453396154,
+            "longitude": 125.22242546082,
+            "street": "Lingkungan II, Kelapa Dua,  Lembeh Selatan",
+            "zip": "95558"
+        },
+        "id": "1486747761631160"
+    },
+    "105490766150267": {
+        "name": "Padangbai",
+        "location": {
+            "city": "Padangbai",
+            "country": "Indonesia",
+            "latitude": -8.53333,
+            "longitude": 115.5,
+            "zip": "80871"
+        },
+        "id": "105490766150267"
+    },
+    "611605975629265": {
+        "name": "Diving and live aboard BALI &  Indonesia",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.70549,
+            "longitude": 115.25644,
+            "street": "Jalan danau poso",
+            "zip": "sanur"
+        },
+        "id": "611605975629265"
+    },
+    "316657798350433": {
+        "name": "Rubiah Tirta Divers",
+        "location": {
+            "city": "Iboih",
+            "country": "Indonesia",
+            "latitude": 5.8750868,
+            "longitude": 95.2555256,
+            "street": "iboih beach",
+            "zip": "23518"
+        },
+        "id": "316657798350433"
+    },
+    "222115361313989": {
+        "name": "Travelling, stay, and diving in Raja Ampat Papua Indonesia.",
+        "location": {
+            "city": "Surabaya",
+            "country": "Indonesia",
+            "latitude": -7.306561,
+            "longitude": 112.728085,
+            "street": "Jetis kulon 1 no.79 wonokromo",
+            "zip": "60243"
+        },
+        "id": "222115361313989"
+    },
+    "533529676738289": {
+        "name": "SeaGods Wetsuit",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.6918185294732,
+            "longitude": 115.2584695816,
+            "street": "Jl. By Pass Ngurah Rai 376",
+            "zip": "80228"
+        },
+        "id": "533529676738289"
+    },
+    "283551921680776": {
+        "name": "Raja4Divers, Pulau Pef, Raja Ampat, Indonesia.",
+        "location": {
+            "city": "Sorong",
+            "country": "Indonesia",
+            "latitude": -0.4394534567837,
+            "longitude": 130.44130325846,
+            "zip": "98413"
+        },
+        "id": "283551921680776"
+    },
+    "156275697776648": {
+        "name": "Scout Diving Indonesia branch Tarakan",
+        "location": {
+            "city": "Tarakan",
+            "country": "Indonesia",
+            "latitude": 3.31384,
+            "longitude": 117.6096
+        },
+        "id": "156275697776648"
+    },
+    "222303361613368": {
+        "name": "French Kiss Divers Lembongan",
+        "location": {
+            "city": "Lembongan",
+            "country": "Indonesia",
+            "latitude": -8.6657967371994,
+            "longitude": 115.44901371002,
+            "street": "At Puri Nusa, Br. Kaja Desa Jungutbatu, Kecamatan Nusa Penida",
+            "zip": "80771"
+        },
+        "id": "222303361613368"
+    },
+    "395024803920939": {
+        "name": "Divemaster Internships Indonesia",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3634378981913,
+            "longitude": 116.08231544495,
+            "street": "Oceans 5 Gili Air",
+            "zip": "83000"
+        },
+        "id": "395024803920939"
+    },
+    "1401027263460476": {
+        "name": "Flores XP",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": -8.5077714579846,
+            "longitude": 119.88684654236,
+            "street": "Jln Waemata",
+            "zip": "86754"
+        },
+        "id": "1401027263460476"
+    },
+    "1300132633433299": {
+        "name": "Compass Divers",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.3538208263569,
+            "longitude": 116.04218959808,
+            "street": "Jl. Ikan Hiu Gili Trawangan"
+        },
+        "id": "1300132633433299"
+    },
+    "434653779951928": {
+        "name": "Misool",
+        "location": {
+            "city": "Sorong",
+            "country": "Indonesia",
+            "latitude": -2.2475007985316,
+            "longitude": 130.57662963867,
+            "street": "Batbitim, Raja Ampat, Indonesia",
+            "zip": "98483"
+        },
+        "id": "434653779951928"
+    },
+    "418834788217428": {
+        "name": "Gili Air Escape",
+        "location": {
+            "city": "Lombok",
+            "country": "Indonesia",
+            "latitude": -8.35485676,
+            "longitude": 116.08347684,
+            "zip": "83352"
+        },
+        "id": "418834788217428"
+    },
+    "995324420563034": {
+        "name": "Polskie Centrum Nurkowe na Bali",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.7022171960382,
+            "longitude": 115.25383472443,
+            "street": "Jalan Tirta Nandi II No. 9",
+            "zip": "80224"
+        },
+        "id": "995324420563034"
+    },
+    "730501420318023": {
+        "name": "Manta Point",
+        "location": {
+            "city": "Labuanbajo",
+            "country": "Indonesia",
+            "latitude": 3.6099529,
+            "longitude": 72.7641453,
+            "street": "South Ari Atoll"
+        },
+        "id": "730501420318023"
+    },
+    "1313692315335276": {
+        "name": "Wisata Kebun Bontomarannu Gowa, Jl Poros Malino",
+        "location": {
+            "city": "Ujungtanah",
+            "country": "Indonesia",
+            "latitude": -5.1175032,
+            "longitude": 119.4367263,
+            "street": "Jl. Poros Malino Km.20 Desa Bontomanai Kec. Bontomarannu"
+        },
+        "id": "1313692315335276"
+    },
+    "1597039810529347": {
+        "name": "غواصی در اندونزی و بالی  Diving in Indonesia & Bali",
+        "location": {
+            "city": "Denpasar",
+            "country": "Indonesia",
+            "latitude": -8.70504,
+            "longitude": 115.24914,
+            "street": "Jl. Danau Poso",
+            "zip": "80227"
+        },
+        "id": "1597039810529347"
+    },
+    "32764421851": {
+        "name": "Bali Scuba",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.7057,
+            "longitude": 115.2528,
+            "street": "Jl. Danau Poso 46.",
+            "zip": "80228"
+        },
+        "id": "32764421851"
+    },
+    "7507694316": {
+        "name": "Two Fish Divers",
+        "location": {
+            "city": "Manado",
+            "country": "Indonesia",
+            "latitude": 1.4754702779416,
+            "longitude": 124.83623027802,
+            "zip": "95113"
+        },
+        "id": "7507694316"
+    },
+    "299044230443765": {
+        "name": "La Galigo Liveaboard",
+        "location": {
+            "city": "Sanur",
+            "country": "Indonesia",
+            "latitude": -8.69386,
+            "longitude": 115.2587,
+            "street": "289 B Jl. Raya Bypass Sanur",
+            "zip": "80228"
+        },
+        "id": "299044230443765"
+    },
+    "292667934174197": {
+        "name": "Padang Bai ... Mola mola dive site",
+        "location": {
+            "city": "Manggis",
+            "country": "Indonesia",
+            "latitude": -8.529802,
+            "longitude": 115.511079
+        },
+        "id": "292667934174197"
+    }
+}
