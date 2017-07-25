@@ -1,0 +1,23 @@
+{
+  "name": "client",
+  "authors": [
+    "ycy88 <yongchunyuan.88@gmail.com>"
+  ],
+  "description": "",
+  "main": "client/app.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.5",
+    "angular-ui-router": "^1.0.5"
+  }
+}

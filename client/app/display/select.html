@@ -1,0 +1,21 @@
+<!--for objects use key- value -->
+<select ng-model="con.selected">
+    <option ng-repeat="each in con.list" value="{{ each.fb_id }}">
+        {{ each.name }}
+    </option>
+</select>
+
+</br>
+
+<!-- 
+Old ng-repeat for object
+
+<option ng-repeat=" (key, value) in con.list " value="{{ key }}">
+    {{ value["name"] }}
+</option>
+ -->
+
+
+<!-- <button class="btn btn-lg btn-info ui-sref="select( {id: con.selected } )" ">
+            Don't need this button
+</button> -->

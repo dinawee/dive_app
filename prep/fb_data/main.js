@@ -1,8 +1,6 @@
 // tutorial see https://www.youtube.com/watch?v=1VBgdKkuyNs
 // and here http://lorenstewart.me/2017/03/12/using-node-js-to-interact-with-facebooks-graph-api/
 
-
-
 const rp = require('request-promise');
 const express = require('express');
 const path = require('path');
