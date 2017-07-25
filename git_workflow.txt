@@ -1,0 +1,38 @@
+SETUP A
+(i) git clone --> npm i, bower i / 
+(ii) default branch --> master
+(iii) git branch new_branch --> is an exact copy of master branch but with the name new_branch
+
+SETUP B
+(i) git pull origin master
+
+--------------------------------------
+
+(1) git checkout new_branch
+
+---work on new_branch---
+
+(2) git status, git add, git commit
+
+---> to make a pull request to remote master branch
+
+(3) git checkout master
+(4) git pull origin master 
+(5) git checkout new_branch
+(6) git merge master --> taking all changes from master and updating new_branch
+
+--> resolve conflicts
+
+(7) git status, git add, git commit
+(8) git push -u origin new_branch
+
+--> in bitbucket/github GUI
+
+(9) checkout new_branch
+(10) issue pull request to master, select delete/close branch upon merge
+
+--> contributors "Approve" pull request
+--> lead "Merge" pull request
+
+(11) start SETUP B
+
