@@ -12,11 +12,11 @@
             url: '/home',
             views: {
                 'select': {
-                    templateUrl: '/app/display/select.html',
+                    templateUrl: '/app/home/select.html',
                     controller: 'SelectC as con'
                 },
                 'show': {
-                    templateUrl: '/app/display/show.html',
+                    templateUrl: '/app/home/show.html',
                     controller: 'ShowC as con'
                 }
             }
