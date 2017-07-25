@@ -15,14 +15,7 @@ var searchTerm = "diving indonesia";
 var dataObject = JSON.parse(fs.readFileSync(filename));
 
 
-// export the un-run function
-// OTHERWISE when require on the otherside, it will resolve and invoke
-module.exports = {
-    callFb : callFb
-};
-
-
-// define pushing array function 
+// clean and write to results to memory
 function pushArray(fbJSONPage, dataObject) {
     for (var i in fbJSONPage) {
         if (fbJSONPage[i].location && (fbJSONPage[i].location.country === "Indonesia") && fbJSONPage[i].location.city !== "Jakarta" && !dataObject[fbJSONPage[i].id])
@@ -32,7 +25,7 @@ function pushArray(fbJSONPage, dataObject) {
 }
 
 
-// delay 3 secs before pushing along result
+// parse and set next page in FB results json
 function process(fbData) {
     return new Promise(function (resolve, reject) {
         console.log(`Response received`);

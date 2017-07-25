@@ -1,8 +1,10 @@
+// converts rawresults to MongoDB readable format => mongoresults.json
+
 var fs = require('fs');
 
 // shortcut use require
 var rawResults = require('./rawresults.json');
-var resultFilePath = __dirname + '/results.json';
+var resultFilePath = __dirname + '/mongoresults.json';
 
 var writeStream = fs.createWriteStream(resultFilePath);
 
