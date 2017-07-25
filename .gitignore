@@ -4,5 +4,6 @@ client/bower_components/
 
 
 prep/fb_data/config/development-cloud.js
+prep/map/config/development-cloud.js
 
 *.sql
