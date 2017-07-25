@@ -1,11 +1,11 @@
 (function () {
     angular
         .module("MyApp")
-        .service("ListService", ListService);
+        .service("dbRouteService", dbRouteService);
 
-    ListService.$inject = ["$http"];
+    dbRouteService.$inject = ["$http"];
 
-    function ListService($http) {
+    function dbRouteService($http) {
         var service = this;
 
         service.aToken = "EAACEdEose0cBAFKgqcDiYh7RKnZAgyPdQvVa05xwUwEKI6IG57krg4RteIKOfJdGjoYhR8IA4ycTIVrv9VvmBGNBZBQoVXVjxodv9HZAIdQiZAexvvgTyJjz3NFDAZAJ4QNEgyQlwdimUsQixvnSvV1ZA0ZCpQLpNqOO98TZBF77si6Xrs1ExyZBDE5BfDwV8sTUZD";
@@ -14,7 +14,7 @@
         service.id;
 
         // endpoint is GET '/list' 
-        service.reloadList = function () {
+        service.retrieveDiveOperators = function () {
             console.log('Now retrieving latest list from server');
             return $http.get('/api/diveoperators')
                 .then(function (result) {
@@ -25,7 +25,7 @@
                 .catch(function (err) {
                     console.log(err);
                 })
-        }; // end reloadlist
+        }; // end retrieveDiveOperators
             
         /*
         $watch stuff  
@@ -71,6 +71,6 @@
 
 
 
-    }// end ListService 
+    }// end dbRouteService 
 
 })();

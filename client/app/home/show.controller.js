@@ -3,9 +3,9 @@
         .module("MyApp")
         .controller("ShowC", ShowC);
 
-    ShowC.$inject = ["$scope", "ListService", "$stateParams"];
+    ShowC.$inject = ["$scope", "dbRouteService", "$stateParams"];
 
-    function ShowC($scope, ListService, $stateParams) {
+    function ShowC($scope, dbRouteService, $stateParams) {
         var con = this;
 
         // fb definition
@@ -18,12 +18,12 @@
 
         // $watch - auto watch it for automatic pinging of FB
         $scope.$watch(function(){
-            return ListService.id;
+            return dbRouteService.id;
         }
         , function(newValue, oldValue){
-            ListService.pingFb()
+            dbRouteService.pingFb()
                 .then(function (result) {
-                    con.object = ListService.object;
+                    con.object = dbRouteService.object;
                 })
                 .catch(function (err) {
                     console.log(err);
@@ -101,9 +101,9 @@
         // Legacy Code - using change in $state and $stateParams
         if ($stateParams) {
             console.log("The state params is now >>>>> " + JSON.stringify($stateParams));
-            ListService.pingFb()
+            dbRouteService.pingFb()
                 .then(function (result) {
-                    con.object = ListService.object;
+                    con.object = dbRouteService.object;
                 })
                 .catch(function (err) {
                     console.log(err);

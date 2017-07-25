@@ -3,9 +3,9 @@
         .module("MyApp")
         .controller("SelectC", SelectC);
     
-    SelectC.$inject = ["$scope", "ListService"];
+    SelectC.$inject = ["$scope", "dbRouteService"];
 
-    function SelectC($scope, ListService) {
+    function SelectC($scope, dbRouteService) {
         var con = this;
 
         //get object 
@@ -20,7 +20,7 @@
 
         // init
         con.initialize = function() {
-            ListService.reloadList()
+            dbRouteService.retrieveDiveOperators()
                 .then(function(result){
                     con.list = result;
                     console.log("Con.list is now >>>>");
@@ -36,13 +36,13 @@
         // $watch
         $scope.$watch('con.selected', function(newValue, oldValue){
             console.log('The new value is' + newValue);
-            ListService.getSelected(con.selected);
-            console.log('The new value in the Service is now' + ListService.selected());
+            dbRouteService.getSelected(con.selected);
+            console.log('The new value in the Service is now' + dbRouteService.selected());
         });
 
 
         // con.select = function () {
-        //     ListService.getSelected(con.selected);
+        //     dbRouteService.getSelected(con.selected);
         // }
 
     
