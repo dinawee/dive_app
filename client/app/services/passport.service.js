@@ -19,7 +19,6 @@
                 .catch(function (err) {
                     console.log(err);
                 })
-
         }; // close isAuth 
         /*
         
