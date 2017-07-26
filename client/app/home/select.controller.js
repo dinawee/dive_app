@@ -1,51 +1,69 @@
-(function (){
+(function () {
     angular
         .module("MyApp")
         .controller("SelectC", SelectC);
-    
-    SelectC.$inject = ["$scope", "dbRouteService"];
 
-    function SelectC($scope, dbRouteService) {
+    SelectC.$inject = ["$scope", "dbRouteService", "$state", "user"];
+
+    function SelectC($scope, dbRouteService, $state, user) {
         var con = this;
 
-        //get object 
         con.list; // initialize below
-        con.selected = "None";
-        // fb definition
+        con.id = "None";
+        con.user = user;
+
+        // don't change con.object def - ties with FB object
         con.object = {
             name: "initial",
             phone: "initial",
-            cover: { source : "initial"},
+            cover: { source: "initial" },
         };
 
         // init
-        con.initialize = function() {
+        con.initialize = function () {
             dbRouteService.retrieveDiveOperators()
-                .then(function(result){
+                .then(function (result) {
                     con.list = result;
-                    console.log("Con.list is now >>>>");
-                    console.log(JSON.stringify(result));
-                    console.log('Type is ' + typeof result);
                 })
-                .catch(function(err){
+                .catch(function (err) {
                     console.log(err);
                 });
         }
         con.initialize();
 
-        // $watch
-        $scope.$watch('con.selected', function(newValue, oldValue){
-            console.log('The new value is' + newValue);
-            dbRouteService.getSelected(con.selected);
+        /*
+            FUNCTIONS FOR DINA 
+        */
+        con.select = function () {
+            dbRouteService.getSelected(con.id);
             console.log('The new value in the Service is now' + dbRouteService.selected());
-        });
+        };
+
+        con.gothere = function () {
+            if (!user) {
+                // nothing happens because it will return true all the time
+            }
+            alert('Function not protected by login now, con.user always exists because now passportService.isUserAuth() returns true all the time\n\n AKAN DATANG\n 1. pending redirect function in select.controller to login page. \n 2. Login page not up yet, must create one\n 3. Facebook callbacks to HOME page even if failed login, need to re-route to LOGIN page on server/routes.js');
+            con.select();
+            dbRouteService.pingFb()
+                .then(function(result){
+                    $state.go('show'); 
+                })
+                .catch(function(err){
+                    console.log(err);
+                });
+
+        }
 
 
-        // con.select = function () {
-        //     dbRouteService.getSelected(con.selected);
-        // }
-
-    
     }; // end controller
 
 })();
+
+
+// $watch
+// $scope.$watch('con.selected', function(newValue, oldValue){
+//     console.log('The new value is' + newValue);
+//     dbRouteService.getSelected(con.selected);
+//     console.log('The new value in the Service is now' + dbRouteService.selected());
+// });

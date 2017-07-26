@@ -9,6 +9,7 @@
 
     <!-- load bootstrap before your styles -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="app/css/map.css" rel="stylesheet">
 
 </head>
 
@@ -34,11 +35,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item active">
-                        <a ui-sref="select">Select Destination <span class="sr-only">(current)</span></a>
+                        <a ui-sref="home">Home <span class="sr-only">(current)</span></a>
                     </li>
-                     <li class="nav-item active">
-                        <a ui-sref="show">Show <span class="sr-only">(current)</span></a>
-                    </li>   
+                    <li class="nav-item active">
+                        <a ui-sref="prepmap">Prep Map <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a ui-sref="show">Show View <span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -49,12 +53,12 @@
     <!-- partials to load -->
 
     <div class="container">
-         <h3>Inject map page here</h3>
-         <div ui-view></div>
-         <hr>  
-         <div ui-view="select"></div>  
-         <div ui-view="show"></div>  
-         <!-- <div ui-view="show"></div>  -->
+        <div ui-view="map"></div>
+        <hr>
+        <div ui-view="select"></div>
+        <div ui-view="show"></div>
+        <!-- <div ui-view="show"></div>  -->
+        <div ui-view="prepmap"></div>
     </div>
 
 
@@ -68,18 +72,28 @@
     <!-- load module -->
     <script src="app/app.js"></script>
 
-
     <!-- load routes -->
     <script src="app/config/app.route.js"></script>
     <!-- load services-->
     <script src="app/services/dbroute.service.js"></script>
+    <script src="app/services/map.service.js"></script>
+    <script src="app/services/passport.service.js"></script>
+
+
+
     <!-- load controllers -->
+    <script src="app/home/map.ctrl.js"></script>
     <script src="app/home/select.controller.js"></script>
     <script src="app/home/show.controller.js"></script>
     <!--<script src="app/edit/edit.controller.js"></script>-->
 
+    <!-- load google maps api -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQYQrDMpPGwIBOos_2HHV2pacKurBmVY"></script>
 
+    <!-- load prep ctrl and svcs -->
+    <script src="app/prep/prepmap.ctrl.js"></script>
+    <script src="app/prep/prepmap.svc.js"></script>
+    <script src="app/prep/prepdbroute.svc.js"></script>
 </body>
 
 </html>
-

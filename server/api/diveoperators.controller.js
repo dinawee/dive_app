@@ -1,9 +1,8 @@
-
 function getAll(db) {
     return function (req, res) {
         db.DiveOperators
             .findAll({
-                limit: 25,
+                // limit: 25,
                 order: ['id']
             }
             )// returns array of JSON
