@@ -3,9 +3,9 @@
         .module("MyApp")
         .controller("PrepMapCtrl", PrepMapCtrl);
 
-    PrepMapCtrl.$inject = ["dbRouteService", "PrepMapSvc", "MapSvc"];
+    PrepMapCtrl.$inject = ["dbRouteService", "PrepMapSvc", "PrepdbRouteSvc"];
 
-    function PrepMapCtrl(dbRouteService, PrepMapSvc, MapSvc) {
+    function PrepMapCtrl(dbRouteService, PrepMapSvc, PrepdbRouteSvc) {
         var vm = this;
 
         function retrieveDiveOperators() {
@@ -56,9 +56,10 @@
 
         vm.createDivespot = function () {
             setDivespotValue();
+            console.log(vm.divespot);
             vm.region_array.push(vm.divespot.divespot_array);
             console.log(JSON.stringify(vm.region_array));
-            dbRouteService
+            PrepdbRouteSvc
                 .createDivespot(vm.divespot)
                 .then(function (results) {
                     console.log("PrepMapCtrl --> createDivespot successful");
@@ -68,6 +69,7 @@
                     console.log("Error: \n", err);
                     PrepMapSvc.resetPolyPath();
                 });
+                
         };
 
         //Retrieving divespots (polygons)
@@ -80,11 +82,12 @@
         };
 
         vm.displayDivespots = function () {
-            dbRouteService
+            PrepdbRouteSvc
                 .displayDivespots()
                 .then(function (results) {
                     console.log("PrepMapCtrl --> displayDivespots successful");
                     vm.retrievedDivespots = results.data;
+                    console.log(vm.retrievedDivespots[0].divespot_array);
                     plotDivespotsOnMap();
                 })
                 .catch(function (err) {
@@ -101,7 +104,7 @@
 
         var createRegion = function () {
             console.log(vm.region);
-            dbRouteService
+            PrepdbRouteSvc
                 .createRegion(vm.region)
                 .then(function (results) {
                     console.log("PrepMapCtrl --> Result of createRegion " + results);

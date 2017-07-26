@@ -39,6 +39,16 @@ var sequelize = new Sequelize('dive_app',
 // note DiveOperators == dive_operators table
 const DiveOperators = sequelize.import('./models/dive_operators.js'); 
 
+//prep routes
+const prep_DiveOperators = sequelize.import('./models/prep/prep_dive_operators.js');
+const prep_Divespots = sequelize.import('./models/prep/prep_divespots.js');
+const prep_DiveRegions = sequelize.import('./models/prep/prep_dive_regions.js');
+
 module.exports = {
-    DiveOperators: DiveOperators
+	DiveOperators: DiveOperators,
+	
+	//prep
+	prep_DiveOperators: prep_DiveOperators,
+	prep_Divespots: prep_Divespots,
+	prep_DiveRegions: prep_DiveRegions
 };

@@ -31,6 +31,7 @@ app.use(passport.session());
 
 // normal routes
 app.use(express.static(CLIENT_FOLDER));
+app.use(bodyParser.json());
 
 // list api
 require('./routes.js')(app, db);

@@ -1,4 +1,3 @@
-
 function getAll(db) {
     return function (req, res) {
         db.DiveOperators
