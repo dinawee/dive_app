@@ -52,9 +52,15 @@
             });
         }
 
+        svc.retrivePolyPath = function () {
+            console.log("retrievePolyPath:", svcPolyPath);
+            return svcPolyPath;
+        }
+
         svc.createPoly = function (polyPath) {
+            console.log(JSON.parse(polyPath));
             var polygon = new google.maps.Polygon({
-                paths: polyPath,
+                paths: JSON.parse(polyPath),
                 strokeColor: "#A0769A",
                 strokeOpactity: 0.8,
                 strokeWeight: 3,
@@ -64,10 +70,7 @@
             polygon.setMap(svc.map);
         };
 
-        svc.retrivePolyPath = function () {
-            console.log(svcPolyPath);
-            return svcPolyPath;
-        }
+
 
         svc.resetPolyPath = function () {
             console.log("svcPolyPath reset");

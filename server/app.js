@@ -15,6 +15,7 @@ const CLIENT_FOLDER = path.join(__dirname, '/../client');
 // routes
 // first one is searchme - test searching my own fb acct 
 app.use(express.static(CLIENT_FOLDER));
+app.use(bodyParser.json());
 
 // list api
 require('./routes.js')(app, db);
