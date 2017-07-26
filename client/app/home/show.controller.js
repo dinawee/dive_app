@@ -17,10 +17,9 @@
 
 
         // $watch - auto watch it for automatic pinging of FB
-        $scope.$watch(function(){
+        $scope.$watch(function () {
             return dbRouteService.id;
-        }
-        , function(newValue, oldValue){
+        }, function (newValue, oldValue) {
             dbRouteService.pingFb()
                 .then(function (result) {
                     con.object = dbRouteService.object;
@@ -28,7 +27,8 @@
                 .catch(function (err) {
                     console.log(err);
                 });
-        });
+        }
+        );
 
         /* Steps 
         Debate on the best method - $watch, $emit etc - they didnt include $transitions
@@ -109,10 +109,6 @@
                     console.log(err);
                 });
         }
-
-
-        // how does the control here KNOW that the service is updated
-        // without a change of state OMG 
 
 
     }; // end controller

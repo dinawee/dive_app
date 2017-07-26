@@ -20,7 +20,17 @@
                     controller: 'ShowC as con'
                 }
             }
+        })
+        .state('show', {
+            url: '/show',
+            views: {
+                'show': {
+                    templateUrl: '/app/home/show.html',
+                    controller: 'ShowC as con'
+                }
+            }
         });
+        
         
         // set catchall URL
         $urlRouterProvider
