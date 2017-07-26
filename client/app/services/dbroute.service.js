@@ -8,7 +8,7 @@
     function dbRouteService($http) {
         var service = this;
 
-        service.aToken = "EAACEdEose0cBAFKgqcDiYh7RKnZAgyPdQvVa05xwUwEKI6IG57krg4RteIKOfJdGjoYhR8IA4ycTIVrv9VvmBGNBZBQoVXVjxodv9HZAIdQiZAexvvgTyJjz3NFDAZAJ4QNEgyQlwdimUsQixvnSvV1ZA0ZCpQLpNqOO98TZBF77si6Xrs1ExyZBDE5BfDwV8sTUZD";
+        service.aToken = "EAACEdEose0cBAJQ9ftARTHFxPBljMsZCUxpMCK1KoeOnl9ZC6E0MKQUKaX2sjbwFTeaHMeGSTDRoa0cL11CS0K0PPOyWkW38MHgWZBFOhhsDRdNgaOJ3QKzGMoldtggQbO3dFAd1iHCN8ZAlUZAnXBt6dHgPyXVEJfPLfxBA3qHXcgEy1g8OmD0pqUJZAksQgZD";
 
         service.object = {};
         service.id;

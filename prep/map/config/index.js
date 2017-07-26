@@ -1,6 +1,6 @@
 'use strict';
 
-var ENV = process.env.NODE_ENV || "development-cloud" ||'development';
+var ENV = "development-cloud";
 
 // .js is optional in require
 module.exports = require('./' + ENV + '.js') || {};
