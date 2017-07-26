@@ -8,7 +8,7 @@
     function dbRouteService($http) {
         var service = this;
 
-        service.aToken = "EAACEdEose0cBAJQ9ftARTHFxPBljMsZCUxpMCK1KoeOnl9ZC6E0MKQUKaX2sjbwFTeaHMeGSTDRoa0cL11CS0K0PPOyWkW38MHgWZBFOhhsDRdNgaOJ3QKzGMoldtggQbO3dFAd1iHCN8ZAlUZAnXBt6dHgPyXVEJfPLfxBA3qHXcgEy1g8OmD0pqUJZAksQgZD";
+        service.aToken = "EAACEdEose0cBAL2tGZCReQCpzpCwFdwGPemK7HvdyqAsfInPHCCCY4t9MCgjrhlZCq7ZBemZAbuxx98u5kMTTqZAeGJx4bPNlV5Iz5k4zZC2eJEAfHWwKRPxclMqMvDLYLZCo9CE2tbdi7pnDyr2QqcUcCxZAoxwcZB8wCuqIEKlZBpXZCj8DfLgOqr2zOWtYQYXosZD";
 
         service.object = {};
         service.id;
@@ -18,8 +18,7 @@
             console.log('Now retrieving latest list from server');
             return $http.get('/api/diveoperators')
                 .then(function (result) {
-                    console.log("Result.data is >>>>>");
-                    console.log(JSON.stringify(result.data));
+                    console.log("Result.data returns >>>>");
                     return result.data;
                 })
                 .catch(function (err) {
@@ -55,8 +54,7 @@
                     fields: 'id, name, phone, cover, about'
                 }
             }
-            )
-                // result NOT returned as string, unlike server side call
+            )// result NOT returned as string, unlike server side call
                 .then(function (result) {
                     console.log(`Query was successful to ${id}`);
                     service.object = result.data;

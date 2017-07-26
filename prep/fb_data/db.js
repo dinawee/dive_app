@@ -23,10 +23,13 @@ var sequelize = new Sequelize('dive_app',
 // use .import to avoid double loading problem with require 
 // note DiveOperators == dive_operators table
 const DiveOperators = sequelize.import('./models/dive_operators.js'); 
+const PrepDiveOperators = sequelize.import('./models/prep_dive_operators.js'); 
+
 // const Divespots = sequelize.import('./models/divespots.js'); 
 
 // export to app.js 
 module.exports = {
-    DiveOperators: DiveOperators
+    DiveOperators: DiveOperators,
+    PrepDiveOperators: PrepDiveOperators
     // Divespots: Divespots
 };

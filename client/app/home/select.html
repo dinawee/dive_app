@@ -1,21 +1,26 @@
 <!--for objects use key- value -->
-<select ng-model="con.selected">
-    <option ng-repeat="each in con.list" value="{{ each.fb_id }}">
+<select ng-model="con.id">
+    <option ng-repeat="each in con.list | orderBy: 'name' " value="{{ each.fb_id }}" >
         {{ each.name }}
     </option>
 </select>
-
 <hr>
 
-<!-- <div ng-repeat="each in con.list">
-    <a href="#" >
-        {{ each.name }}
-    </a>
-    </br>
-</div> -->
+<button class="btn btn-lg btn-info" ng-click="con.select()">
+    This button represents CLICKING on the pin
+</button> 
+
+</br></br>
+<button class="btn btn-lg btn-success" ng-click="con.gothere()">
+    This button represents TAKE ME THERE
+</button> 
 
 
-</br>
+<!-- <button class="btn btn-lg btn-info ui-sref="select( {id: con.selected } )" ">
+            Don't need this button
+</button>  -->
+
+
 
 <!-- 
 Old ng-repeat for object
@@ -26,6 +31,3 @@ Old ng-repeat for object
  -->
 
 
-<!-- <button class="btn btn-lg btn-info ui-sref="select( {id: con.selected } )" ">
-            Don't need this button
-</button> -->

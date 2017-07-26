@@ -23,6 +23,8 @@ var sequelize = new Sequelize('dive_app',
 );
 
 const DiveOperators = sequelize.import('./../models/dive_operators.js');
+const PrepDiveOperators = sequelize.import('./../models/prep_dive_operators.js');
+
 
 // var testObject = {
 //     id: 1345355355,
@@ -37,7 +39,7 @@ const DiveOperators = sequelize.import('./../models/dive_operators.js');
 
 function postOne(object) {
     // insert req, res
-    return DiveOperators // return the promise 
+    return PrepDiveOperators // return the promise 
         .create({
             fb_id: object.id,
             latitude: object.location.latitude,

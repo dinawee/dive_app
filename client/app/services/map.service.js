@@ -16,7 +16,7 @@
         }
 
         svc.createMarker = function (info) {
-            console.log("map is -->", svc.map);
+            // console.log("map is -->", svc.map);
             var marker = new google.maps.Marker({
                 map: svc.map,
                 position: new google.maps.LatLng(info.latitude, info.longitude),
