@@ -15,7 +15,7 @@ module.exports = function (app, db, passport) {
     */
 
     // test whether user is auth, inserts isAuth middleware
-    app.get('/user/auth', isAuthenticated, function(req, res){
+    app.get('/user/auth', function(req, res){
         res.status(200).send('true');
     });
 

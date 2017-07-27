@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 // auth dependencies
 const cookieParser = require('cookie-parser');
 const session = require('express-session'); // for sessions
-const passport = require('passport'); // by Jared Hanson
+var passport = require('passport'); // by Jared Hanson
 const flash = require('connect-flash'); // by Jared Hason too, guess passport needs this
 
 /*
@@ -46,7 +46,7 @@ app.use(express.static(CLIENT_FOLDER));
 app.use(bodyParser.json());
 
 // list api
-require('./auth.js')(app, passport);
+require('./auth.js')(app, db, passport);
 require('./routes.js')(app, db, passport);
 
 

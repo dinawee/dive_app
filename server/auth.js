@@ -1,5 +1,7 @@
 
 // getting path to config file
+var fs = require('fs');
+
 var configPath = function () {
     try {
         fs.accessSync(__dirname + "/../prep/fb_data/config/development-cloud.js");
@@ -38,30 +40,42 @@ module.exports = function (app, db, passport) {
     );
 
     // handles the result from FB - returns null & user
+
     function authCallbackFunction(accessToken, refreshToken, profile, callback) {
         console.log("Returned profile is --->" + profile);
         console.log("Stringify returned profile is --->" + JSON.stringify(profile));
+        console.log("Access Token is --->" + accessToken);
+
         var fb_id = profile.id;
-        var first_name = profile.first_name;
-        var last_name = profile.last_name;
-        var email = profile.emails[0].value;
+        // var first_name = profile.first_name;
+        // var last_name = profile.last_name;
+        var email = 'random@one.com' || profile.emails[0].value;
         var access_token = accessToken;
 
         // i'm worried that some of the fields will be UNDEFINED and get inserted
         // obviously this won't update access token lol
+        // double check the .spread documentation
+
+        // See: 
+        // https://www.youtube.com/watch?v=OMcWgmkMpEE
+        // https://stackoverflow.com/questions/43403084/how-to-use-findorcreate-in-sequelize
         db.Users
             .findOrCreate({
-                where: {fb_id: fb_id}, 
+                where: { fb_id: fb_id },
                 defaults: {
-                    email: email, 
-                    password: null, 
-                    first_name: first_name,
-                    last_name: last_name,
+                    fb_id: fb_id,
+                    email: email,
+                    // first_name: first_name,
+                    // last_name: last_name,
                     access_token: access_token
-                })
-
-
-        return callback(null, profile);
+                }
+            }
+            )
+            .spread(function (user, created) {
+                console.log(user.get({ plain: true }));
+                console.log(created);
+                callback(null, user);
+            }); // end spread
     }
 
     // passport step 1 - serialize 
@@ -74,17 +88,17 @@ module.exports = function (app, db, passport) {
     passport.deserializeUser(function (user, callback) {
         // cater for scenario when DB was down when authenticate was called 
         // so double check that user account was there
-        // User.findOne({
-        //     where: {
-        //         email: user.email
-        //     }
-        // }).then(function(result) {
-        //     if(result){
+        db.Users.findOne({
+            where: {
+                fb_id: user.fb_id,
+            }
+        }).then(function (result) {
+            if (result) {
                 callback(null, user);
-        //     }
-        // }).catch(function(err){
-        //     done(err, user);
-        // });
+            }
+        }).catch(function (err) {
+            done(err, user);
+        });
     });
 
 
