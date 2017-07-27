@@ -37,15 +37,19 @@ var sequelize = new Sequelize('dive_app',
 );
 
 // note DiveOperators == dive_operators table
+// all our model names are PLURAL, same as table names
 const DiveOperators = sequelize.import('./models/dive_operators.js'); 
+const Users = sequelize.import('./models/users.js'); 
 
 //prep routes
 const prep_DiveOperators = sequelize.import('./models/prep/prep_dive_operators.js');
 const prep_Divespots = sequelize.import('./models/prep/prep_divespots.js');
 const prep_DiveRegions = sequelize.import('./models/prep/prep_dive_regions.js');
 
+
 module.exports = {
-	DiveOperators: DiveOperators,
+    DiveOperators: DiveOperators,
+    Users: Users,
 	
 	//prep
 	prep_DiveOperators: prep_DiveOperators,

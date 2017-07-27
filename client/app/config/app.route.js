@@ -8,6 +8,15 @@
     function uiRouteConfig($stateProvider, $urlRouterProvider) {
         // .state takes 2 params - state name string & object
         $stateProvider
+            .state('login',{
+                url: '/login',
+                views: {
+                    'login' : {
+                        templateUrl: '/app/login/login.html',
+                        controller: 'LoginC as con'
+                    }
+                }
+            })
             .state('home', {
                 url: '/home',
                 views: {

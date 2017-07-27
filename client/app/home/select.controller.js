@@ -43,7 +43,7 @@
             if (!user) {
                 // nothing happens because it will return true all the time
             }
-            alert('Function not protected by login now, con.user always exists because now passportService.isUserAuth() returns true all the time\n\n AKAN DATANG\n 1. pending redirect function in select.controller to login page. \n 2. Login page not up yet, must create one\n 3. Facebook callbacks to HOME page even if failed login, need to re-route to LOGIN page on server/routes.js');
+            alert('Function not protected by login now, con.user always exists because now passportService.isUserAuth() returns true all the time\n\n AKAN DATANG\n 1. pending redirect function in select.controller to login page. \n 2. auth.js - double check the FindOrCreate options, will it insert UNDEFINED values?');
             con.select();
             dbRouteService.pingFb()
                 .then(function(result){

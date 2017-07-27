@@ -43,6 +43,9 @@
                     <li class="nav-item active">
                         <a ui-sref="show">Show View <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active">
+                        <a ui-sref="login">Login<span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -53,6 +56,7 @@
     <!-- partials to load -->
 
     <div class="container">
+        <div ui-view="login"></div>
         <div ui-view="map"></div>
         <hr>
         <div ui-view="select"></div>
@@ -85,6 +89,8 @@
     <script src="app/home/map.ctrl.js"></script>
     <script src="app/home/select.controller.js"></script>
     <script src="app/home/show.controller.js"></script>
+    <script src="app/login/login.controller.js"></script>
+
     <!--<script src="app/edit/edit.controller.js"></script>-->
 
     <!-- load google maps api -->

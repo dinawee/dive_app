@@ -49,5 +49,17 @@ DROP TABLE IF EXISTS dive_operators;
 );
 
 
+CREATE TABLE IF NOT EXISTS users (
+	`user_id` INT unsigned not null auto_increment PRIMARY KEY, 
+    `created_at` datetime not null default current_timestamp,
+    `updated_at` datetime not null default current_timestamp on update current_timestamp,
+    `fb_id` VARCHAR(255) NOT NULL,
+    `first_name` VARCHAR(255),
+    `last_name` VARCHAR(255),
+    `email` VARCHAR(255),
+    `access_token` VARCHAR(255),
+    UNIQUE KEY (`fb_id`)
+);
+
 -- Deleting tables 
 -- http://notes.jerzygangi.com/how-to-delete-all-rows-in-a-mysql-or-oracle-table/
