@@ -16,7 +16,6 @@
         }
 
         svc.createMarker = function (info) {
-            console.log("map is -->", svc.map);
             var marker = new google.maps.Marker({
                 map: svc.map,
                 position: new google.maps.LatLng(info.latitude, info.longitude),
@@ -30,13 +29,17 @@
             });
         };
 
-
         var svcPolyPath = [];
         svc.createPolyPath = function () {
             google.maps.event.addListener(svc.map, "click", function (e) {
                 console.log("createPolyPath function");
                 var marker = new google.maps.Marker({
                     position: e.latLng,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        strokeColor: "green",
+                        scale: 3
+                    }
                 });
                 console.log(marker);
                 marker.setMap(svc.map);
@@ -58,9 +61,8 @@
         }
 
         svc.createPoly = function (polyPath) {
-            console.log(JSON.parse(polyPath));
             var polygon = new google.maps.Polygon({
-                paths: JSON.parse(polyPath),
+                paths: polyPath,
                 strokeColor: "#A0769A",
                 strokeOpactity: 0.8,
                 strokeWeight: 3,
@@ -70,12 +72,10 @@
             polygon.setMap(svc.map);
         };
 
-
-
         svc.resetPolyPath = function () {
             console.log("svcPolyPath reset");
             svcPolyPath = [];
         }
 
-    }//End PrepMapSvc
-})();
+    }//End of PrepMapSvc
+})();//End of IIFE

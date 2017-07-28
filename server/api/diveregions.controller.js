@@ -1,12 +1,14 @@
 //Prep
 var create = function (db) {
     return function (req, res) {
-        console.log("reached divespots db");
+        console.log("reached regions db");
+        console.log("region_array: \n" + JSON.stringify(req.body.region.region_array));
+        console.log("region_name:" + req.body.region.region_name);
 
-        db.prep_Divespots
+        db.prep_DiveRegions
             .create({
-                divespot_name: req.body.divespot.divespot_name,
-                divespot_array: JSON.stringify(req.body.divespot.divespot_array),
+                region_name: req.body.region.region_name,
+                region_array: JSON.stringify(req.body.region.region_array),
             })
             .then(function (results) {
                 res
@@ -19,36 +21,14 @@ var create = function (db) {
                     .status(500)
                     .json(err);
             })
-    };
+    }; 
 };
 
 var prep_display = function (db) {
     return function (req, res) {
         console.log("reached db");
 
-        db.prep_Divespots
-            .findAll({
-                where: {},//end where
-            })
-            .then(function (results) {
-                res
-                    .status(200)
-                    .json(results);
-            })
-            .catch(function (err) {
-                res
-                    .status(500)
-                    .json(err);
-            })
-    };
-};
-
-//Live
-var display = function (db) {
-    return function (req, res) {
-        console.log("reached db");
-
-        db.Divespots
+        db.prep_DiveRegions
             .findAll({
                 where: {},//end where
             })
