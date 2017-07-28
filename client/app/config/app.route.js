@@ -32,12 +32,13 @@
                         templateUrl: '/app/home/show.html',
                         controller: 'ShowC as con'
                     }
-                }, resolve: {
-                    user : function(passportService) {
-                        return passportService.isUserAuth() 
-                        // this should hold onto resolve until isUserAuth() returns
-                    }
-                }
+                }, 
+                // resolve: {
+                //     user : function(passportService) {
+                //         return passportService.isUserAuth() 
+                //         // this should hold onto resolve until isUserAuth() returns
+                //     }
+                // }
             })
             .state('show', {
                 url: '/show',

@@ -8,8 +8,6 @@
     function dbRouteService($http) {
         var service = this;
 
-        service.aToken = "EAACEdEose0cBAMpjUThoYT0IJ9RFQVSvRIkt8mQSqUKrBhz8nkhVcH2VFTCLZCVXAJ4g0NWY1tVYfukyoyZCnXmpkQa8ez7DNncTL9ZCQJJjvw2RetcgvEIlnDanBrdcCCgFqIijWhxpiMMNyE7WmWuzIdiOtqrvFxigypnCiwWnnZBXCwZA7PqZCZArDUUuEQZD";
-
         service.object = {};
         service.id;
 
@@ -18,7 +16,6 @@
             console.log('Now retrieving latest list from server');
             return $http.get('/api/diveoperators')
                 .then(function (result) {
-                    console.log("Result.data returns >>>>");
                     return result.data;
                 })
                 .catch(function (err) {
@@ -41,7 +38,10 @@
         }
 
 
-        service.pingFb = function () {
+        service.pingFb = function (userToken) {
+            if (userToken === "false"){
+                throw 'You are not authenticated';
+            }
             var id = service.id;
             console.log(`Now pinging https://graph.facebook.com/v2.9/${id} `);
 
@@ -49,7 +49,7 @@
                 method: 'GET',
                 url: `https://graph.facebook.com/v2.9/${id}`,
                 params: {
-                    access_token: service.aToken,
+                    access_token: userToken,
                     type: 'page',
                     fields: 'id, name, phone, cover, about'
                 }
@@ -58,10 +58,7 @@
                 .then(function (result) {
                     console.log(`Query was successful to ${id}`);
                     service.object = result.data;
-                    console.log(JSON.stringify(service.object));
-                    if (!service.object.cover) {
-                        service.object.cover = { source: "initial" };
-                    }
+                    console.log('The return from FB is ' + JSON.stringify(service.object));
                 })
                 .catch(function (err) {
                     console.log(err);

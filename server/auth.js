@@ -36,69 +36,59 @@ module.exports = function (app, db, passport) {
         clientID: config.FACEBOOK_APP_ID,
         clientSecret: config.FACEBOOK_APP_SECRET,
         callbackURL: config.FACEBOOK_CALLBACK_URL,
+        profileFields: ['id', 'displayName', 'first_name', 'last_name', 'email'] // need this line to return what fields you need
     }, authCallbackFunction)
     );
 
     // handles the result from FB - returns null & user
-
     function authCallbackFunction(accessToken, refreshToken, profile, callback) {
-        console.log("Returned profile is --->" + profile);
-        console.log("Stringify returned profile is --->" + JSON.stringify(profile));
-        console.log("Access Token is --->" + accessToken);
+        // console.log("\nStringify returned profile is --->" + JSON.stringify(profile));
+        console.log("\nAccess Token is --->" + accessToken);
 
-        var fb_id = profile.id;
-        // var first_name = profile.first_name;
-        // var last_name = profile.last_name;
-        var email = 'random@one.com' || profile.emails[0].value;
-        var access_token = accessToken;
+        // note that the JSON return is structured different fr request profile fields
+        // FB will return raw json as well
 
-        // i'm worried that some of the fields will be UNDEFINED and get inserted
-        // obviously this won't update access token lol
-        // double check the .spread documentation
+        var user = {
+            fb_id: profile.id,
+            email: profile.emails[0].value,
+            first_name: profile.name.givenName,
+            last_name: profile.name.familyName,
+            access_token: accessToken
+        }
 
-        // See: 
-        // https://www.youtube.com/watch?v=OMcWgmkMpEE
-        // https://stackoverflow.com/questions/43403084/how-to-use-findorcreate-in-sequelize
         db.Users
-            .findOrCreate({
-                where: { fb_id: fb_id },
-                defaults: {
-                    fb_id: fb_id,
-                    email: email,
-                    // first_name: first_name,
-                    // last_name: last_name,
-                    access_token: access_token
-                }
-            }
-            )
-            .spread(function (user, created) {
-                console.log(user.get({ plain: true }));
-                console.log(created);
-                callback(null, user);
-            }); // end spread
+            .upsert(user)
+            .then(function (result) {
+                console.log("\n The result of upsert is in next line >>>>>"); //returns a boolean
+                console.log(result); //returns a boolean
+                callback(null, user); //return the memory object, not DB object
+            })
+            .catch(function (err) {
+                callback(null, err);
+                console.log(err);
+            });
+        // uncaught errors
     }
 
-    // passport step 1 - serialize 
+    // passport step 1 - serialize - creates session object 
+    // stores more things than the default, including access token
     passport.serializeUser(function (user, callback) {
-        console.log('Serialize session');
-        callback(null, user);
+        console.log('\n\nSerializing session');
+        console.log('\npassport.serializeUser: ' + JSON.stringify(user));
+        var sessionUser = {
+            fb_id: user.fb_id,
+            first_name: user.first_name,
+            last_name: user.last_name,
+            access_token: user.access_token
+        }
+        callback(null, sessionUser);
     });
 
     // passport step 2 - de-serialize - constructs req.user
-    passport.deserializeUser(function (user, callback) {
-        // cater for scenario when DB was down when authenticate was called 
-        // so double check that user account was there
-        db.Users.findOne({
-            where: {
-                fb_id: user.fb_id,
-            }
-        }).then(function (result) {
-            if (result) {
-                callback(null, user);
-            }
-        }).catch(function (err) {
-            done(err, user);
-        });
+    // fires EVERY time the server is called with the matching session ID
+    passport.deserializeUser(function (sessionUser, callback) {
+        console.log('\n>>>>passport.deserializeUser: ' + JSON.stringify(sessionUser));
+        callback(null, sessionUser);
     });
 
 

@@ -13,12 +13,9 @@
         svc.isUserAuth = function () {
             return $http.get('/user/auth')
                 .then(function (result) {
-                    console.log('The auth result is ' + result.data);
+                    console.log('The access token is ' + result.data);
                     return result.data
-                })
-                .catch(function (err) {
-                    console.log(err);
-                })
+                }) // returns the access_token, or if not "false"
         }; // close isAuth 
         /*
         

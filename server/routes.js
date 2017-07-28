@@ -10,14 +10,30 @@ module.exports = function (app, db, passport) {
     // Index GET all
     app.get('/api/diveoperators', DiveOperators.index);
 
+
+
     /* 
         AUTH ROUTES
     */
 
     // test whether user is auth, inserts isAuth middleware
     app.get('/user/auth', function(req, res){
-        res.status(200).send('true');
+        if (req.user){
+            // console.log('\n\n\n Req.user.access_token is ---> ' + req.user.access_token);
+            res.status(200).send(req.user.access_token);
+        } else {
+            res.status(401).send('false');// need this to throw error on client side
+        }
     });
+
+    app.get('/logout', function(req, res){
+        req.logout();
+        console.log('Logged out, client re-directs to home page');
+        res.redirect('/');
+    })
+
+
+
 
     // passport.authenticate calls the passport.use(new FacebookStrategy()) in the auth.js
     app.get('/oauth/facebook', passport.authenticate('facebook',{
@@ -34,9 +50,10 @@ module.exports = function (app, db, passport) {
 
     // middleware to test auth
     function isAuthenticated(req, res, next) {
-        if (req.isAuthenticated())
-            return next();
-        res.redirect(LOGIN_PAGE);
+        if (req.user == null){
+            res.redirect(LOGIN_PAGE);
+        }
+        return next();
     }
 
     //prep

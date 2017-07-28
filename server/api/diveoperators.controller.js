@@ -7,7 +7,6 @@ function getAll(db) {
             }
             )// returns array of JSON
             .then(function (operatorList) {
-                console.log("Results >>> " + JSON.stringify(operatorList));
                 res.status(200).json(operatorList);
             })
             .catch(function (err) {
