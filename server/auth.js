@@ -64,7 +64,7 @@ module.exports = function (app, db, passport) {
                 callback(null, user); //return the memory object, not DB object
             })
             .catch(function (err) {
-                callback(null, err);
+                callback(err);
                 console.log(err);
             });
         // uncaught errors

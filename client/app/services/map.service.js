@@ -3,7 +3,9 @@
         .module("MyApp")
         .service("MapSvc", MapSvc);
 
-    function MapSvc() {
+    MapSvc.$inject = ["dbRouteService", "passportService", "$state"]
+
+    function MapSvc(dbRouteService, passportService, $state) {
         var svc = this;
 
         svc.initMap = function (mapName) {
@@ -15,8 +17,20 @@
             return svc.map;
         }
 
+
         var takemethere = function () {
-            console.log("Hello world");
+            return passportService.isUserAuth()
+                .then(function(aToken){
+                    return dbRouteService.pingFb(aToken)
+                })
+                .then(function(result){
+                    $state.go('show'); 
+                })
+                .catch(function(err){
+                    alert('Please log in')
+                    console.log('The err is ' + JSON.stringify(err));
+                    $state.go('login');
+                });
         }
 
         svc.createMarker = function (info) {
@@ -28,9 +42,13 @@
             });
             var infoWindow = new google.maps.InfoWindow();
             marker.content = '<div class="infoWindowContent"> diveoperator_id:&nbsp' + info.id + '&nbsp(FB_id:&nbsp' + info.fb_id + ')<br/>' + 'lat:' + info.latitude + '&nbsp;' + 'lng:' + info.longitude + '</div>';
+            
             google.maps.event.addListener(infoWindow, "domready", function () {
-                console.log("Hello world 2");
+                dbRouteService.getSelected(info.fb_id);
+                console.log('The pin you selected has FB ID of: ' + dbRouteService.selected());
+                alert('0. Need a pre-check \n1. Need to show/ hide login/ logout - how does Ken do it? \n 2. if not defined, will insert null values' );
             });
+
             google.maps.event.addListener(marker, "click", function () {
                 var origContent = '<h2>' + marker.title + '</h2>' + '<br/>' + marker.content;
                 var infoWindowContent = document.createElement('div');

@@ -24,10 +24,10 @@
                         templateUrl: '/app/home/map.html',
                         controller: 'MapCtrl as ctrl'
                     },
-                    'select': {
-                        templateUrl: '/app/home/select.html',
-                        controller: 'SelectC as con'
-                    },
+                    // 'select': {
+                    //     templateUrl: '/app/home/select.html',
+                    //     controller: 'SelectC as con'
+                    // },
                     'show': {
                         templateUrl: '/app/home/show.html',
                         controller: 'ShowC as con'

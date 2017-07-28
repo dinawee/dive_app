@@ -30,9 +30,13 @@
         }
         con.initialize();
 
-        /*
-            FUNCTIONS FOR DINA 
+        /* 
+            LEGACY FUNCTIONS
+            NOW CALLED BY MAP SERVICE 
+            **************************
+        
         */
+        
         con.select = function () {
             dbRouteService.getSelected(con.id);
             console.log('The pin you selected has FB ID of: ' + dbRouteService.selected());
@@ -50,12 +54,11 @@
                     $state.go('show'); 
                 })
                 .catch(function(err){
-                    alert('You are not logged in.')
+                    alert('Please log in')
                     console.log('The err is ' + JSON.stringify(err));
                     $state.go('login');
                 });
-
-        }
+        }// close gothere()
 
 
     }; // end controller
