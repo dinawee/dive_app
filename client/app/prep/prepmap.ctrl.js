@@ -8,6 +8,10 @@
     function PrepMapCtrl(dbRouteService, PrepMapSvc, PrepdbRouteSvc) {
         var vm = this;
 
+        //On page load:
+        // vm.displayDiveRegions(); //--> change vm to var in LIVE page
+
+
         function retrieveDiveOperators() {
             dbRouteService
                 .retrieveDiveOperators()
@@ -103,12 +107,12 @@
             if (retrievedResults[0].divespot_name) {
                 for (var i in retrievedResults) {
                     PrepMapSvc
-                        .createPoly(JSON.parse(retrievedResults[i].divespot_array));
+                        .createPoly(retrievedResults[i]);
                 }
             } else {
                 for (var i in retrievedResults) {
                     PrepMapSvc
-                        .createPoly(JSON.parse(retrievedResults[i].region_array));
+                        .createPoly(retrievedResults[i]);
                 }
             }
         };

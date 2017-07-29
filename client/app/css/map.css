@@ -10,6 +10,8 @@
     background-color: cornflowerblue;
 }
 
-#infoWindowContent{
-    
+#wrapper {
+    position: relative;
 }
+
+  
