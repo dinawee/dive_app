@@ -19,7 +19,7 @@
 
 
         var takemethere = function () {
-            return passportService.isUserAuth()
+            return passportService.getAccessToken()
                 .then(function(aToken){
                     return dbRouteService.pingFb(aToken)
                 })

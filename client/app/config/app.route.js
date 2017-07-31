@@ -35,8 +35,8 @@
                 }, 
                 // resolve: {
                 //     user : function(passportService) {
-                //         return passportService.isUserAuth() 
-                //         // this should hold onto resolve until isUserAuth() returns
+                //         return passportService.getAccessToken() 
+                //         // this should hold onto resolve until getAccessToken() returns
                 //     }
                 // }
             })

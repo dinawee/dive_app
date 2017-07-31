@@ -67,7 +67,6 @@ module.exports = function (app, db, passport) {
                 callback(err);
                 console.log(err);
             });
-        // uncaught errors
     }
 
     // passport step 1 - serialize - creates session object 

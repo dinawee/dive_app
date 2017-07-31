@@ -46,7 +46,7 @@
             alert('0. Need a pre-check \n1. Need to show/ hide login/ logout - how does Ken do it? \n 2. if not defined, will insert null values' );
             con.select();
             
-            passportService.isUserAuth()
+            passportService.getAccessToken()
                 .then(function(aToken){
                     return dbRouteService.pingFb(aToken)
                 })

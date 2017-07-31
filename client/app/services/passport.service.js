@@ -10,7 +10,7 @@
         var svc = this;
 
         // only the server knows if the user is logged in
-        svc.isUserAuth = function () {
+        svc.getAccessToken = function () {
             return $http.get('/user/auth')
                 .then(function (result) {
                     console.log('The access token is ' + result.data);

@@ -50,10 +50,10 @@ module.exports = function (app, db, passport) {
 
     // middleware to test auth
     function isAuthenticated(req, res, next) {
-        if (req.user == null){
-            res.redirect(LOGIN_PAGE);
+        if (req.isAuthenticated()) {
+            return next(); // no need return 
         }
-        return next();
+        res.redirect('/');
     }
 
     //prep
