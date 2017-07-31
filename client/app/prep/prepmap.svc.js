@@ -16,20 +16,18 @@
         }
 
         svc.createMarker = function (info) {
-            console.log("map is -->", svc.map);
             var marker = new google.maps.Marker({
                 map: svc.map,
                 position: new google.maps.LatLng(info.latitude, info.longitude),
                 title: info.name
             });
-            var infoWindow = new google.maps.InfoWindow();
             marker.content = '<div class="infoWindowContent"> diveoperator_id:&nbsp' + info.id + '&nbsp(FB_id:&nbsp' + info.fb_id + ')<br/>' + 'lat:' + info.latitude + '&nbsp;' + 'lng:' + info.longitude;
+            var infoWindow = new google.maps.InfoWindow();
             google.maps.event.addListener(marker, "click", function () {
                 infoWindow.setContent('<h2>' + marker.title + '</h2>' + '<br/>' + marker.content);
                 infoWindow.open(svc.map, marker);
             });
         };
-
 
         var svcPolyPath = [];
         svc.createPolyPath = function () {
@@ -37,6 +35,11 @@
                 console.log("createPolyPath function");
                 var marker = new google.maps.Marker({
                     position: e.latLng,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        strokeColor: "green",
+                        scale: 3
+                    }
                 });
                 console.log(marker);
                 marker.setMap(svc.map);
@@ -57,10 +60,18 @@
             return svcPolyPath;
         }
 
-        svc.createPoly = function (polyPath) {
-            console.log(JSON.parse(polyPath));
+
+
+        svc.createPoly = function (polyObj) {
+            console.log(polyObj)
+            var path;
+            if (polyObj.divespot_array) {
+                path = JSON.parse(polyObj.divespot_array);
+            } else {
+                path = JSON.parse(polyObj.region_array);
+            }
             var polygon = new google.maps.Polygon({
-                paths: JSON.parse(polyPath),
+                paths: path,
                 strokeColor: "#A0769A",
                 strokeOpactity: 0.8,
                 strokeWeight: 3,
@@ -68,14 +79,51 @@
                 fillOpacity: 0.35,
             });
             polygon.setMap(svc.map);
+            setPolyOptions(polygon, polyObj);
         };
 
+        var setPolyOptions = function (polygon, polyObj) {
+            var polyName = polyObj.divespot_name || polyObj.region_name;
+            polygon.set("polyName", polyName);
+            var infoWindowPosition = JSON.parse(polyObj.divespot_array || polyObj.region_array);
+            var infoWindow = new google.maps.InfoWindow();
+            google.maps.event.addListener(polygon, "mouseover", function () {
+                infoWindow.setContent(polygon.get("polyName"));
+                infoWindow.setPosition(infoWindowPosition[3]);
+                infoWindow.open(svc.map);
+            });
+            google.maps.event.addListener(polygon, "mouseout", function () {
+                infoWindow.close();
+            });
 
+            //Creating zoom for polygon
+            // function getBoundsForPoly() {
+            //     var bounds = new google.maps.LatLngBounds;
+            //     polygon.getPath().forEach(function (latLng) {
+            //         bounds.extend(latLng);
+            //     });
+            //     return bounds;
+            // }
+
+            bounds = getBoundsForPoly(zone1)
+
+            // Add a listener for the click event
+            google.maps.event.addListener(zone1, 'click', function () {
+                map.fitBounds(bounds);
+            });
+
+
+            google.maps.event.addListener(polygon, "click", function () {
+                var bounds = new google.maps.LatLngBounds();
+                var points = [];
+            });
+        };
 
         svc.resetPolyPath = function () {
             console.log("svcPolyPath reset");
             svcPolyPath = [];
         }
 
-    }//End PrepMapSvc
-})();
+
+    }//End of PrepMapSvc
+})();//End of IIFE

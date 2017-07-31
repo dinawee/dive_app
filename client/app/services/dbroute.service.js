@@ -16,6 +16,8 @@
             console.log('Now retrieving latest list from server');
             return $http.get('/api/diveoperators')
                 .then(function (result) {
+                    console.log("Result.data is >>>>>");
+                    // console.log(JSON.stringify(result.data));
                     return result.data;
                 })
                 .catch(function (err) {
