@@ -78,7 +78,8 @@ module.exports = function (app, db, passport) {
             fb_id: user.fb_id,
             first_name: user.first_name,
             last_name: user.last_name,
-            access_token: user.access_token
+            access_token: user.access_token,
+            email: user.email
         }
         callback(null, sessionUser);
     });

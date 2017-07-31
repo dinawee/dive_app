@@ -41,9 +41,6 @@
 
 
         service.pingFb = function (userToken) {
-            if (userToken === "false"){
-                throw 'You are not authenticated';
-            }
             var id = service.id;
             console.log(`Now pinging https://graph.facebook.com/v2.9/${id} `);
 
@@ -63,7 +60,7 @@
                     console.log('The return from FB is ' + JSON.stringify(service.object));
                 })
                 .catch(function (err) {
-                    console.log(err);
+                    console.log("The error for calling FB is " + err);
                 });
         }; // end pingFb
 

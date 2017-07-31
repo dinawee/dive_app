@@ -14,6 +14,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-session": "^1.15.4",
+    "mailgun-js": "^0.12.0",
     "mysql2": "^1.3.6",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",

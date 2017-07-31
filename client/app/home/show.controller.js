@@ -3,9 +3,9 @@
         .module("MyApp")
         .controller("ShowC", ShowC);
 
-    ShowC.$inject = ["$scope", "dbRouteService", "$stateParams"];
+    ShowC.$inject = ["$scope", "dbRouteService", "$stateParams", "mailService"];
 
-    function ShowC($scope, dbRouteService, $stateParams) {
+    function ShowC($scope, dbRouteService, $stateParams, mailService) {
         var con = this;
 
         // fb definition
@@ -20,6 +20,11 @@
         };
         
         con.initialize();
+
+        // temp email
+        con.sendEmail = function (){
+            mailService.sendEmail();
+        }
 
         // Legacy Code - using change in $state and $stateParams
         // if ($stateParams) {

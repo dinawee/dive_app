@@ -26,11 +26,6 @@
                 .then(function(result){
                     $state.go('show'); 
                 })
-                .catch(function(err){
-                    alert('Please log in')
-                    console.log('The err is ' + JSON.stringify(err));
-                    $state.go('login');
-                });
         }
 
         svc.createMarker = function (info) {
