@@ -8,10 +8,6 @@
     function PrepMapCtrl(dbRouteService, PrepMapSvc, PrepdbRouteSvc) {
         var vm = this;
 
-        //On page load:
-        // vm.displayDiveRegions(); //--> change vm to var in LIVE page
-
-
         function retrieveDiveOperators() {
             dbRouteService
                 .retrieveDiveOperators()
@@ -29,7 +25,12 @@
 
         //Setting up Map variables
         var mapName = "prepmap";
-        const map = PrepMapSvc.initMap(mapName);
+        var mapOptions = {
+            zoom: 5,
+            center: { lat: 0.2000285, lng: 118.015776 },
+            scrollwheel: false,
+        }
+        var map = PrepMapSvc.initMap(mapName, mapOptions);
 
         var createMarker = function () {
             for (var i in vm.results) {
@@ -123,7 +124,6 @@
                 .then(function (results) {
                     console.log("PrepMapCtrl --> displayDivespots successful");
                     vm.retrievedDivespots = results.data;
-                    console.log(vm.retrievedDivespots[0].divespot_array);
                     plotOnMap(vm.retrievedDivespots);
                 })
                 .catch(function (err) {
@@ -133,7 +133,7 @@
 
         //---REGIONS
 
-        vm.displayDiveRegions = function () {
+        var displayDiveRegions = function () {
             PrepdbRouteSvc
                 .displayDiveRegions()
                 .then(function (results) {
@@ -146,6 +146,8 @@
                     console.log("Error: \n", err);
                 });
         }
+        displayDiveRegions();
+
 
     };//End PrepMapCtrl
 })();//End of IIFE

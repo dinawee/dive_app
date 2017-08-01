@@ -6,11 +6,7 @@
     function PrepMapSvc() {
         var svc = this;
 
-        svc.initMap = function (mapName) {
-            var mapOptions = {
-                zoom: 5,
-                center: { lat: 0.2000285, lng: 118.015776 }
-            }
+        svc.initMap = function (mapName, mapOptions) {
             svc.map = new google.maps.Map(document.getElementById(mapName), mapOptions);
             return svc.map;
         }
@@ -60,11 +56,41 @@
             return svcPolyPath;
         }
 
+        var setPolyBounds = function (polygon) {
+            //Set bounds of polygon
+            if (!google.maps.Polygon.prototype.getBounds)
+                google.maps.Polygon.prototype.getBounds = function () {
+                    var bounds = new google.maps.LatLngBounds();
+                    var paths = this.getPaths();
+                    for (var i = 0; i < paths.getLength(); i++) {
+                        var path = paths.getAt(i);
+                        for (var j = 0; j < path.getLength(); j++) {
+                            bounds.extend(path.getAt(j));
+                        }
+                    }
+                    return bounds;
+                }
+            //Construct rectangle with polygon bounds
+            var rectangle = new google.maps.Rectangle({
+                visible: false,
+                map: svc.map,
+                bounds: polygon.getBounds(),
+                zIndex: 0,
+            });
+            return rectangle;
+        };
 
+        //Set center of polygon bounds
+        var setPolyBoundsCenter = function (rectangle) {
+            var polyBoundsCenter = rectangle.getBounds().getCenter();
+            console.log(polyBoundsCenter);
+            return polyBoundsCenter;
+        };
 
         svc.createPoly = function (polyObj) {
-            console.log(polyObj)
             var path;
+            var polyName;
+            var polyId;
             if (polyObj.divespot_array) {
                 path = JSON.parse(polyObj.divespot_array);
             } else {
@@ -77,45 +103,34 @@
                 strokeWeight: 3,
                 fillColor: "#F8B0B7",
                 fillOpacity: 0.35,
+                zIndex: 1,
             });
             polygon.setMap(svc.map);
-            setPolyOptions(polygon, polyObj);
+            var rectangle = setPolyBounds(polygon);
+            var polyBoundsCenter = setPolyBoundsCenter(rectangle);
+            setPolyOptions(polygon, polyObj, rectangle, polyBoundsCenter);
         };
 
-        var setPolyOptions = function (polygon, polyObj) {
+        var setPolyOptions = function (polygon, polyObj, rectangle, polyBoundsCenter) {
+            console.log("PolyObj ---->", polyObj);
             var polyName = polyObj.divespot_name || polyObj.region_name;
+            var polyId = polyObj.divespot_id || polyObj.region_id;
             polygon.set("polyName", polyName);
-            var infoWindowPosition = JSON.parse(polyObj.divespot_array || polyObj.region_array);
+            polygon.set("polyId", polyId);
             var infoWindow = new google.maps.InfoWindow();
             google.maps.event.addListener(polygon, "mouseover", function () {
                 infoWindow.setContent(polygon.get("polyName"));
-                infoWindow.setPosition(infoWindowPosition[3]);
+                infoWindow.setPosition(polyBoundsCenter);
                 infoWindow.open(svc.map);
             });
             google.maps.event.addListener(polygon, "mouseout", function () {
                 infoWindow.close();
             });
-
-            //Creating zoom for polygon
-            // function getBoundsForPoly() {
-            //     var bounds = new google.maps.LatLngBounds;
-            //     polygon.getPath().forEach(function (latLng) {
-            //         bounds.extend(latLng);
-            //     });
-            //     return bounds;
-            // }
-
-            bounds = getBoundsForPoly(zone1)
-
-            // Add a listener for the click event
-            google.maps.event.addListener(zone1, 'click', function () {
-                map.fitBounds(bounds);
-            });
-
-
             google.maps.event.addListener(polygon, "click", function () {
-                var bounds = new google.maps.LatLngBounds();
-                var points = [];
+                console.log(polyObj);
+                console.log("polygon clicked");
+                svc.map.fitBounds(rectangle.getBounds());
+                svc.map.setOptions({ zoom: 7 });
             });
         };
 

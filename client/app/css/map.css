@@ -1,4 +1,4 @@
-#map {
+#map_country {
     height: 500px;
     width: 100%;
     background-color: cornflowerblue;
@@ -12,6 +12,12 @@
 
 #wrapper {
     position: relative;
+}
+
+#selectedregion {
+    height: 500px;
+    width: 100%;
+    background-color: cornflowerblue;
 }
 
   

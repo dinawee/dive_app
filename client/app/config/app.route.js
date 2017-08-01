@@ -11,8 +11,8 @@
             .state('home', {
                 url: '/home',
                 views: {
-                    'map': {
-                        templateUrl: '/app/home/map.html',
+                    'mapcountry': {
+                        templateUrl: '/app/home/map_country.html',
                         controller: 'MapCtrl as ctrl'
                     },
                     'select': {
@@ -31,6 +31,15 @@
                     "prepmap": {
                         templateUrl: "app/prep/prepmap.html",
                         controller: "PrepMapCtrl as ctrl"
+                    }
+                }
+            })
+            .state("mapregion", {
+                url: "/mapregion",
+                views: {
+                    "mapregion": {
+                        templateUrl: "app/home/map_region.html",
+                        controller: "RegionCtrl as ctrl"
                     }
                 }
             });

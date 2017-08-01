@@ -24,7 +24,7 @@ var create = function (db) {
     }; 
 };
 
-var prep_display = function (db) {
+var display = function (db) {
     return function (req, res) {
         console.log("reached db");
 
@@ -50,6 +50,6 @@ var prep_display = function (db) {
 module.exports = function (db) {
     return {
         create: create(db),
-        prep_display: prep_display(db),
+        display: display(db),
     }
 };

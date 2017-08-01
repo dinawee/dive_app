@@ -40,6 +40,9 @@
                     <li class="nav-item active">
                         <a ui-sref="prepmap">Prep Map <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active">
+                        <a ui-sref="mapregion">Map Region <span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -50,12 +53,13 @@
     <!-- partials to load -->
 
     <div class="container">
-        <div ui-view="map"></div>
+        <div ui-view="mapcountry"></div>
         <hr>
         <div ui-view="select"></div>
         <div ui-view="show"></div>
         <!-- <div ui-view="show"></div>  -->
         <div ui-view="prepmap"></div>
+        <div ui-view="mapregion"></div>
     </div>
 
 
@@ -72,23 +76,27 @@
 
     <!-- load routes -->
     <script src="app/config/app.route.js"></script>
+
+    <!-- load map ctrl and svc -->
+    <script src="app/services/map.service.js"></script>
+    <script src="app/home/map_country.ctrl.js"></script>
+    <script defer src="app/home/map_region.ctrl.js"></script>
+
     <!-- load services-->
     <script src="app/services/dbroute.service.js"></script>
-    <script src="app/services/map.service.js"></script>
+    <script src="app/services/mapdbroute.service.js"></script>
+
     <!-- load controllers -->
-    <script src="app/home/map.ctrl.js"></script>
     <script src="app/home/select.controller.js"></script>
     <script src="app/home/show.controller.js"></script>
     <!--<script src="app/edit/edit.controller.js"></script>-->
 
-    <!-- load other scripts -->
-
     <!-- load google maps api -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQYQrDMpPGwIBOos_2HHV2pacKurBmVY"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQYQrDMpPGwIBOos_2HHV2pacKurBmVY"></script>
 
     <!-- load prep ctrl and svcs -->
-    <script src="app/prep/prepmap.ctrl.js"></script>
-    <script src="app/prep/prepmap.svc.js"></script>
+    <script defer src="app/prep/prepmap.ctrl.js"></script>
+    <script defer src="app/prep/prepmap.svc.js"></script>
     <script src="app/prep/prepdbroute.svc.js"></script>
 </body>
 
