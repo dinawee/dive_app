@@ -17,6 +17,15 @@
                     }
                 }
             })
+            .state('bookmark',{
+                url: '/user/bookmark',
+                views: {
+                    'bookmark' : {
+                        templateUrl: 'app/home/bookmark.html',
+                        controller: 'BookmarkC as con'
+                    }
+                }
+            })
             .state('home', {
                 url: '/home',
                 views: {

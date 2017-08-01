@@ -17,12 +17,22 @@ module.exports = function (app, db, passport) {
     var DiveOperators = require('./api/diveoperators.controller.js')(db);
     var Divespots = require("./api/divespots.controller.js")(db);
     var DiveRegions = require("./api/diveregions.controller.js")(db);
+    var Bookmarks = require("./api/bookmarks.controller.js")(db);
     var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
 
 
-    // Index GET all
+    /* 
+        DiveOperator Routes 
+    */
     app.get('/api/diveoperators', DiveOperators.index);
 
+    /*
+        Bookmark Routes
+    */
+    app.post('/api/bookmarks', isUserAuth, Bookmarks.create);
+
+    app.get('/api/bookmarks', isUserAuth, Bookmarks.index);
+    
 
     /* 
         EMAIL ROUTES

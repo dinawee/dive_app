@@ -61,5 +61,20 @@ CREATE TABLE IF NOT EXISTS users (
     UNIQUE KEY (`fb_id`)
 );
 
+
+CREATE TABLE IF NOT EXISTS `user_dive_operators` (
+	`user_dive_operator_id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `user_id` INT UNSIGNED NOT NULL,
+    `dive_operator_id` INT UNSIGNED NOT NULL,
+	FOREIGN KEY (`dive_operator_id`) REFERENCES `dive_operators`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 -- Deleting tables 
 -- http://notes.jerzygangi.com/how-to-delete-all-rows-in-a-mysql-or-oracle-table/
+
+
+-- Foreign Key Errors
+-- https://www.percona.com/blog/2017/04/06/dealing-mysql-error-code-1215-cannot-add-foreign-key-constraint/

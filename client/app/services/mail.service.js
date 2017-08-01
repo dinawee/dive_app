@@ -13,7 +13,8 @@
             to: '',
             from: '',
             subject: 'Welcome to DiveApp',
-            html: '<p> Hello! Welcome to DiveApp </p>'
+            html: '<p> Hello! Welcome to <br> DiveApp <br> </p>' + 
+            '<p> Thank you for signing up with us </p>'
         }
 
         svc.sendEmail = function() {

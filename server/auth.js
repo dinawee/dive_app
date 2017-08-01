@@ -23,15 +23,6 @@ const config = require(configPath());
 
 module.exports = function (app, db, passport) {
 
-    /* FB Strategy
-        Create a new instance of FB strategy based on passport-facebook
-        Supply the callback function to process the return from FB
-        FB returns 1) accessToken, 2) refreshToken (optional), 3) profile (user FB data)
-        4) another callback fx to complete the auth - commonaly called 'done'
-
-    */
-
-
     passport.use(new FacebookStrategy({
         clientID: config.FACEBOOK_APP_ID,
         clientSecret: config.FACEBOOK_APP_SECRET,
@@ -61,7 +52,13 @@ module.exports = function (app, db, passport) {
             .then(function (result) {
                 console.log("\n The result of upsert is in next line >>>>>"); //returns a boolean
                 console.log(result); //returns a boolean
-                callback(null, user); //return the memory object, not DB object
+            }).then(function(){
+                return db.Users.findOne(
+                    { where: {fb_id: user.fb_id } }
+                ) // multiple return in a promise? 
+            }).then(function(dbUser){
+                console.log("The user record is " + JSON.stringify(dbUser));
+                callback(null, dbUser); 
             })
             .catch(function (err) {
                 callback(err);
@@ -71,17 +68,12 @@ module.exports = function (app, db, passport) {
 
     // passport step 1 - serialize - creates session object 
     // stores more things than the default, including access token
-    passport.serializeUser(function (user, callback) {
+    passport.serializeUser(function (sessionUser, callback) {
         console.log('\n\nSerializing session');
-        console.log('\npassport.serializeUser: ' + JSON.stringify(user));
-        var sessionUser = {
-            fb_id: user.fb_id,
-            first_name: user.first_name,
-            last_name: user.last_name,
-            access_token: user.access_token,
-            email: user.email
-        }
-        callback(null, sessionUser);
+        console.log('\npassport.serializeUser: ' + JSON.stringify(sessionUser));
+        callback(null, sessionUser); 
+        // note we create the sessionUser with the entire user object
+        // memory implications? 
     });
 
     // passport step 2 - de-serialize - constructs req.user
@@ -93,3 +85,17 @@ module.exports = function (app, db, passport) {
 
 
 }// close exports 
+
+
+// DONE. 0. do a DB find by fb_id and return user id 
+// DONE. 1. Update server/auth.js to store id when serialize user object - req.user.id 
+// DONE 2. New end point POST /api/bookmarks - call out req.user.id
+// DONE 3. New controller bookmarks.controller.js - note that since the models are exported
+    // you still can call DiveOperators findBy (fb_id) - call out DiveOperators Id
+    // return Bookmarks.create using DiveOperators Id and User Id
+
+
+// 4. New end point GET api/bookmarks - call out req.user.id
+// 5. Add on the bookmarks.controller = findAll - no limit 
+    // return entire list as JSON - list them as a table 
+    // KIV fire AJAX calls for the entire list to return from FB

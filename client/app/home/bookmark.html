@@ -1,0 +1,22 @@
+<h1>My Bookmarks</h1>
+
+<div class="row">
+    </br>
+    <div class="col-xs-8">
+        <table>
+            <thead>
+                <tr>
+                    <th>No. </th>
+                    <th>Operator ID</th>
+                    <th>FB ID</th>
+                </tr>
+            </thead>
+             <tbody>
+                <tr ng-repeat= "each in con.selectedBookmarks">
+                    <td> {{ $index + 1 }} </td>
+                    <td> {{ each["user_dive_operator_id"] }} </td>
+                </tr>
+            </tbody> 
+        </table>
+    </div>
+</div>

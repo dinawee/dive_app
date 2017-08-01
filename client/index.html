@@ -49,6 +49,9 @@
                     <li class="nav-item active">
                         <a href="/logout">Logout<span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active">
+                        <a ui-sref="bookmark">Bookmarks<span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -64,6 +67,7 @@
         <div ui-view="show"></div>
         <!-- <div ui-view="show"></div>  -->
         <div ui-view="prepmap"></div>
+        <div ui-view="bookmark"></div>
     </div>
 
 
@@ -81,11 +85,11 @@
     <!-- load routes -->
     <script src="app/config/app.route.js"></script>
     <!-- load services-->
+    <script src="app/services/passport.service.js"></script>
     <script src="app/services/dbroute.service.js"></script>
     <script src="app/services/map.service.js"></script>
     <script src="app/services/mail.service.js"></script>
-    <script src="app/services/passport.service.js"></script>
-
+    <script src="app/services/bookmark.service.js"></script>
 
 
     <!-- load controllers -->
@@ -93,6 +97,7 @@
     <!-- <script src="app/home/select.controller.js"></script> -->
     <script src="app/home/show.controller.js"></script> 
     <script src="app/login/login.controller.js"></script>
+    <script src="app/home/bookmark.controller.js"></script>
 
     <!--<script src="app/edit/edit.controller.js"></script>-->
 
