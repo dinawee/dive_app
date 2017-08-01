@@ -11,20 +11,6 @@
             return svc.map;
         }
 
-        svc.createMarker = function (info) {
-            var marker = new google.maps.Marker({
-                map: svc.map,
-                position: new google.maps.LatLng(info.latitude, info.longitude),
-                title: info.name
-            });
-            marker.content = '<div class="infoWindowContent"> diveoperator_id:&nbsp' + info.id + '&nbsp(FB_id:&nbsp' + info.fb_id + ')<br/>' + 'lat:' + info.latitude + '&nbsp;' + 'lng:' + info.longitude;
-            var infoWindow = new google.maps.InfoWindow();
-            google.maps.event.addListener(marker, "click", function () {
-                infoWindow.setContent('<h2>' + marker.title + '</h2>' + '<br/>' + marker.content);
-                infoWindow.open(svc.map, marker);
-            });
-        };
-
         var svcPolyPath = [];
         svc.createPolyPath = function () {
             google.maps.event.addListener(svc.map, "click", function (e) {

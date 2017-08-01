@@ -3,9 +3,9 @@
         .module("MyApp")
         .service("MapSvc", MapSvc);
 
-    MapSvc.$inject = ["$state"];
+    MapSvc.$inject = ["$state", "MapdbRouteSvc"];
 
-    function MapSvc($state) {
+    function MapSvc($state, MapdbRouteSvc) {
         var svc = this;
 
         svc.initMap = function (mapName, mapOptions) {
@@ -17,19 +17,33 @@
             console.log("Hello world");
         }
 
-        svc.createMarker = function (info) {
-            console.log(info.divespot_array);
-            console.log("map is -->", svc.map);
+        svc.markersDiveOperators = [];
+
+        svc.retrieveDiveOperators = function (results) {
+            console.log("svc.retrieveDiveOperators results: \n");
+            svc.DiveOperators = results.data;
+            for (i in svc.DiveOperators) {
+                createMarker(svc.DiveOperators[i]);
+            }
+        };
+
+        var createMarker = function (info) {
             var marker = new google.maps.Marker({
                 map: svc.map,
                 position: new google.maps.LatLng(info.latitude, info.longitude),
-                title: info.name
+                title: info.name,
+                visible: false
             });
-            var infoWindow = new google.maps.InfoWindow();
             marker.content = '<div class="infoWindowContent"> diveoperator_id:&nbsp' + info.id + '&nbsp(FB_id:&nbsp' + info.fb_id + ')<br/>' + 'lat:' + info.latitude + '&nbsp;' + 'lng:' + info.longitude + '</div>';
-            google.maps.event.addListener(infoWindow, "domready", function () {
-                console.log("Hello world 2");
-            });
+            setMarkerBehaviour(marker);
+            svc.markersDiveOperators.push(marker);
+        };
+
+        var setMarkerBehaviour = function (marker) {
+            var infoWindow = new google.maps.InfoWindow();
+            // google.maps.event.addListener(infoWindow, "domready", function () {
+            //     console.log("Hello world 2");
+            // });
             google.maps.event.addListener(marker, "click", function () {
                 var origContent = '<h2>' + marker.title + '</h2>' + '<br/>' + marker.content;
                 var infoWindowContent = document.createElement('div');
@@ -42,7 +56,7 @@
                 infoWindow.setContent(infoWindowContent);
                 infoWindow.open(svc.map, marker);
             });
-        };
+        }
 
         var setPolyBounds = function (polygon) {
             //Set bounds of polygon
@@ -92,10 +106,19 @@
             var polyName = polyObj.divespot_name;
             polygon.set("polyName", polyName);
             setPolyListener(polygon, polyName, polyBoundsCenter);
+            var rectangle = setPolyBounds(polygon);
+            var polyBoundsCenter = setPolyBoundsCenter(rectangle);
             google.maps.event.addListener(polygon, "click", function () {
-                polygon.setOptions({visible: false});
-                console.log(polyObj);
-                // creat marker on click
+                polygon.setOptions({ visible: false });
+                svc.map.fitBounds(rectangle.getBounds());
+                for (i in svc.markersDiveOperators) {
+                    if (google.maps.geometry.poly.containsLocation(svc.markersDiveOperators[i].getPosition(), polygon)) {
+                        svc.markersDiveOperators[i].setMap(svc.map);
+                        svc.markersDiveOperators[i].setOptions({visible:true});
+                    } else {
+                        console.log("marker not in polygon");
+                    };
+                };
             });
         };
 
@@ -106,12 +129,12 @@
             setPolyListener(polygon, polyName, polyBoundsCenter);
             google.maps.event.addListener(polygon, "click", function () {
                 console.log("polygon clicked");
-                    svc.clickedPolygon = {
-                        polyObj: polyObj,
-                        rectangle: rectangle,
-                        polyBoundsCenter: polyBoundsCenter,
-                    }
-                    $state.go("mapregion");
+                svc.clickedPolygon = {
+                    polyObj: polyObj,
+                    rectangle: rectangle,
+                    polyBoundsCenter: polyBoundsCenter,
+                }
+                $state.go("mapregion");
             });
         };
 
@@ -149,9 +172,8 @@
         };
 
         svc.createPoly = function (polyObj) {
-            console.log("createPoly reached", svc.polyObj);
+            console.log("createPoly reached", polyObj);
             if (polyObj.divespot_array) {
-                console.log("crete divespot poly", polyObj);
                 createDivespotPoly(polyObj);
             } else {
                 createDiveRegionPoly(polyObj);

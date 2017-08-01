@@ -32,13 +32,6 @@
         }
         var map = PrepMapSvc.initMap(mapName, mapOptions);
 
-        var createMarker = function () {
-            for (var i in vm.results) {
-                PrepMapSvc
-                    .createMarker(vm.results[i]);
-            };
-        }
-
         PrepMapSvc.createPolyPath();
 
         vm.createPoly = function () {

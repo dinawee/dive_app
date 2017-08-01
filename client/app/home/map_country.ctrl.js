@@ -29,7 +29,6 @@
                 .then(function (results) {
                     console.log("PrepMapCtrl --> displayDiveRegions successful");
                     vm.retrievedDiveRegions = results.data;
-                    console.log(vm.retrievedDiveRegions[0].region_array);
                     plotOnMap(vm.retrievedDiveRegions);
                 })
                 .catch(function (err) {

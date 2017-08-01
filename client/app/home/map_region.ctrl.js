@@ -13,7 +13,7 @@
                 console.log(retrievedResults[i]);
                 MapSvc
                     .createPoly(retrievedResults[i]);
-            } 
+            }
         };
 
         var displayDivespots = function (clickedPolygon) {
@@ -46,6 +46,20 @@
             var map = MapSvc.initMap(mapName, mapOptions);
             displayDivespots(clickedPolygon);
         };
+
+        retrieveDiveOperators();
+        function retrieveDiveOperators() {
+            MapdbRouteSvc
+                .retrieveDiveOperators()
+                .then(function (results) {
+                    console.log("map_region.ctrl --> retrieveDiveOperators successful");
+                    MapSvc.retrieveDiveOperators(results);
+                })
+                .catch(function (err) {
+                    console.log("Error: \n" + (err));
+                })
+        };
+        
 
     };//End RegionCtrl
 })();//End of IIFE

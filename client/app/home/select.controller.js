@@ -24,7 +24,7 @@
                 .then(function(result){
                     con.list = result;
                     console.log("Con.list is now >>>>");
-                    console.log(JSON.stringify(result));
+                    // console.log(JSON.stringify(result));
                     console.log('Type is ' + typeof result);
                 })
                 .catch(function(err){

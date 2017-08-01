@@ -9,7 +9,7 @@
         var svc = this;
 
         svc.retrieveDiveOperators = function () {
-            console.log("reached prepdbroute.svc.display");
+            console.log("reached mapdbroute.svc.retrieveDiveOperators");
             return $http.get("/api/diveoperators");
         };
 
