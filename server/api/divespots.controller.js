@@ -27,13 +27,15 @@ var display = function (db) {
         console.log("reached db");
         console.log(req.query.region_id);
 
-        if (!req.query.region_id) {req.query.region_id = ""};
+        var whereCondition = {
+            region_id : req.query.region_id
+        };
 
+        if (!req.query.region_id) {whereCondition = {}};
+        
         db.prep_Divespots
             .findAll({
-                where: {
-                    // region_id : req.query.region_id
-                },//end where
+                where: whereCondition, //end where
             })
             .then(function (results) {
                 res
