@@ -1,11 +1,11 @@
 #map_country {
-    height: 500px;
+    height: 520px;
     width: 100%;
     background-color: cornflowerblue;
 }
 
 #prepmap {
-    height: 500px;
+    height: 520px;
     width: 100%;
     background-color: cornflowerblue;
 }
@@ -15,7 +15,7 @@
 }
 
 #selectedregion {
-    height: 500px;
+    height: 520px;
     width: 100%;
     background-color: cornflowerblue;
 }

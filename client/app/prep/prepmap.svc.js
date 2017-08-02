@@ -42,48 +42,10 @@
             return svcPolyPath;
         }
 
-        var setPolyBounds = function (polygon) {
-            //Set bounds of polygon
-            if (!google.maps.Polygon.prototype.getBounds)
-                google.maps.Polygon.prototype.getBounds = function () {
-                    var bounds = new google.maps.LatLngBounds();
-                    var paths = this.getPaths();
-                    for (var i = 0; i < paths.getLength(); i++) {
-                        var path = paths.getAt(i);
-                        for (var j = 0; j < path.getLength(); j++) {
-                            bounds.extend(path.getAt(j));
-                        }
-                    }
-                    return bounds;
-                }
-            //Construct rectangle with polygon bounds
-            var rectangle = new google.maps.Rectangle({
-                visible: false,
-                map: svc.map,
-                bounds: polygon.getBounds(),
-                zIndex: 0,
-            });
-            return rectangle;
-        };
-
-        //Set center of polygon bounds
-        var setPolyBoundsCenter = function (rectangle) {
-            var polyBoundsCenter = rectangle.getBounds().getCenter();
-            console.log(polyBoundsCenter);
-            return polyBoundsCenter;
-        };
-
-        svc.createPoly = function (polyObj) {
-            var path;
-            var polyName;
-            var polyId;
-            if (polyObj.divespot_array) {
-                path = JSON.parse(polyObj.divespot_array);
-            } else {
-                path = JSON.parse(polyObj.region_array);
-            }
+        svc.createPoly = function (polyPath) {
+            console.log(polyPath);
             var polygon = new google.maps.Polygon({
-                paths: path,
+                paths: polyPath,
                 strokeColor: "#A0769A",
                 strokeOpactity: 0.8,
                 strokeWeight: 3,
@@ -92,33 +54,8 @@
                 zIndex: 1,
             });
             polygon.setMap(svc.map);
-            var rectangle = setPolyBounds(polygon);
-            var polyBoundsCenter = setPolyBoundsCenter(rectangle);
-            setPolyOptions(polygon, polyObj, rectangle, polyBoundsCenter);
         };
 
-        var setPolyOptions = function (polygon, polyObj, rectangle, polyBoundsCenter) {
-            console.log("PolyObj ---->", polyObj);
-            var polyName = polyObj.divespot_name || polyObj.region_name;
-            var polyId = polyObj.divespot_id || polyObj.region_id;
-            polygon.set("polyName", polyName);
-            polygon.set("polyId", polyId);
-            var infoWindow = new google.maps.InfoWindow();
-            google.maps.event.addListener(polygon, "mouseover", function () {
-                infoWindow.setContent(polygon.get("polyName"));
-                infoWindow.setPosition(polyBoundsCenter);
-                infoWindow.open(svc.map);
-            });
-            google.maps.event.addListener(polygon, "mouseout", function () {
-                infoWindow.close();
-            });
-            google.maps.event.addListener(polygon, "click", function () {
-                console.log(polyObj);
-                console.log("polygon clicked");
-                svc.map.fitBounds(rectangle.getBounds());
-                svc.map.setOptions({ zoom: 7 });
-            });
-        };
 
         svc.resetPolyPath = function () {
             console.log("svcPolyPath reset");

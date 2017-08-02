@@ -21,7 +21,7 @@
                     console.log("Error: \n" + (err));
                 })
         };
-        retrieveDiveOperators();
+        // retrieveDiveOperators();
 
         //Setting up Map variables
         var mapName = "prepmap";
@@ -36,11 +36,12 @@
 
         vm.createPoly = function () {
             polyPath = PrepMapSvc.retrivePolyPath();
+            console.log(polyPath);
             PrepMapSvc
                 .createPoly(polyPath);
         }
 
-        //Creating records
+//Creating records
 
         //---DIVESPOTS
 
@@ -77,7 +78,6 @@
 
         vm.region = {};
 
-
         vm.createDiveRegions = function () {
             setPolygonArray(vm.region);
             console.log(vm.region);
@@ -93,23 +93,23 @@
                 });
         };
 
-        //Retrieving records
-
-        //---DIVESPOTS
+//Retrieving records
 
         var plotOnMap = function (retrievedResults) {
             if (retrievedResults[0].divespot_name) {
                 for (var i in retrievedResults) {
                     PrepMapSvc
-                        .createPoly(retrievedResults[i]);
+                        .createPoly(JSON.parse(retrievedResults[i].divespot_array));
                 }
             } else {
                 for (var i in retrievedResults) {
                     PrepMapSvc
-                        .createPoly(retrievedResults[i]);
+                        .createPoly(JSON.parse(retrievedResults[i].region_array));
                 }
             }
         };
+
+        //---DIVESPOTS
 
         vm.displayDivespots = function () {
             PrepdbRouteSvc
@@ -117,6 +117,7 @@
                 .then(function (results) {
                     console.log("PrepMapCtrl --> displayDivespots successful");
                     vm.retrievedDivespots = results.data;
+                    console.log(vm.retrievedDivespots);
                     plotOnMap(vm.retrievedDivespots);
                 })
                 .catch(function (err) {
@@ -126,7 +127,7 @@
 
         //---REGIONS
 
-        var displayDiveRegions = function () {
+        vm.displayDiveRegions = function () {
             PrepdbRouteSvc
                 .displayDiveRegions()
                 .then(function (results) {
@@ -139,8 +140,6 @@
                     console.log("Error: \n", err);
                 });
         }
-        displayDiveRegions();
-
 
     };//End PrepMapCtrl
 })();//End of IIFE
