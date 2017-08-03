@@ -8,12 +8,6 @@
     function PrepdbRouteSvc($http) {
         var svc = this;
 
-        svc.retrieveDiveOperators = function () {
-            console.log("reached prepdbroute.svc.display");
-            return $http.get("/api/diveoperators");
-        };
-
-
         svc.createDivespot = function (divespot) {
             console.log("reached prepdbroute.svc.createDivespot");
             console.log(JSON.stringify(divespot));
@@ -21,7 +15,6 @@
                 divespot: divespot
             });
         };
-
 
         svc.displayDivespots = function () {
             console.log("reached prepdbroute.svc.displayDivespots");

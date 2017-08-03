@@ -8,10 +8,6 @@
     function PrepMapCtrl(dbRouteService, PrepMapSvc, PrepdbRouteSvc) {
         var vm = this;
 
-        //On page load:
-        // vm.displayDiveRegions(); //--> change vm to var in LIVE page
-
-
         function retrieveDiveOperators() {
             dbRouteService
                 .retrieveDiveOperators()
@@ -25,28 +21,27 @@
                     console.log("Error: \n" + (err));
                 })
         };
-        retrieveDiveOperators();
+        // retrieveDiveOperators();
 
         //Setting up Map variables
         var mapName = "prepmap";
-        const map = PrepMapSvc.initMap(mapName);
-
-        var createMarker = function () {
-            for (var i in vm.results) {
-                PrepMapSvc
-                    .createMarker(vm.results[i]);
-            };
+        var mapOptions = {
+            zoom: 5,
+            center: { lat: 0.2000285, lng: 118.015776 },
+            scrollwheel: false,
         }
+        var map = PrepMapSvc.initMap(mapName, mapOptions);
 
         PrepMapSvc.createPolyPath();
 
         vm.createPoly = function () {
             polyPath = PrepMapSvc.retrivePolyPath();
+            console.log(polyPath);
             PrepMapSvc
                 .createPoly(polyPath);
         }
 
-        //Creating records
+//Creating records
 
         //---DIVESPOTS
 
@@ -83,7 +78,6 @@
 
         vm.region = {};
 
-
         vm.createDiveRegions = function () {
             setPolygonArray(vm.region);
             console.log(vm.region);
@@ -99,23 +93,23 @@
                 });
         };
 
-        //Retrieving records
-
-        //---DIVESPOTS
+//Retrieving records
 
         var plotOnMap = function (retrievedResults) {
             if (retrievedResults[0].divespot_name) {
                 for (var i in retrievedResults) {
                     PrepMapSvc
-                        .createPoly(retrievedResults[i]);
+                        .createPoly(JSON.parse(retrievedResults[i].divespot_array));
                 }
             } else {
                 for (var i in retrievedResults) {
                     PrepMapSvc
-                        .createPoly(retrievedResults[i]);
+                        .createPoly(JSON.parse(retrievedResults[i].region_array));
                 }
             }
         };
+
+        //---DIVESPOTS
 
         vm.displayDivespots = function () {
             PrepdbRouteSvc
@@ -123,7 +117,7 @@
                 .then(function (results) {
                     console.log("PrepMapCtrl --> displayDivespots successful");
                     vm.retrievedDivespots = results.data;
-                    console.log(vm.retrievedDivespots[0].divespot_array);
+                    console.log(vm.retrievedDivespots);
                     plotOnMap(vm.retrievedDivespots);
                 })
                 .catch(function (err) {
