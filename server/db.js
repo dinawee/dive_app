@@ -42,11 +42,20 @@ const DiveOperators = sequelize.import('./models/dive_operators.js');
 const Users = sequelize.import('./models/users.js');
 const Bookmarks = sequelize.import('./models/bookmarks.js');
 
-// Users.hasMany(Bookmarks);
-// Bookmarks.belongsTo(Users);
-// DiveOperators.hasMany(Bookmarks);
-// Bookmarks.belongsTo(DiveOperators);
 
+/* 
+    Associations
+    Be safe and spell out FK columns to prevent sequelize from generating funny stuff
+    Note that the FKs only reside in the users table, they REFERENCE the PKs in other table
+
+    No need targetKey unless you want to specify another column
+*/ 
+
+Users.belongsToMany(DiveOperators, {through: Bookmarks, foreignKey:'user_id' });
+// this is for creation - you can call Users.DiveOperators
+DiveOperators.belongsToMany(Users, {through: Bookmarks, foreignkey:'dive_operator_id'});
+Bookmarks.belongsTo(DiveOperators, {foreignKey: 'dive_operator_id' });
+// so you can call Bookmarks.getDiveOperator
 
 //prep routes
 const prep_DiveOperators = sequelize.import('./models/prep/prep_dive_operators.js');

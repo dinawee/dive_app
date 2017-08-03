@@ -7,14 +7,15 @@
             <thead>
                 <tr>
                     <th>No. </th>
-                    <th>Operator ID</th>
+                    <th>Name</th>
                     <th>FB ID</th>
                 </tr>
             </thead>
              <tbody>
                 <tr ng-repeat= "each in con.selectedBookmarks">
                     <td> {{ $index + 1 }} </td>
-                    <td> {{ each["user_dive_operator_id"] }} </td>
+                    <td> {{ each["dive_operator"]["name"] }} </td>
+                    <td> {{ each["dive_operator"]["fb_id"] }} </td>
                 </tr>
             </tbody> 
         </table>

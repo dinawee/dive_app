@@ -3,14 +3,18 @@ function getAll(db) {
         console.log('Req user is ' + req.user.user_id);
         db.Bookmarks
             .findAll({
-                where : { user_id: req.user.user_id },
-                order: ['user_id'],
-                // include: [ db.DiveOperators ], 
-                // include fetches back the DiveOperator result, eager loading
+                where: { user_id: req.user.user_id },
+                attributes: ['user_dive_operator_id', 'user_id', 'dive_operator_id'],
+                order: ['user_dive_operator_id'],
+                include: [{ 
+                    model: db.DiveOperators,
+                    attributes: [ 'fb_id', 'name']
+                }],
+                // include eager loads the DiveOperator results
             }
             )// returns array of JSON
             .then(function (bookmarkList) {
-                console.log('Server side result is ' + JSON.stringify(bookmarkList));
+                console.log(bookmarkList);
                 res.status(200).json(bookmarkList);
             })
             .catch(function (err) {
