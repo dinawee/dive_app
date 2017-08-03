@@ -4,21 +4,24 @@
         .module("MyApp")
         .service("passportService", passportService);
 
-    passportService.$inject = ["$http"];
+    passportService.$inject = ["$http", "$state"];
 
-    function passportService($http) {
+    function passportService($http, $state) {
         var svc = this;
 
         // only the server knows if the user is logged in
-        svc.isUserAuth = function () {
+        svc.getAccessToken = function () {
             return $http.get('/user/auth')
                 .then(function (result) {
-                    console.log('The auth result is ' + result.data);
+                    console.log('The access token is ' + result.data);
                     return result.data
                 })
-                .catch(function (err) {
-                    console.log(err);
-                })
+                .catch(function (err){
+                    alert('You are not logged in');
+                    console.log("The passport service error is " + JSON.stringify(err));
+                    $state.go('login');
+                    throw 'You are not logged in' // no need catch, for caller to handle
+                }) // returns the access_token, or if not "false"
         }; // close isAuth 
         /*
         

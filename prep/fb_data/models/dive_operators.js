@@ -1,6 +1,6 @@
 // define dive_operators table and model
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define('dive_operators', {
+    return sequelize.define('bookmarks', {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false,
@@ -34,6 +34,6 @@ module.exports = function (sequelize, DataTypes) {
     }, {
             // timestamps: false,
             underscored: true,
-            tableName: 'dive_operators', // to fit .sql table name
+            tableName: 'user_dive_operators', // to fit .sql table name
         });
 };

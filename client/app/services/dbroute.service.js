@@ -8,8 +8,6 @@
     function dbRouteService($http) {
         var service = this;
 
-        service.aToken = "EAACEdEose0cBAL2tGZCReQCpzpCwFdwGPemK7HvdyqAsfInPHCCCY4t9MCgjrhlZCq7ZBemZAbuxx98u5kMTTqZAeGJx4bPNlV5Iz5k4zZC2eJEAfHWwKRPxclMqMvDLYLZCo9CE2tbdi7pnDyr2QqcUcCxZAoxwcZB8wCuqIEKlZBpXZCj8DfLgOqr2zOWtYQYXosZD";
-
         service.object = {};
         service.id;
 
@@ -18,7 +16,8 @@
             console.log('Now retrieving latest list from server');
             return $http.get('/api/diveoperators')
                 .then(function (result) {
-                    console.log("Result.data returns >>>>");
+                    console.log("Result.data is >>>>>");
+                    // console.log(JSON.stringify(result.data));
                     return result.data;
                 })
                 .catch(function (err) {
@@ -41,7 +40,7 @@
         }
 
 
-        service.pingFb = function () {
+        service.pingFb = function (userToken) {
             var id = service.id;
             console.log(`Now pinging https://graph.facebook.com/v2.9/${id} `);
 
@@ -49,7 +48,7 @@
                 method: 'GET',
                 url: `https://graph.facebook.com/v2.9/${id}`,
                 params: {
-                    access_token: service.aToken,
+                    access_token: userToken,
                     type: 'page',
                     fields: 'id, name, phone, cover, about'
                 }
@@ -58,13 +57,10 @@
                 .then(function (result) {
                     console.log(`Query was successful to ${id}`);
                     service.object = result.data;
-                    console.log(JSON.stringify(service.object));
-                    if (!service.object.cover) {
-                        service.object.cover = { source: "initial" };
-                    }
+                    console.log('The return from FB is ' + JSON.stringify(service.object));
                 })
                 .catch(function (err) {
-                    console.log(err);
+                    console.log("The error for calling FB is " + err);
                 });
         }; // end pingFb
 

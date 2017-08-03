@@ -6,30 +6,10 @@
     function PrepMapSvc() {
         var svc = this;
 
-        svc.initMap = function (mapName) {
-            var mapOptions = {
-                zoom: 5,
-                center: { lat: 0.2000285, lng: 118.015776 }
-            }
+        svc.initMap = function (mapName, mapOptions) {
             svc.map = new google.maps.Map(document.getElementById(mapName), mapOptions);
             return svc.map;
         }
-
-        svc.createMarker = function (info) {
-            console.log("map is -->", svc.map);
-            var marker = new google.maps.Marker({
-                map: svc.map,
-                position: new google.maps.LatLng(info.latitude, info.longitude),
-                title: info.name
-            });
-            var infoWindow = new google.maps.InfoWindow();
-            marker.content = '<div class="infoWindowContent"> diveoperator_id:&nbsp' + info.id + '&nbsp(FB_id:&nbsp' + info.fb_id + ')<br/>' + 'lat:' + info.latitude + '&nbsp;' + 'lng:' + info.longitude;
-            google.maps.event.addListener(marker, "click", function () {
-                infoWindow.setContent('<h2>' + marker.title + '</h2>' + '<br/>' + marker.content);
-                infoWindow.open(svc.map, marker);
-            });
-        };
-
 
         var svcPolyPath = [];
         svc.createPolyPath = function () {
@@ -37,6 +17,11 @@
                 console.log("createPolyPath function");
                 var marker = new google.maps.Marker({
                     position: e.latLng,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        strokeColor: "green",
+                        scale: 3
+                    }
                 });
                 console.log(marker);
                 marker.setMap(svc.map);
@@ -58,18 +43,18 @@
         }
 
         svc.createPoly = function (polyPath) {
-            console.log(JSON.parse(polyPath));
+            console.log(polyPath);
             var polygon = new google.maps.Polygon({
-                paths: JSON.parse(polyPath),
+                paths: polyPath,
                 strokeColor: "#A0769A",
                 strokeOpactity: 0.8,
                 strokeWeight: 3,
                 fillColor: "#F8B0B7",
                 fillOpacity: 0.35,
+                zIndex: 1,
             });
             polygon.setMap(svc.map);
         };
-
 
 
         svc.resetPolyPath = function () {
@@ -77,5 +62,6 @@
             svcPolyPath = [];
         }
 
-    }//End PrepMapSvc
-})();
+
+    }//End of PrepMapSvc
+})();//End of IIFE

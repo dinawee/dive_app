@@ -12,7 +12,15 @@ Update the tokens in
 
 2. Change your config files
 
-Get the DB credentials from the admin 
+A. Config file for Amazon DB credentials 
+in: /prep/fb_data/config/development-cloud.js
+or /prep/map/config/development-cloud.js
 
-Change the pointer to config in 
-/server/db.js
+Referenced in: /server/db.js
+
+
+B. Config file for FB credentials 
+in  /prep/fb_data/config/development-cloud.js
+or /prep/map/config/development-cloud.js
+
+Referenced in /server/auth.js

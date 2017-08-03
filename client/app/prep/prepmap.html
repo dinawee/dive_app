@@ -17,7 +17,7 @@
     <div class="row">
         <!-- column 3.1 -->
         <div class="col-md-4">
-            <label for="instructions">Instructions</label>
+            <label for="divespots">Divespots</label>
             <p>1. Click on map to set markers and define divespot area (polygon path).</p>
             <p>2. <button ng-click="ctrl.createPoly()">Set divespot (polygon) area</button></p>
             <p>3. Add divespot (polygon) to divespots table.
@@ -35,10 +35,25 @@
         <!-- end of column 3.1 -->
         <!-- column 3.2 -->
         <div class="col-md-4">
-            <label for="polyPath">Divespots:</label>
-            <!-- <ul class="list-group" id="divespots" name="divespots" ng-repeat="i in ctrl.region">
-                <li class="list-group-item">coord: {{i.divespot_name}}</li>
-            </ul> -->
+            <label for="regions">Regions:</label>
+            <p>1. Click on map to set markers and define divespot area (polygon path).</p>
+            <p>2. <button ng-click="ctrl.createPoly()">Set region (polygon) area</button></p>
+            <p>3. Add region (polygon) to regions table.
+                <div>
+                    <form ng-submit="ctrl.DiveRegions()">
+                        <label for="region_name">Region name:</label>
+                        <input type="text" id="region_name" name="region_name" ng-model="ctrl.region.region_name">
+                        <button type="submit">Create Region</button>
+                    </form>
+                </div>
+            </p>
+            <p>4. Repeat steps 1 - 3 until all divespots (polygons) in a region are set.</p>
+            <p>5. <button ng-click="ctrl.displayDiveRegions()">Display regions</button></p>
+        </div>
+        <!-- end of column 3.2 -->
+        <!-- column 3.3 -->
+        <div class="col-md-4">
+
         </div>
         <!-- end of column 3.2 -->
     </div>

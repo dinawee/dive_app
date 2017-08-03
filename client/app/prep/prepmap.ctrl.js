@@ -14,51 +14,53 @@
                 .then(function (results) {
                     vm.results = results;
                     console.log("PrepMapCtrl --> retrieveDiveOperators successful");
-                    console.log(JSON.stringify(results[0]));
+                    // console.log(JSON.stringify(results[0]));
                     createMarker();
                 })
                 .catch(function (err) {
                     console.log("Error: \n" + (err));
                 })
         };
-        retrieveDiveOperators();
+        // retrieveDiveOperators();
 
         //Setting up Map variables
         var mapName = "prepmap";
-        const map = PrepMapSvc.initMap(mapName);
-
-        var createMarker = function () {
-            for (var i in vm.results) {
-                PrepMapSvc
-                    .createMarker(vm.results[i]);
-            };
+        var mapOptions = {
+            zoom: 5,
+            center: { lat: 0.2000285, lng: 118.015776 },
+            scrollwheel: false,
         }
+        var map = PrepMapSvc.initMap(mapName, mapOptions);
 
         PrepMapSvc.createPolyPath();
 
         vm.createPoly = function () {
             polyPath = PrepMapSvc.retrivePolyPath();
+            console.log(polyPath);
             PrepMapSvc
                 .createPoly(polyPath);
         }
 
-        //Creating divespot in divespots table
+//Creating records
 
-        vm.region_array = [];
+        //---DIVESPOTS
 
         var polyPath = [];
         vm.divespot = {};
 
-        var setDivespotValue = function () {
+        var setPolygonArray = function (polygon) {
             polyPath = PrepMapSvc.retrivePolyPath();
-            vm.divespot.divespot_array = polyPath;
+            if (polygon.divespot_array) {
+                polygon.divespot_array = polyPath;
+            }
+            else {
+                polygon.region_array = polyPath;
+            }
         };
 
         vm.createDivespot = function () {
-            setDivespotValue();
+            setPolygonArray(vm.divespot);
             console.log(vm.divespot);
-            vm.region_array.push(vm.divespot.divespot_array);
-            console.log(JSON.stringify(vm.region_array));
             PrepdbRouteSvc
                 .createDivespot(vm.divespot)
                 .then(function (results) {
@@ -69,17 +71,45 @@
                     console.log("Error: \n", err);
                     PrepMapSvc.resetPolyPath();
                 });
-                
+
         };
 
-        //Retrieving divespots (polygons)
+        //---REGIONS
 
-        var plotDivespotsOnMap = function () {
-            for (var i in vm.retrievedDivespots) {
-                PrepMapSvc
-                    .createPoly(vm.retrievedDivespots[i].divespot_array);
+        vm.region = {};
+
+        vm.createDiveRegions = function () {
+            setPolygonArray(vm.region);
+            console.log(vm.region);
+            PrepdbRouteSvc
+                .createRegion(vm.region)
+                .then(function (results) {
+                    console.log("PrepMapCtrl --> Result of createDiveRegion " + results);
+                    PrepMapSvc.resetPolyPath();
+                })
+                .catch(function (err) {
+                    console.log("Error: \n" + err);
+                    PrepMapSvc.resetPolyPath();
+                });
+        };
+
+//Retrieving records
+
+        var plotOnMap = function (retrievedResults) {
+            if (retrievedResults[0].divespot_name) {
+                for (var i in retrievedResults) {
+                    PrepMapSvc
+                        .createPoly(JSON.parse(retrievedResults[i].divespot_array));
+                }
+            } else {
+                for (var i in retrievedResults) {
+                    PrepMapSvc
+                        .createPoly(JSON.parse(retrievedResults[i].region_array));
+                }
             }
         };
+
+        //---DIVESPOTS
 
         vm.displayDivespots = function () {
             PrepdbRouteSvc
@@ -87,49 +117,29 @@
                 .then(function (results) {
                     console.log("PrepMapCtrl --> displayDivespots successful");
                     vm.retrievedDivespots = results.data;
-                    console.log(vm.retrievedDivespots[0].divespot_array);
-                    plotDivespotsOnMap();
+                    console.log(vm.retrievedDivespots);
+                    plotOnMap(vm.retrievedDivespots);
                 })
                 .catch(function (err) {
                     console.log("Error: \n", err);
                 });
         }
 
-        //Creating region in region table
+        //---REGIONS
 
-        vm.region = {
-            region_name: null,
-            region_array: vm.region_array
-        }
-
-        var createRegion = function () {
-            console.log(vm.region);
+        vm.displayDiveRegions = function () {
             PrepdbRouteSvc
-                .createRegion(vm.region)
+                .displayDiveRegions()
                 .then(function (results) {
-                    console.log("PrepMapCtrl --> Result of createRegion " + results);
+                    console.log("PrepMapCtrl --> displayDivespots successful");
+                    vm.retrievedDiveRegions = results.data;
+                    console.log(vm.retrievedDiveRegions[0].region_array);
+                    plotOnMap(vm.retrievedDiveRegions);
                 })
                 .catch(function (err) {
-                    console.log("Error: \n" + err);
+                    console.log("Error: \n", err);
                 });
-        };
+        }
 
     };//End PrepMapCtrl
-
-})();
-
-        //Clickable buttons that bring up infoWindow on marker
-        /*--
-        vm.clickedCity = clickedCity;
-        function clickedCity(e, marker) {
-            console.log(marker);
-            google.maps.event.trigger(marker, 'click');
-        };
-        --*/
-
-                //Creating a collection of polygons (aka region)
-        /* var createRegion = function () {
-             console.log(vm.polyPath);
-             polyPathCol.push(vm.polyPath);
-             console.log("polyPathCol: ", polyPathCol);
-         };*/
+})();//End of IIFE

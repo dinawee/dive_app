@@ -3,14 +3,13 @@
         .module("MyApp")
         .controller("SelectC", SelectC);
 
-    SelectC.$inject = ["$scope", "dbRouteService", "$state", "user"];
+    SelectC.$inject = ["$scope", "dbRouteService", "$state", "passportService"];
 
-    function SelectC($scope, dbRouteService, $state, user) {
+    function SelectC($scope, dbRouteService, $state, passportService) {
         var con = this;
 
         con.list; // initialize below
         con.id = "None";
-        con.user = user;
 
         // don't change con.object def - ties with FB object
         con.object = {
@@ -31,29 +30,35 @@
         }
         con.initialize();
 
-        /*
-            FUNCTIONS FOR DINA 
+        /* 
+            LEGACY FUNCTIONS
+            NOW CALLED BY MAP SERVICE 
+            **************************
+        
         */
+        
         con.select = function () {
             dbRouteService.getSelected(con.id);
-            console.log('The new value in the Service is now' + dbRouteService.selected());
+            console.log('The pin you selected has FB ID of: ' + dbRouteService.selected());
         };
 
         con.gothere = function () {
-            if (!user) {
-                // nothing happens because it will return true all the time
-            }
-            alert('Function not protected by login now, con.user always exists because now passportService.isUserAuth() returns true all the time\n\n AKAN DATANG\n 1. pending redirect function in select.controller to login page. \n 2. Login page not up yet, must create one\n 3. Facebook callbacks to HOME page even if failed login, need to re-route to LOGIN page on server/routes.js');
+            alert('0. Need a pre-check \n1. Need to show/ hide login/ logout - how does Ken do it? \n 2. if not defined, will insert null values' );
             con.select();
-            dbRouteService.pingFb()
+            
+            passportService.getAccessToken()
+                .then(function(aToken){
+                    return dbRouteService.pingFb(aToken)
+                })
                 .then(function(result){
                     $state.go('show'); 
                 })
                 .catch(function(err){
-                    console.log(err);
+                    alert('Please log in')
+                    console.log('The err is ' + JSON.stringify(err));
+                    $state.go('login');
                 });
-
-        }
+        }// close gothere()
 
 
     }; // end controller

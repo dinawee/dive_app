@@ -47,11 +47,10 @@ function callFb(rp, searchTerm) {
 
     // fire the first call
     // if the calling function is not inherently a promise, it must return the inner promise
-    // need return here also to push return value, other than promise
     return myLoop(params)
         .then(function (result) {
             fs.writeFileSync(filename, JSON.stringify(dataObject, null, 4));
-            var done = `Written ${Object.keys(dataObject).length} records to the file`
+            var done = `Written ${Object.keys(dataObject).length} records to the file`;
             console.log(done);
             return (done);
         })

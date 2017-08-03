@@ -43,6 +43,18 @@
                     <li class="nav-item active">
                         <a ui-sref="show">Show View <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active">
+                        <a ui-sref="login">Login<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/logout">Logout<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a ui-sref="bookmark">Bookmarks<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item-active">
+                        <a ui-sref="mapregion">Map Region <span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -52,13 +64,16 @@
 
     <!-- partials to load -->
 
+        <div ui-view="mapcountry"></div>
+        <div ui-view="mapregion"></div>
+
     <div class="container">
+        <div ui-view="login"></div>
         <div ui-view="map"></div>
-        <hr>
-        <div ui-view="select"></div>
         <div ui-view="show"></div>
         <!-- <div ui-view="show"></div>  -->
         <div ui-view="prepmap"></div>
+        <div ui-view="bookmark"></div>
     </div>
 
 
@@ -69,30 +84,34 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
     <!-- app scripts -->
+
     <!-- load module -->
     <script src="app/app.js"></script>
 
     <!-- load routes -->
     <script src="app/config/app.route.js"></script>
+
     <!-- load services-->
+    <script src="app/services/passport.service.js"></script>
+    <script src="app/services/mail.service.js"></script>
+    <script src="app/services/bookmark.service.js"></script>
     <script src="app/services/dbroute.service.js"></script>
     <script src="app/services/map.service.js"></script>
-    <script src="app/services/passport.service.js"></script>
-
-
+    <script src="app/services/mapdbroute.service.js"></script>
 
     <!-- load controllers -->
-    <script src="app/home/map.ctrl.js"></script>
-    <script src="app/home/select.controller.js"></script>
-    <script src="app/home/show.controller.js"></script>
-    <!--<script src="app/edit/edit.controller.js"></script>-->
+    <script src="app/home/map_country.ctrl.js"></script>
+    <script defer src="app/home/map_region.ctrl.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/home/show.controller.js"></script> 
+    <script src="app/home/bookmark.controller.js"></script>
 
     <!-- load google maps api -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQYQrDMpPGwIBOos_2HHV2pacKurBmVY"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQYQrDMpPGwIBOos_2HHV2pacKurBmVY&libraries=geometry"></script>
 
     <!-- load prep ctrl and svcs -->
-    <script src="app/prep/prepmap.ctrl.js"></script>
-    <script src="app/prep/prepmap.svc.js"></script>
+    <script defer src="app/prep/prepmap.ctrl.js"></script>
+    <script defer src="app/prep/prepmap.svc.js"></script>
     <script src="app/prep/prepdbroute.svc.js"></script>
 </body>
 
