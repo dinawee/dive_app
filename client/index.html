@@ -41,7 +41,6 @@
                         <a ui-sref="prepmap">Prep Map <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-<<<<<<< HEAD
                         <a ui-sref="show">Show View <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
@@ -52,9 +51,9 @@
                     </li>
                     <li class="nav-item active">
                         <a ui-sref="bookmark">Bookmarks<span class="sr-only">(current)</span></a>
-=======
+                    </li>
+                    <li class="nav-item-active">
                         <a ui-sref="mapregion">Map Region <span class="sr-only">(current)</span></a>
->>>>>>> dina_work
                     </li>
                 </ul>
             </div>
@@ -67,7 +66,7 @@
 
         <div ui-view="mapcountry"></div>
         <div ui-view="mapregion"></div>
-        
+
     <div class="container">
         <div ui-view="login"></div>
         <div ui-view="map"></div>
@@ -92,35 +91,20 @@
     <!-- load routes -->
     <script src="app/config/app.route.js"></script>
 
-    <!-- load map ctrl and svc -->
-    <script src="app/services/map.service.js"></script>
-    <script src="app/home/map_country.ctrl.js"></script>
-    <script defer src="app/home/map_region.ctrl.js"></script>
-
     <!-- load services-->
     <script src="app/services/passport.service.js"></script>
-    <script src="app/services/dbroute.service.js"></script>
-<<<<<<< HEAD
-    <script src="app/services/map.service.js"></script>
     <script src="app/services/mail.service.js"></script>
     <script src="app/services/bookmark.service.js"></script>
-
-
-    <!-- load controllers -->
-    <script src="app/home/map.ctrl.js"></script>
-    <!-- <script src="app/home/select.controller.js"></script> -->
-    <script src="app/home/show.controller.js"></script> 
-    <script src="app/login/login.controller.js"></script>
-    <script src="app/home/bookmark.controller.js"></script>
-
-=======
+    <script src="app/services/dbroute.service.js"></script>
+    <script src="app/services/map.service.js"></script>
     <script src="app/services/mapdbroute.service.js"></script>
 
     <!-- load controllers -->
-    <script src="app/home/select.controller.js"></script>
-    <script src="app/home/show.controller.js"></script>
->>>>>>> dina_work
-    <!--<script src="app/edit/edit.controller.js"></script>-->
+    <script src="app/home/map_country.ctrl.js"></script>
+    <script defer src="app/home/map_region.ctrl.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/home/show.controller.js"></script> 
+    <script src="app/home/bookmark.controller.js"></script>
 
     <!-- load google maps api -->
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQYQrDMpPGwIBOos_2HHV2pacKurBmVY&libraries=geometry"></script>
