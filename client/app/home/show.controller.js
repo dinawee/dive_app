@@ -3,9 +3,9 @@
         .module("MyApp")
         .controller("ShowC", ShowC);
 
-    ShowC.$inject = ["$scope", "dbRouteService", "$stateParams", "mailService", "bookmarkService"];
+    ShowC.$inject = ["$scope", "fbService", "$stateParams", "mailService", "bookmarkService"];
 
-    function ShowC($scope, dbRouteService, $stateParams, mailService, bookmarkService) {
+    function ShowC($scope, fbService, $stateParams, mailService, bookmarkService) {
         var con = this;
 
         // fb definition - next time define the whole thing here
@@ -16,11 +16,18 @@
             cover: { source: "" },
         };
 
-        con.initialize = function () {
-            con.object = dbRouteService.object;
-        };
+        /* when you init bookmarks controller the show value should be some default
+
+        */
         
-        con.initialize();
+        $scope.$watch( function () {
+            return fbService.object;
+        }, function (newValue, oldValue) {
+            console.log('The old value is' + oldValue);
+            console.log('The new value is' + newValue);
+           con.object = fbService.object;
+        }, true);
+
 
         // temp email
         con.sendEmail = function () {
@@ -30,17 +37,6 @@
         con.bookmark = function() {
             bookmarkService.createOne(con.object.id);
         };
-
-        // Legacy Code - using change in $state and $stateParams
-        // if ($stateParams) {
-        //     dbRouteService.pingFb()
-        //         .then(function (result) {
-        //             con.object = dbRouteService.object;
-        //         })
-        //         .catch(function (err) {
-        //             console.log(err);
-        //         });
-        // }
 
 
     }; // end controller

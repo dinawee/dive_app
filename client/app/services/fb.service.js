@@ -1,30 +1,16 @@
 (function () {
     angular
         .module("MyApp")
-        .service("dbRouteService", dbRouteService);
+        .service("fbService", fbService);
 
-    dbRouteService.$inject = ["$http"];
+    fbService.$inject = ["$http"];
 
-    function dbRouteService($http) {
+    function fbService($http) {
         var service = this;
 
         service.object = {};
+        service.success = null;
         service.id;
-
-        // endpoint is GET '/list' 
-        service.retrieveDiveOperators = function () {
-            console.log('Now retrieving latest list from server');
-            return $http.get('/api/diveoperators')
-                .then(function (result) {
-                    console.log("Result.data is >>>>>");
-                    // console.log(JSON.stringify(result.data));
-                    return result.data;
-                })
-                .catch(function (err) {
-                    console.log(err);
-                })
-        }; // end retrieveDiveOperators
-            
         
         /*
         $watch stuff  
@@ -38,7 +24,6 @@
         service.selected = function () {
             return service.id;
         }
-
 
         service.pingFb = function (userToken) {
             var id = service.id;
@@ -58,6 +43,7 @@
                     console.log(`Query was successful to ${id}`);
                     service.object = result.data;
                     console.log('The return from FB is ' + JSON.stringify(service.object));
+                    service.success = service.id;
                 })
                 .catch(function (err) {
                     console.log("The error for calling FB is " + err);
@@ -66,6 +52,6 @@
 
 
 
-    }// end dbRouteService 
+    }// end fbService 
 
 })();

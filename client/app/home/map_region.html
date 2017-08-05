@@ -1,4 +1,7 @@
 <div>
+    <div id="showmap"></div>
+
+    <!-- Do we still need the commented out stuff? -->
 
     <!--row 1 -->
     <!-- <div class="row">
@@ -13,9 +16,28 @@
     <!-- end of row 2-->
 
     <!-- row 3 -->
-    <hr>
     <div class="row">
     </div>
     <!-- end of row 3 -->
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+    <div class="row" ng-if="ctrl.toggleShow">
+        <div class="col-md-4 col-md-offset-4 well show-clear">
+            <div ui-view="show"></div>
+            <div class="button btn btn-sm" ng-click="ctrl.scrollTo('showmap')" 
+                id="showresult">Back to map
+            </div>
+        </div>
+    </div>
+
+
+
 
 </div>

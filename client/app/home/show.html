@@ -1,35 +1,32 @@
 <div>
-    </br>
-    <button class="btn btn-danger" ng-click="con.sendEmail()">Send Me Email</button>
-    </br>
-    </br>
-    <button class="btn btn-success" ng-click="con.bookmark()">Bookmark Me!</button>
+
     <p>
-
-        <h3>Dive Operator</h3>
-        {{ con.object.name }} </br>
-
+        <h4><em>Dive Operator</em> | {{ con.object.name }}</h4>
+        </br>
     </p>
-    <div ng-if="con.object.cover.source">
+
+    <div ng-if="con.object.cover.source" class="show-img">
         <img ng-src="{{con.object.cover.source}}">
     </div>
 
-    <h3>Contact</h3>
-    <div ng-if="con.object.phone">
-        {{ con.object.phone }} </br>
-    </div>
-    <div ng-if="!con.object.phone">
-        This page has no phone. </br>
-    </div>
+    <p>
+    <h4><em>Contact</em></h4>
+        {{ con.object.phone ? con.object.phone : "This page has no contact detail." }} </br>
+    </p>
+    <br>
 
-    <h3>Description</h3>
-    <div ng-if="con.object.about">
-        {{ con.object.about }} </br>
-    </div>
-    <div ng-if="!con.object.about">
-        This page has no description. </br>
-    </div>
+    <p>
+    <h4><em>Description</em></h4>
+        {{ con.object.about ? con.object.about : "This page has no description." }} </br>
 
+    </p>
+    <br>
+
+    </br>
+    <button class="btn btn-danger btn-block" ng-click="con.sendEmail()">Send Me Email</button>
+    </br></br>
+    <button class="btn btn-success btn-block" ng-click="con.bookmark()">Add Bookmark</button>
+    <p>
 
 
 </div>

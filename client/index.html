@@ -10,6 +10,9 @@
     <!-- load bootstrap before your styles -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="app/css/map.css" rel="stylesheet">
+    <link href="app/css/login.css" rel="stylesheet">
+    <link href="app/css/misc.css" rel="stylesheet">
+    <link href="app/fonts/ionicons.min.css" rel="stylesheet">
 
 </head>
 
@@ -41,9 +44,6 @@
                         <a ui-sref="prepmap">Prep Map <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a ui-sref="show">Show View <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
                         <a ui-sref="login">Login<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
@@ -64,17 +64,17 @@
 
     <!-- partials to load -->
 
-        <div ui-view="mapcountry"></div>
+    <div ui-view></div>
+         <div ui-view="mapcountry"></div>
         <div ui-view="mapregion"></div>
 
     <div class="container">
         <div ui-view="login"></div>
         <div ui-view="map"></div>
         <div ui-view="show"></div>
-        <!-- <div ui-view="show"></div>  -->
         <div ui-view="prepmap"></div>
         <div ui-view="bookmark"></div>
-    </div>
+    </div> 
 
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -95,7 +95,7 @@
     <script src="app/services/passport.service.js"></script>
     <script src="app/services/mail.service.js"></script>
     <script src="app/services/bookmark.service.js"></script>
-    <script src="app/services/dbroute.service.js"></script>
+    <script src="app/services/fb.service.js"></script>
     <script src="app/services/map.service.js"></script>
     <script src="app/services/mapdbroute.service.js"></script>
 

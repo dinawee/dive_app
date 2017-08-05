@@ -1,9 +1,16 @@
-<h1>My Bookmarks</h1>
+
+
+
 
 <div class="row">
-    </br>
-    <div class="col-xs-8">
-        <table>
+    <div class="col-md-12 well">
+        <h1>My Bookmarks</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 well">
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>No. </th>
@@ -19,5 +26,9 @@
                 </tr>
             </tbody> 
         </table>
+    </div>
+    <!-- end xs-8 -->
+    <div class="col-md-8 col-xs-offset-1 well show-clear">
+        <div ui-view="show"></div>
     </div>
 </div>

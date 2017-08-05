@@ -1,0 +1,18 @@
+.show-clear {
+    background: rgba(0,0,0,0);
+    border: none;
+}
+
+.show-img {
+    height: 400px;
+    width: 400px;
+}
+
+.show-img img{
+    max-width: 100%;
+    max-height: auto;
+}
+
+.show-back {
+    float: right;
+}

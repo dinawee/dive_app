@@ -3,9 +3,9 @@
         .module("MyApp")
         .service("MapSvc", MapSvc);
 
-    MapSvc.$inject = ["dbRouteService", "passportService", "$state", "MapdbRouteSvc"];
+    MapSvc.$inject = ["fbService", "passportService", "$state", "MapdbRouteSvc"];
 
-    function MapSvc(dbRouteService, passportService, $state, MapdbRouteSvc) {
+    function MapSvc(fbService, passportService, $state, MapdbRouteSvc) {
         var svc = this;
 
         svc.initMap = function (mapName, mapOptions) {
@@ -17,10 +17,10 @@
         var takemethere = function () {
             return passportService.getAccessToken()
                 .then(function(aToken){
-                    return dbRouteService.pingFb(aToken)
+                    return fbService.pingFb(aToken)
                 })
                 .then(function(result){
-                    $state.go('show'); 
+                   console.log('Taken me there');
                 })
         }
 
@@ -51,9 +51,9 @@
             var infoWindow = new google.maps.InfoWindow();
             google.maps.event.addListener(marker, "click", function () {
 
-                dbRouteService.getSelected(info.fb_id);
-                    console.log('The pin you selected has FB ID of: ' + dbRouteService.selected());
-                    alert('0. Need a pre-check \n1. Need to show/ hide login/ logout - how does Ken do it? \n 2. if not defined, will insert null values' );
+                fbService.getSelected(info.fb_id);
+                    console.log('The pin you selected has FB ID of: ' + fbService.selected());
+                
                 var origContent = '<h2>' + marker.title + '</h2>' + '<br/>' + marker.content;
                 var infoWindowContent = document.createElement('div');
                 infoWindowContent.innerHTML = origContent;

@@ -8,21 +8,26 @@
     function uiRouteConfig($stateProvider, $urlRouterProvider) {
         // .state takes 2 params - state name string & object
         $stateProvider
-            .state('login',{
+            .state('login', {
                 url: '/login',
                 views: {
-                    'login' : {
+                    'login': {
                         templateUrl: '/app/login/login.html',
                         controller: 'LoginC as con'
                     }
                 }
             })
-            .state('bookmark',{
+            .state('bookmark', {
                 url: '/user/bookmark',
+                authenticate: true,
                 views: {
-                    'bookmark' : {
+                    'bookmark': {
                         templateUrl: 'app/home/bookmark.html',
                         controller: 'BookmarkC as con'
+                    },
+                    'show@bookmark': {
+                        templateUrl: '/app/home/show.html',
+                        controller: 'ShowC as con'
                     }
                 }
             })
@@ -32,32 +37,19 @@
                     'mapcountry': {
                         templateUrl: '/app/home/map_country.html',
                         controller: 'MapCtrl as ctrl'
-                    },
-                    // 'select': {
-                    //     templateUrl: '/app/home/select.html',
-                    //     controller: 'SelectC as con'
-                    // },
-                    'show': {
-                        templateUrl: '/app/home/show.html',
-                        controller: 'ShowC as con'
                     }
-                }, 
-                // resolve: {
-                //     user : function(passportService) {
-                //         return passportService.getAccessToken() 
-                //         // this should hold onto resolve until getAccessToken() returns
-                //     }
-                // }
+                },
             })
-            .state('show', {
-                url: '/show',
-                views: {
-                    'show': {
-                        templateUrl: '/app/home/show.html',
-                        controller: 'ShowC as con'
-                    }
-                }
-            })
+            // .state('show', {
+            //     url: '/show',
+            //     authenticate: true,
+            //     views: {
+            //         'show': {
+            //             templateUrl: '/app/home/show.html',
+            //             controller: 'ShowC as con'
+            //         }
+            //     }
+            // })
             .state("prepmap", {
                 url: "/map",
                 views: {
@@ -73,6 +65,10 @@
                     "mapregion": {
                         templateUrl: "app/home/map_region.html",
                         controller: "RegionCtrl as ctrl"
+                    },
+                    'show@mapregion': {
+                        templateUrl: '/app/home/show.html',
+                        controller: 'ShowC as con'
                     }
                 }
             });

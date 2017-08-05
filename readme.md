@@ -6,7 +6,7 @@
 Get from here: https://developers.facebook.com/tools/explorer
 
 Update the tokens in 
-/client/app/services/dbroute.service.js
+/client/app/services/fb.service.js
 
 
 
