@@ -2,6 +2,7 @@
     angular
         .module("MyApp")
         .controller("RegionCtrl", RegionCtrl)
+        .value('duScrollDuration', 1600)
         .value('duScrollOffset', 30);
 
     RegionCtrl.$inject = ["$scope", "$document", "$anchorScroll", "MapSvc", "MapdbRouteSvc", "fbService"];

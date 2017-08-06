@@ -7,6 +7,13 @@
   display: none !important;
 }
 
+/* .bm-number {
+    position: absolute;
+  font-size: 1em;
+  top: 10px;
+  right: 20px;
+} */
+
 .show-clear {
     background: rgba(0,0,0,0);
     border: none;

@@ -3,17 +3,14 @@
         .module('MyApp')
         .controller('LoginC', LoginC);
 
-    LoginC.$inject = ["$scope", "passportService", "$state"];
+    LoginC.$inject = ["$scope", "passportService", "$state", "bookmarkService"];
 
-    function LoginC($scope, passportService, $state) {
+    function LoginC($scope, passportService, $state, bookmarkService) {
         var con = this;
 
         con.isLoggedIn = false;
 
-        con.login = function () {
-            console.log('Logging in now');
-            passportService.login();
-        }
+        con.bookmarks = 0;
 
         con.logout = function () {
             passportService.logout();
@@ -29,6 +26,13 @@
             con.isLoggedIn = false;
         });
 
+        $scope.$watch(function () {
+            return bookmarkService.userBookmarks.length;
+        }, function (newValue, oldValue) {
+                console.log('The old v is %d', oldValue);
+                console.log('The new v is %d', newValue);
+                con.bookmarks = newValue;
+        });
 
     }// close controller
 

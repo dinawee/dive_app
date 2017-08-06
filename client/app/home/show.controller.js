@@ -16,6 +16,7 @@
             cover: { source: "" },
         };
 
+        con.isAdded = false;
         /* when you init bookmarks controller the show value should be some default
 
         */
@@ -23,10 +24,16 @@
         $scope.$watch( function () {
             return fbService.object;
         }, function (newValue, oldValue) {
-            console.log('The old value is' + oldValue);
-            console.log('The new value is' + newValue);
-           con.object = fbService.object;
-        }, true);
+            // performance problem...
+            con.isAdded = false;
+            for (var index in bookmarkService.userBookmarks) {
+                if (bookmarkService.userBookmarks[index]["dive_operator"]["fb_id"] === fbService.object.id){
+                    con.isAdded = true;
+                    break;
+                }
+            }
+            con.object = fbService.object;
+        });
 
 
         // temp email
