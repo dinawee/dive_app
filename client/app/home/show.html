@@ -10,21 +10,17 @@
     </div>
 
     <p>
-    <h4><em>Contact</em></h4>
+        <h4><em>Contact</em></h4>
         {{ con.object.phone ? con.object.phone : "This page has no contact detail." }} </br>
     </p>
     <br>
 
     <p>
-    <h4><em>Description</em></h4>
+        <h4><em>Description</em></h4>
         {{ con.object.about ? con.object.about : "This page has no description." }} </br>
-
     </p>
-    <br>
-
-    </br>
-    <button class="btn btn-danger btn-block" ng-click="con.sendEmail()">Send Me Email</button>
-    </br></br>
+    
+    <br></br></br>
     <button class="btn btn-success btn-block" ng-click="con.bookmark()">Add Bookmark</button>
     <p>
 

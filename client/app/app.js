@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module("MyApp", ["ui.router"])
+        .module("MyApp", ["ui.router", "duScroll"])
         .run(init);
             
         init.$inject = ['$transitions', '$state', 'passportService'];
@@ -9,14 +9,15 @@
             $transitions.onStart( { to: '**' }, 
                 function(trans){
                     var nextState = trans.to(); // is this pass by reference?
-                    // check if state has authenticate property
+                    // check if user is logged in; they will have accessToken
                     if (nextState.authenticate) { 
-                        return passportService.getAccessToken()
-                        .then(function(token){
-                            // do nothing
+                        return passportService.getAccessToken().then(function(token){
+                            // retrieve bookmarks
                         })
-                        .catch(function(err){ // 401 will return .catch immediately
-                            console.log('Not authorised');
+                        .catch(function(err){ 
+                            if (nextState.authenticate === "home"){
+                                return; // allow default to go through still
+                            }
                             $state.transitionTo("login");
                             event.preventDefault();
                         });

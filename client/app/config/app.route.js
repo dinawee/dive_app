@@ -33,6 +33,7 @@
             })
             .state('home', {
                 url: '/home',
+                authenticate: "home", // special setting for Angular.run to know
                 views: {
                     'mapcountry': {
                         templateUrl: '/app/home/map_country.html',
@@ -40,16 +41,6 @@
                     }
                 },
             })
-            // .state('show', {
-            //     url: '/show',
-            //     authenticate: true,
-            //     views: {
-            //         'show': {
-            //             templateUrl: '/app/home/show.html',
-            //             controller: 'ShowC as con'
-            //         }
-            //     }
-            // })
             .state("prepmap", {
                 url: "/map",
                 views: {

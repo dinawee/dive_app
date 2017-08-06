@@ -22,6 +22,10 @@
                 .then(function(result){
                    console.log('Taken me there');
                 })
+                .catch(function(err){
+                    alert('Takeme function says: You are not logged in');
+                    $state.go('login');
+                });
         }
 
         svc.markersDiveOperators = [];

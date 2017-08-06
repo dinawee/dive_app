@@ -35,7 +35,7 @@
 
             <!-- dont use data toggle when using ui-routing -->
             <!-- use ui-sref -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse navbar-light" ng-controller="LoginC as con" ng-cloak>
                 <ul class="nav navbar-nav">
                     <li class="nav-item active">
                         <a ui-sref="home">Home <span class="sr-only">(current)</span></a>
@@ -44,17 +44,24 @@
                         <a ui-sref="prepmap">Prep Map <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a ui-sref="login">Login<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="/logout">Logout<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a ui-sref="bookmark">Bookmarks<span class="sr-only">(current)</span></a>
+                        <a ui-sref="bookmark" ng-if="con.isLoggedIn">
+                            Bookmarks<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item-active">
                         <a ui-sref="mapregion">Map Region <span class="sr-only">(current)</span></a>
                     </li>
+                    <!-- all the login routes based on LoginC -->
+                    <li class="nav-item active" ng-if="!(con.isLoggedIn)">
+                        <a ui-sref="login">Login<span class="sr-only">(current)</span></a>
+                        <!-- perform actual login on the login page -->
+                    </li>
+                    <li class="nav-item active" ng-if="con.isLoggedIn">
+                        <a href="#" ng-click="con.logout()">
+                            Logout
+                        <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- end login routes -->
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -82,6 +89,7 @@
     <script src="bower_components/angular/angular.js"></script>
     <!--<script src="bower_components/angular-messages/angular-messages.min.js"></script>-->
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-scroll//angular-scroll.min.js"></script>
 
     <!-- app scripts -->
 

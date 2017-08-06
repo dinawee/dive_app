@@ -1,18 +1,23 @@
 (function () {
     angular
         .module("MyApp")
-        .controller("RegionCtrl", RegionCtrl);
+        .controller("RegionCtrl", RegionCtrl)
+        .value('duScrollOffset', 30);
 
-    RegionCtrl.$inject = ["$scope", "$location", "$anchorScroll", "MapSvc", "MapdbRouteSvc", "fbService"];
+    RegionCtrl.$inject = ["$scope", "$document", "$anchorScroll", "MapSvc", "MapdbRouteSvc", "fbService"];
 
-    function RegionCtrl($scope, $location, $anchorScroll, MapSvc, MapdbRouteSvc, fbService) {
+    function RegionCtrl($scope, $document, $anchorScroll, MapSvc, MapdbRouteSvc, fbService) {
         var ctrl = this;
 
         ctrl.toggleShow = false; //controls the show-hide of show view
 
-        ctrl.scrollTo = function (location) {
-            $location.hash(location);
-            $anchorScroll();
+        ctrl.toPlace = function(place){
+            $document.scrollToElementAnimated(place); // provided by duScroll library
+        }
+
+        ctrl.toShowMap = function(){
+            $document.scrollTopAnimated(0); // provided by duScroll library
+            // the offset is how many pixels from window top
         }
 
         // Init the watcher
@@ -26,7 +31,8 @@
             }
             console.log('>>>>> Calling show now');
             ctrl.toggleShow = true;
-            ctrl.scrollTo('showresult');
+            var showresult = angular.element(document.getElementById('showresult')); 
+            ctrl.toPlace(showresult);
         });
 
         // Map Functions //

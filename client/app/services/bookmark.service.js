@@ -11,6 +11,8 @@
 
         svc.selectedBookmarks;
 
+        svc.userBookmarks = {};
+
         svc.createOne = function (fb_id) {
             body = { fb_id: fb_id };
             $http.post('/api/bookmarks', body)
