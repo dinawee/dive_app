@@ -4,10 +4,21 @@
         .controller("RegionCtrl", RegionCtrl)
         .value('duScrollDuration', 1200);
 
-    RegionCtrl.$inject = ["$scope", "$document", "$anchorScroll", "MapSvc", "MapdbRouteSvc", "fbService", "passportService"];
+    RegionCtrl.$inject = ["$scope", "$document", "MapSvc", "MapdbRouteSvc", "fbService", "passportService"];
 
-    function RegionCtrl($scope, $document, $anchorScroll, MapSvc, MapdbRouteSvc, fbService, passportService) {
+    function RegionCtrl($scope, $document, MapSvc, MapdbRouteSvc, fbService, passportService) {
         var ctrl = this;
+
+         
+
+
+
+        function init () {
+            // Toggle display - hide of injected show view 
+            // toggled by watching from fbService, see below
+            ctrl.toggleShow = false; 
+        }
+        init();
 
 
         // Scroll Functions // 
@@ -22,36 +33,24 @@
         }
 
 
-        // Toggle display - hide of injected show view // 
-        ctrl.toggleShow = false; 
-        // controlled by 2 watchers from passportService and fbService
-
+       // Watcher for toggle display //
         $scope.$watch(function () {
             // watch any change in value of the success state in fbService
             // when a new pin data is returned the value changes
             return fbService.success;
         }, function (newValue, oldValue) {
-            if (newValue === null) {
+            // equality prevents it from firing when init
+            if (newValue === oldValue) {
                 return;
             }
+            console.log('Calling toggle');
             ctrl.toggleShow = true;
             var showresult = angular.element(document.getElementById('showresult')); 
             ctrl.toPlace(showresult);
         });
 
 
-         $scope.$watch(function () {
-            // watch for any change in log in status
-            return passportService.isLoggedIn;
-        }, function (newValue, oldValue) {
-            if (newValue === false) {
-                ctrl.toggleShow = false;
-            }
-        });
-
-
-
-        // Map Functions //
+        // Map Functions, called on init //
         var plotOnMap = function (retrievedResults) {
             for (var i in retrievedResults) {
                 console.log(retrievedResults[i]);

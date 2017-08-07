@@ -41,7 +41,7 @@
                     console.log(`Query was successful to ${id}`);
                     service.object = result.data;
                     console.log('The return from FB is ' + JSON.stringify(service.object));
-                    service.success = service.id;
+                    service.success = new Date().getTime();; // return unique timestamp
                 })
                 .catch(function (err) {
                     console.log("The error for calling FB is " + err);
