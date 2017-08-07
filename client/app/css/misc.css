@@ -14,20 +14,34 @@
   right: 20px;
 } */
 
+.nogap {
+    margin-bottom: 0px;
+}
+
+
+/* 
+Show Styles
+*/
+
+#show-box {
+    padding-top: 40px;
+}
+
+/* not used */
 .show-clear {
     background: rgba(0,0,0,0);
     border: none;
 }
 
 .show-img {
-    height: 400px;
     width: 400px;
+    height: auto;
 }
 
 .show-img img{
     max-width: 100%;
-    max-height: auto;
-}
+    max-height: 100%;
+} 
 
 .show-back {
     float: right;

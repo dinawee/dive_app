@@ -12,12 +12,10 @@
         service.success = null;
         service.id;
         
-        /*
-        $watch stuff  
-        */
+
         // setter method - getSelected
-        service.getSelected = function (id_param) {
-            service.id = id_param;
+        service.getSelected = function (fb_id) {
+            service.id = fb_id;
         }
 
         // getter method - selected 

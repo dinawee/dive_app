@@ -2,18 +2,18 @@
     angular
         .module("MyApp")
         .controller("RegionCtrl", RegionCtrl)
-        .value('duScrollDuration', 1600)
-        .value('duScrollOffset', 30);
+        .value('duScrollDuration', 1200);
 
-    RegionCtrl.$inject = ["$scope", "$document", "$anchorScroll", "MapSvc", "MapdbRouteSvc", "fbService"];
+    RegionCtrl.$inject = ["$scope", "$document", "$anchorScroll", "MapSvc", "MapdbRouteSvc", "fbService", "passportService"];
 
-    function RegionCtrl($scope, $document, $anchorScroll, MapSvc, MapdbRouteSvc, fbService) {
+    function RegionCtrl($scope, $document, $anchorScroll, MapSvc, MapdbRouteSvc, fbService, passportService) {
         var ctrl = this;
 
-        ctrl.toggleShow = false; //controls the show-hide of show view
 
+        // Scroll Functions // 
         ctrl.toPlace = function(place){
-            $document.scrollToElementAnimated(place); // provided by duScroll library
+            var offset = -300; // scroll 300 px lower than element to be safe
+            $document.scrollToElementAnimated(place, offset); // provided by duScroll library
         }
 
         ctrl.toShowMap = function(){
@@ -21,7 +21,11 @@
             // the offset is how many pixels from window top
         }
 
-        // Init the watcher
+
+        // Toggle display - hide of injected show view // 
+        ctrl.toggleShow = false; 
+        // controlled by 2 watchers from passportService and fbService
+
         $scope.$watch(function () {
             // watch any change in value of the success state in fbService
             // when a new pin data is returned the value changes
@@ -30,11 +34,22 @@
             if (newValue === null) {
                 return;
             }
-            console.log('>>>>> Calling show now');
             ctrl.toggleShow = true;
             var showresult = angular.element(document.getElementById('showresult')); 
             ctrl.toPlace(showresult);
         });
+
+
+         $scope.$watch(function () {
+            // watch for any change in log in status
+            return passportService.isLoggedIn;
+        }, function (newValue, oldValue) {
+            if (newValue === false) {
+                ctrl.toggleShow = false;
+            }
+        });
+
+
 
         // Map Functions //
         var plotOnMap = function (retrievedResults) {

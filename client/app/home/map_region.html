@@ -20,17 +20,21 @@
     </div>
     <!-- end of row 3 -->
 
-    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+    </br></br></br></br></br></br></br></br>
 
     <div class="row" ng-show="ctrl.toggleShow">
-        <div class="col-md-4 col-md-offset-4 well show-clear">
+        <div class="col-md-4 col-md-offset-4">
             <div ui-view="show"></div></br>
-                    <div class="button btn btn-info" ng-click="ctrl.toShowMap()">
-                        Back to map
+                <div class="row">
+                    <div class="button btn btn-info btn-sm" ng-click="ctrl.toShowMap()">
+                        Back to map</br>
+                        <i class="icon ion-chevron-up"></i>
                     </div>
+                </div>
             </div>
         </div>
     </div>
+    </br></br></br></br>
     <div id="showresult"></div>
 
 

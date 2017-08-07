@@ -24,7 +24,7 @@
         $scope.$watch( function () {
             return fbService.object;
         }, function (newValue, oldValue) {
-            // performance problem...
+            // performance problem... pls refactor
             con.isAdded = false;
             for (var index in bookmarkService.userBookmarks) {
                 if (bookmarkService.userBookmarks[index]["dive_operator"]["fb_id"] === fbService.object.id){
