@@ -10,10 +10,6 @@
     background-color: cornflowerblue;
 }
 
-#wrapper {
-    position: relative;
-}
-
 #selectedregion {
     height: 520px;
     width: 100%;

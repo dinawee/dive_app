@@ -3,27 +3,28 @@
         .module("MyApp")
         .service("MapSvc", MapSvc);
 
-    MapSvc.$inject = ["dbRouteService", "passportService", "$state", "MapdbRouteSvc"];
+    MapSvc.$inject = ["dbRouteService", "passportService", "$state", "MapdbRouteSvc", "$rootScope"];
 
-    function MapSvc(dbRouteService, passportService, $state, MapdbRouteSvc) {
+    function MapSvc(dbRouteService, passportService, $state, MapdbRouteSvc, $rootScope) {
         var svc = this;
 
+        //Initialiding map
         svc.initMap = function (mapName, mapOptions) {
             svc.map = new google.maps.Map(document.getElementById(mapName), mapOptions);
             return svc.map;
         }
 
-
         var takemethere = function () {
             return passportService.getAccessToken()
-                .then(function(aToken){
+                .then(function (aToken) {
                     return dbRouteService.pingFb(aToken)
                 })
-                .then(function(result){
-                    $state.go('show'); 
+                .then(function (result) {
+                    $state.go('show');
                 })
         }
 
+        //Retrieving dive operators from db
         svc.markersDiveOperators = [];
 
         svc.retrieveDiveOperators = function (results) {
@@ -34,26 +35,28 @@
             }
         };
 
+        //Create marker
         var createMarker = function (info) {
             var marker = new google.maps.Marker({
                 map: svc.map,
                 position: new google.maps.LatLng(info.latitude, info.longitude),
                 title: info.name,
-                visible: false
+                visible: false,
+                icon: "/app/images/orange_marker_min.png"
             });
             marker.content = '<div class="infoWindowContent"> diveoperator_id:&nbsp' + info.id + '&nbsp(FB_id:&nbsp' + info.fb_id + ')<br/>' + 'lat:' + info.latitude + '&nbsp;' + 'lng:' + info.longitude + '</div>';
             setMarkerBehaviour(marker, info);
             svc.markersDiveOperators.push(marker);
         };
 
-
+        //Set marker behaviour
         var setMarkerBehaviour = function (marker, info) {
             var infoWindow = new google.maps.InfoWindow();
             google.maps.event.addListener(marker, "click", function () {
-
                 dbRouteService.getSelected(info.fb_id);
-                    console.log('The pin you selected has FB ID of: ' + dbRouteService.selected());
-                    alert('0. Need a pre-check \n1. Need to show/ hide login/ logout - how does Ken do it? \n 2. if not defined, will insert null values' );
+                console.log('The pin you selected has FB ID of: ' + dbRouteService.selected());
+                alert('0. Need a pre-check \n1. Need to show/ hide login/ logout - how does Ken do it? \n 2. if not defined, will insert null values');
+                //TO-DO: create DOM object for info-window
                 var origContent = '<h2>' + marker.title + '</h2>' + '<br/>' + marker.content;
                 var infoWindowContent = document.createElement('div');
                 infoWindowContent.innerHTML = origContent;
@@ -98,6 +101,7 @@
             return polyBoundsCenter;
         };
 
+        //Set listener for polygon
         var setPolyListener = function (polygon, polyName, polyBoundsCenter) {
             var infoWindow = new google.maps.InfoWindow();
             google.maps.event.addListener(polygon, "mouseover", function () {
@@ -110,27 +114,37 @@
             });
         };
 
-        var setDivespotPolyOptions = function (polygon, polyObj, rectangle, polyBoundsCenter) {
-            // console.log("PolyObj ---->", polyObj);
-            var polyName = polyObj.divespot_name;
-            polygon.set("polyName", polyName);
-            setPolyListener(polygon, polyName, polyBoundsCenter);
+        svc.exploreMe = function (polygon, rectangle) {
             var rectangle = setPolyBounds(polygon);
             var polyBoundsCenter = setPolyBoundsCenter(rectangle);
-            google.maps.event.addListener(polygon, "click", function () {
-                polygon.setOptions({ visible: false });
-                svc.map.fitBounds(rectangle.getBounds());
-                for (i in svc.markersDiveOperators) {
-                    if (google.maps.geometry.poly.containsLocation(svc.markersDiveOperators[i].getPosition(), polygon)) {
-                        svc.markersDiveOperators[i].setMap(svc.map);
-                        svc.markersDiveOperators[i].setOptions({visible:true});
-                    } else {
-                        console.log("marker not in polygon");
-                    };
+            polygon.setOptions({ visible: false });
+            svc.map.fitBounds(rectangle.getBounds());
+            for (i in svc.markersDiveOperators) {
+                if (google.maps.geometry.poly.containsLocation(svc.markersDiveOperators[i].getPosition(), polygon)) {
+                    svc.markersDiveOperators[i].setMap(svc.map);
+                    svc.markersDiveOperators[i].setOptions({ visible: true });
+                } else {
+                    console.log("marker not in polygon");
                 };
+            };
+        };
+
+        //Set divespot polygon behaviour
+        var setDivespotPolyOptions = function (polygon, polyObj, rectangle, polyBoundsCenter) {
+            var polyName = polyObj.divespot_name;
+            polygon.set("polyName", polyName);
+            // setPolyListener(polygon, polyName, polyBoundsCenter);
+            google.maps.event.addListener(polygon, "click", function () {
+                console.log("Hello");
+                $rootScope.$emit("polygon clicked", { 
+                    polyObj: polyObj,
+                    polygon: polygon,
+                    rectangle: rectangle, 
+                });
             });
         };
 
+        //Set dive region polygon behaviour
         var setDiveRegionPolyOptions = function (polygon, polyObj, rectangle, polyBoundsCenter) {
             // console.log("PolyObj ---->", polyObj);
             var polyName = polyObj.region_name;
@@ -147,14 +161,15 @@
             });
         };
 
+        //Create divespot polygon
         var createDivespotPoly = function (polyObj) {
             console.log("createDivespotPoly reached");
             var DivespotPoly = new google.maps.Polygon({
                 paths: JSON.parse(polyObj.divespot_array),
-                strokeColor: "#A0769A",
+                strokeColor: "#CD661D",
                 strokeOpactity: 0.8,
                 strokeWeight: 3,
-                fillColor: "#F8B0B7",
+                fillColor: "#FF7D40",
                 fillOpacity: 0.35,
                 zIndex: 1,
             });
@@ -164,13 +179,14 @@
             setDivespotPolyOptions(DivespotPoly, polyObj, rectangle, polyBoundsCenter);
         };
 
+        //Create dive region polygon
         var createDiveRegionPoly = function (polyObj) {
             var DiveRegionPoly = new google.maps.Polygon({
                 paths: JSON.parse(polyObj.region_array),
-                strokeColor: "#A0769A",
+                strokeColor: "#CD661D",
                 strokeOpactity: 0.8,
                 strokeWeight: 3,
-                fillColor: "#F8B0B7",
+                fillColor: "#FF7D40",
                 fillOpacity: 0.35,
                 zIndex: 1,
             });

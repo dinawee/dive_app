@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <!-- Sets navigation bar classes -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -63,25 +62,26 @@
     </nav>
 
     <!-- partials to load -->
-
-        <div ui-view="mapcountry"></div>
-        <div ui-view="mapregion"></div>
+    <div ui-view="mapcountry"></div>
+    <div ui-view="mapregion"></div>
 
     <div class="container">
+        <div ui-view="modal"></div>
         <div ui-view="login"></div>
         <div ui-view="map"></div>
         <div ui-view="show"></div>
-        <!-- <div ui-view="show"></div>  -->
         <div ui-view="prepmap"></div>
         <div ui-view="bookmark"></div>
     </div>
 
-
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.min.js"></script>
     <!--<script src="bower_components/angular-messages/angular-messages.min.js"></script>-->
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components\angular-modal-service\dst\angular-modal-service.min.js"></script>
 
     <!-- app scripts -->
 
@@ -98,12 +98,19 @@
     <script src="app/services/dbroute.service.js"></script>
     <script src="app/services/map.service.js"></script>
     <script src="app/services/mapdbroute.service.js"></script>
+    <script src="app/services/map-style.service.js"></script>
+    <script src="app/services/flickr.service.js"></script>
+
+    <!-- modals -->
+    <!-- <script src="app/modals/modal.svc.js"></script> -->
+
 
     <!-- load controllers -->
     <script src="app/home/map_country.ctrl.js"></script>
     <script defer src="app/home/map_region.ctrl.js"></script>
+    <!-- <script src="app/home/modal.ctrl.js"></script> -->
     <script src="app/login/login.controller.js"></script>
-    <script src="app/home/show.controller.js"></script> 
+    <script src="app/home/show.controller.js"></script>
     <script src="app/home/bookmark.controller.js"></script>
 
     <!-- load google maps api -->

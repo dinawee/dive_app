@@ -31,7 +31,7 @@
                 views: {
                     'mapcountry': {
                         templateUrl: '/app/home/map_country.html',
-                        controller: 'MapCtrl as ctrl'
+                        controller: 'CountryCtrl as ctrl'
                     },
                     // 'select': {
                     //     templateUrl: '/app/home/select.html',
@@ -40,7 +40,7 @@
                     'show': {
                         templateUrl: '/app/home/show.html',
                         controller: 'ShowC as con'
-                    }
+                    },
                 }, 
                 // resolve: {
                 //     user : function(passportService) {

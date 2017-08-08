@@ -1,21 +1,32 @@
 <div>
-
-    <!--row 1 -->
-    <!-- <div class="row">
-        <h3>Selected Region</h3>
-    </div> -->
-    <!--end of row 1 -->
-
-    <!--row 2 -->
     <div class="row">
         <div id="selectedregion"></div>
-    </div>
-    <!-- end of row 2-->
 
-    <!-- row 3 -->
-    <hr>
-    <div class="row">
+        <div>
+            <script type="text/ng-template" id="ctry-modal-template.html">
+                <div class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" ng-click="closeModal('x to close')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">{{divespotDetails.divespot_name}}</h4>
+                            </div>
+                            <div class="modal-body align-center">
+                                <img src="http://lorempixel.com/150/150/cats" alt="picture">
+                                <img src="http://lorempixel.com/150/150/cats" alt="picture">
+                                <img src="http://lorempixel.com/150/150/cats" alt="picture">
+                                <img src="http://lorempixel.com/150/150/cats" alt="picture">
+                                <img src="http://lorempixel.com/150/150/cats" alt="picture">
+                                <img src="http://lorempixel.com/150/150/cats" alt="picture">
+                                <p>{{divespotDetails}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info" ng-click="explore()" data-dismiss="modal">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </script>
+        </div>
     </div>
-    <!-- end of row 3 -->
-
 </div>

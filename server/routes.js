@@ -20,7 +20,6 @@ module.exports = function (app, db, passport) {
     var Bookmarks = require("./api/bookmarks.controller.js")(db);
     var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
 
-
     /* 
         DiveOperator Routes 
     */
@@ -35,7 +34,7 @@ module.exports = function (app, db, passport) {
     app.post('/api/bookmarks', isUserAuth, Bookmarks.create);
 
     app.get('/api/bookmarks', isUserAuth, Bookmarks.index);
-    
+
 
     /* 
         EMAIL ROUTES
@@ -82,17 +81,17 @@ module.exports = function (app, db, passport) {
     ));
 
     // middleware to test auth
-    function isUserAuth (req, res, next) {
+    function isUserAuth(req, res, next) {
         if (req.isAuthenticated()) {
             console.log('\n >>>> User is auth');
             next();
-        }else{
+        } else {
             console.log('\n >>>> Re-directing');
             res.status(401).send('Unauthorized');
         }
     }
-   
-   
+
+
     //prep
     app.post("/api/divespots", Divespots.create);
     app.post("/api/diveregions", DiveRegions.create);

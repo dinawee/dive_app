@@ -18,6 +18,10 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "angular": "^1.6.5",
-    "angular-ui-router": "^1.0.5"
+    "angular-ui-router": "^1.0.5",
+    "angular-modal-service": "^0.12.1"
+  },
+  "resolutions": {
+    "angular": "1.6.5"
   }
 }
