@@ -1,34 +1,35 @@
+<div class="row">
+    <h2>Dive Operator</h2>
+    {{ con.object.name }}
+</div>
 
-    <div class="row">
-            <div ng-if="con.isAdded">
-                <button class="btn btn-danger btn-sm" ng-click="con.undefined()">Remove Bookmark
+<div class="row">
+    <!-- <div class="show-img" style="background-image:url('{{con.object.cover.source}}')">
+        </div> -->
+    <div ng-if="con.object.cover.source" class="show-img img-responsive">
+        <img ng-src="{{con.object.cover.source}}">
+    </div>
+</div>
+
+<div class="row">
+    <h2>Contact</h2>
+    {{ con.object.phone ? con.object.phone : "This page has no contact detail." }} </br>
+</div>
+
+<div class="row">
+    <h2>Description</h2>
+    {{ con.object.about ? con.object.about : "This page has no description." }} </br>
+</div>
+
+<div class="row">
+    <div ng-if="con.isAdded">
+        <button class="btn btn-danger" ng-click="con.undefined()">Remove Bookmark
                 &#8194; <i class="icon ion-ios-close"></i>
                  </button>
-            </div>
-                <button class="btn btn-success btn-sm" ng-if="!(con.isAdded)" ng-click="con.bookmark()">Add Bookmark
+    </div>
+    <div ng-if="!(con.isAdded)">
+        <button class="btn btn-success" ng-click="con.bookmark()">Add Bookmark
                 &#8194; <i class="icon ion-bookmark"></i>
                 </button>
     </div>
-
-    <div class="row">
-            <h4 class="nogap">Dive Operator</h4>
-            {{ con.object.name }}
-    </div>
-
-    <div class="row" >
-        <!-- <div class="show-img" style="background-image:url('{{con.object.cover.source}}')">
-        </div> -->
-         <div ng-if="con.object.cover.source" class="show-img img-responsive">
-             <img ng-src="{{con.object.cover.source}}"> 
-        </div> 
-    </div>
-
-    <div class="row">
-        <h4 class="nogap">Contact</h4>
-        {{ con.object.phone ? con.object.phone : "This page has no contact detail." }} </br>
-    </div>
-
-    <div class="row">
-        <h4 class="nogap">Description</h4>
-        {{ con.object.about ? con.object.about : "This page has no description." }} </br>
-    </div>
+</div>
