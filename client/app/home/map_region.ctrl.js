@@ -16,25 +16,21 @@
 
         var plotOnMap = function (retrievedResults) {
             for (var i in retrievedResults) {
-                console.log(retrievedResults[i]);
                 MapSvc
                     .createPoly(retrievedResults[i]);
             }
         };
 
         var displayDivespots = function (clickedPolygon) {
-            console.log(clickedPolygon.polyObj.region_id);
             MapdbRouteSvc
                 .displayDivespots(clickedPolygon.polyObj.region_id)
                 .then(function (results) {
-                    console.log(results);
                     vm.clickedPolygon = null;
-                    console.log("displayDivespots successful");
                     vm.retrievedDivespots = results.data;
                     plotOnMap(vm.retrievedDivespots);
                 })
                 .catch(function (err) {
-                    console.log("Error: \n", err);
+                    console.log("Error from RegionCtrl : displayDivespots: \n", err);
                 });
         }
 
@@ -63,79 +59,75 @@
             MapdbRouteSvc
                 .retrieveDiveOperators()
                 .then(function (results) {
-                    console.log("map_region.ctrl --> retrieveDiveOperators successful");
                     MapSvc.retrieveDiveOperators(results);
                 })
                 .catch(function (err) {
-                    console.log("Error: \n" + (err));
+                    console.log("Error from RegionCtrl : retrieveDiveOperators: \n", err);
                 })
         };
 
-        vm.flickrFeed = [];
+
 
         $rootScope.$on("polygon clicked", function (event, data) {
-            console.log(data.polyObj);
-            console.log(data.polygon);
-            console.log(data.rectangle);
+            var flickrFeed = [];
+            var tag = data.polyObj.divespot_name;
+            console.log("tag: \n", tag);
 
             FlickrSvc
-                .loadPictures()
+                .getFlickr(tag)
                 .then(function (result) {
-                    vm.flickrFeed = result.data.photos.photo;
-                    console.log(vm.flickrFeed);
+                    // console.log("Result from FlickrSvc.getFlickr: \n", result.data.photo);
+                    flickrFeed = result.data.photo;
+                    console.log(flickrFeed);
+                    loadModal(flickrFeed);
                 })
                 .catch(function (err) {
-                    console.log(err);
+                    console.log("Error from FlickrSvc.getFlickr: \n", err);
                 });
 
-            ModalService
-                .showModal({
-                    templateUrl: "ctry-modal-template.html",
-                    controller: "ModalInstanceCtrl",
-                    inputs: {
-                        polyObj: data.polyObj,
-                        polygon: data.polygon,
-                        rectangle: data.rectangle,
-                    },
-                })
-                .then(function (modal) {
-                    modal.element.modal();
-                    modal.close.then(function (result) {
-                        console.log(result);
+            function loadModal(flickrFeed) {
+                ModalService
+                    .showModal({
+                        templateUrl: "ctry-modal-template.html",
+                        controller: "ModalInstanceCtrl",
+                        inputs: {
+                            FlickrFeed: flickrFeed,
+                            polyObj: data.polyObj,
+                            polygon: data.polygon,
+                            rectangle: data.rectangle,
+                        },
+                    })
+                    .then(function (modal) {
+                        modal.element.modal();
+                        modal.close.then(function (result) {
+                            console.log("Result from ModalService.showModal: \n", result);
+                        });
+                    })
+                    .catch(function (err) {
+                        console.log("Error from ModalService.showModal: \n", err);
                     });
-                })
-                .catch(function (err) {
-                    console.log(err);
-                })
+            };
+
         });
 
-        var loadDivespotPics = function () {
-
-        }
     };//End RegionCtrl
 
     /*ModalInstanceCtrl*/
 
-    function ModalInstanceCtrl($scope, polyObj, polygon, rectangle, close, MapSvc) {
+    function ModalInstanceCtrl($scope, FlickrFeed, polyObj, polygon, rectangle, close, MapSvc) {
         var vm = $scope;
 
-        console.log(polyObj);
-        console.log(polygon);
-        console.log(rectangle);
+        vm.divespotDetails = polyObj;
+        vm.flickrFeed = FlickrFeed;
+        console.log(FlickrFeed);
 
         vm.closeModal = function (result) {
-            console.log(result);
             close(result, 500);
         };
 
         vm.explore = function () {
-            console.log("Explore Me!!");
             MapSvc.exploreMe(polygon, rectangle);
         }
-
-        vm.divespotDetails = polyObj;
-
-
 
     }; //ModalInstanceCtrl
 

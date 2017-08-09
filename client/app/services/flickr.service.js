@@ -8,23 +8,21 @@
     function FlickrSvc($http) {
         var svc = this;
 
-        var location = "indonesia";
-
-        svc.loadPictures = function () {
-            console.log("at svc.loadPictures");
-            return $http.get("https://www.flickr.com/services/rest/", {
+        svc.getFlickr = function (tag) {
+            var tags = tag + " , diving" ;
+            console.log("FlickrSvc : getFlickr");
+            return $http.get("/api/flickr", {
                 params: {
-                    method: "flickr.photos.search",
-                    api_key: "33f2538940e8902d3623cdf718de31f1",
-                    tags: "diving", location,
-                    content_type: 1,
-                    per_page: 9,
-                    format: "json",
-                    nojsoncallback: 1
+                    tags: tags,
                 }
-            });
-        }
+            })
+                .then(function (result) {
+                    return result;
+                })
+                .catch(function (err) {
+                    console.log("Error from FlickrSvc : getFlickr: \n", err);
+                })
+        };
 
     }//End FlickrSvc
-
 })();

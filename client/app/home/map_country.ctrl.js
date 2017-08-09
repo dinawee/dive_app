@@ -13,7 +13,6 @@
 
         function loadMapStyle() {
             vm.mapStyle = MapStyleSvc.loadMapStyle();
-            console.log(vm.mapStyle);
         }
         loadMapStyle();
 
@@ -38,7 +37,7 @@
             MapdbRouteSvc
                 .displayDiveRegions()
                 .then(function (results) {
-                    console.log("PrepCountryCtrl --> displayDiveRegions successful");
+                    console.log("CountryCtrl : displayDiveRegions");
                     vm.retrievedDiveRegions = results.data;
                     plotOnMap(vm.retrievedDiveRegions);
                 })

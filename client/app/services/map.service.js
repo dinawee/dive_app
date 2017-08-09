@@ -28,7 +28,6 @@
         svc.markersDiveOperators = [];
 
         svc.retrieveDiveOperators = function (results) {
-            console.log("svc.retrieveDiveOperators results: \n");
             svc.DiveOperators = results.data;
             for (i in svc.DiveOperators) {
                 createMarker(svc.DiveOperators[i]);
@@ -97,7 +96,6 @@
         //Set center of polygon bounds
         var setPolyBoundsCenter = function (rectangle) {
             var polyBoundsCenter = rectangle.getBounds().getCenter();
-            console.log(polyBoundsCenter);
             return polyBoundsCenter;
         };
 
@@ -135,7 +133,6 @@
             polygon.set("polyName", polyName);
             // setPolyListener(polygon, polyName, polyBoundsCenter);
             google.maps.event.addListener(polygon, "click", function () {
-                console.log("Hello");
                 $rootScope.$emit("polygon clicked", { 
                     polyObj: polyObj,
                     polygon: polygon,
@@ -146,12 +143,10 @@
 
         //Set dive region polygon behaviour
         var setDiveRegionPolyOptions = function (polygon, polyObj, rectangle, polyBoundsCenter) {
-            // console.log("PolyObj ---->", polyObj);
             var polyName = polyObj.region_name;
             polygon.set("polyName", polyName);
             setPolyListener(polygon, polyName, polyBoundsCenter);
             google.maps.event.addListener(polygon, "click", function () {
-                console.log("polygon clicked");
                 svc.clickedPolygon = {
                     polyObj: polyObj,
                     rectangle: rectangle,
@@ -163,7 +158,6 @@
 
         //Create divespot polygon
         var createDivespotPoly = function (polyObj) {
-            console.log("createDivespotPoly reached");
             var DivespotPoly = new google.maps.Polygon({
                 paths: JSON.parse(polyObj.divespot_array),
                 strokeColor: "#CD661D",
@@ -197,7 +191,6 @@
         };
 
         svc.createPoly = function (polyObj) {
-            console.log("createPoly reached", polyObj);
             if (polyObj.divespot_array) {
                 createDivespotPoly(polyObj);
             } else {

@@ -19,6 +19,7 @@ module.exports = function (app, db, passport) {
     var DiveRegions = require("./api/diveregions.controller.js")(db);
     var Bookmarks = require("./api/bookmarks.controller.js")(db);
     var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
+    var Flickr = require("./api/flickr.controller.js");
 
     /* 
         DiveOperator Routes 
@@ -90,6 +91,12 @@ module.exports = function (app, db, passport) {
             res.status(401).send('Unauthorized');
         }
     }
+
+    /*
+    Flickr routes
+    */
+
+    app.get("/api/flickr", Flickr.get);
 
 
     //prep
