@@ -3,13 +3,13 @@
         .module("MyApp")
         .controller("PrepMapCtrl", PrepMapCtrl);
 
-    PrepMapCtrl.$inject = ["dbRouteService", "PrepMapSvc", "PrepdbRouteSvc"];
+    PrepMapCtrl.$inject = ["fbService", "PrepMapSvc", "PrepdbRouteSvc"];
 
-    function PrepMapCtrl(dbRouteService, PrepMapSvc, PrepdbRouteSvc) {
+    function PrepMapCtrl(fbService, PrepMapSvc, PrepdbRouteSvc) {
         var vm = this;
 
         function retrieveDiveOperators() {
-            dbRouteService
+            fbService
                 .retrieveDiveOperators()
                 .then(function (results) {
                     vm.results = results;

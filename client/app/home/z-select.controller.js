@@ -3,9 +3,9 @@
         .module("MyApp")
         .controller("SelectC", SelectC);
 
-    SelectC.$inject = ["$scope", "dbRouteService", "$state", "passportService"];
+    SelectC.$inject = ["$scope", "fbService", "$state", "passportService"];
 
-    function SelectC($scope, dbRouteService, $state, passportService) {
+    function SelectC($scope, fbService, $state, passportService) {
         var con = this;
 
         con.list; // initialize below
@@ -20,7 +20,7 @@
 
         // init
         con.initialize = function () {
-            dbRouteService.retrieveDiveOperators()
+            fbService.retrieveDiveOperators()
                 .then(function (result) {
                     con.list = result;
                 })
@@ -38,8 +38,8 @@
         */
         
         con.select = function () {
-            dbRouteService.getSelected(con.id);
-            console.log('The pin you selected has FB ID of: ' + dbRouteService.selected());
+            fbService.getSelected(con.id);
+            console.log('The pin you selected has FB ID of: ' + fbService.selected());
         };
 
         con.gothere = function () {
@@ -48,7 +48,7 @@
             
             passportService.getAccessToken()
                 .then(function(aToken){
-                    return dbRouteService.pingFb(aToken)
+                    return fbService.pingFb(aToken)
                 })
                 .then(function(result){
                     $state.go('show'); 
@@ -69,6 +69,6 @@
 // $watch
 // $scope.$watch('con.selected', function(newValue, oldValue){
 //     console.log('The new value is' + newValue);
-//     dbRouteService.getSelected(con.selected);
-//     console.log('The new value in the Service is now' + dbRouteService.selected());
+//     fbService.getSelected(con.selected);
+//     console.log('The new value in the Service is now' + fbService.selected());
 // });

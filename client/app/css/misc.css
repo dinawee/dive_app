@@ -1,0 +1,91 @@
+/* 
+  Allow angular.js to be loaded in body, hiding cloaked elements until 
+  templates compile.  The !important is important given that there may be 
+  other selectors that are more specific or come later and might alter display.  
+ */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+/* .bm-number {
+    position: absolute;
+  font-size: 1em;
+  top: 10px;
+  right: 20px;
+} */
+
+body {
+    font-family: 'Merriweather', serif;
+}
+
+.nav-wrapper {
+    font-family: 'Lato', sans-serif;
+    background-color: #199d8f; 
+}
+
+a {
+    background-color: #199d8f !important;
+    color: #b4dad7 !important;
+}
+
+h1 {
+    font-size: 3.375em;
+}
+
+h2 {
+    font-size: 2.25em;
+    margin-bottom: 2px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 2px;
+}
+
+h1, h2, h3 {
+    font-family: 'Lato', sans-serif;
+    color: #199d8f; 
+}
+
+td {
+    padding: 15px 5px 25px 5px;
+}
+
+.btn-info {
+    background-color: #ff7d40; 
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-danger {
+    background-color:  #e62739;
+     font-family: 'Lato', sans-serif;
+}
+
+
+/* 
+Show Styles
+*/
+
+#show-box {
+    padding-top: 40px;
+}
+
+/* not used */
+.show-clear {
+    background: rgba(0,0,0,0);
+    border: none;
+}
+
+.show-img {
+    width: 400px;
+    height: auto;
+}
+
+.show-img img{
+    max-width: 100%;
+    max-height: 100%;
+} 
+
+.show-back {
+    float: right;
+}

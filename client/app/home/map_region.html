@@ -1,7 +1,6 @@
 <div>
     <div class="row">
         <div id="selectedregion"></div>
-
         <div>
             <script type="text/ng-template" id="ctry-modal-template.html">
                 <div class="modal fade">
@@ -25,4 +24,34 @@
             </script>
         </div>
     </div>
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+    <div class="row" ng-show="ctrl.toggleShow">
+        <div class="col s8 offset-s2">
+            <div ui-view="show"></div>
+            </br>
+            <div class="row">
+                <div class="button btn btn-info btn-sm" ng-click="ctrl.toShowMap()">
+                    Back to map &#8194;
+                    <i class="icon ion-chevron-up"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </br>
+    </br>
+    </br>
+    </br>
+
+    <div id="showresult"></div>
+
 </div>

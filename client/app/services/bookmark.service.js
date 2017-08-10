@@ -11,6 +11,8 @@
 
         svc.selectedBookmarks;
 
+        svc.userBookmarks = [];
+
         svc.createOne = function (fb_id) {
             body = { fb_id: fb_id };
             $http.post('/api/bookmarks', body)
@@ -29,6 +31,8 @@
                 .then(function(result){
                     // the array is result.data
                     console.log('Client service result is' + JSON.stringify(result.data));
+                    svc.userBookmarks = result.data;
+                    console.log('%d bookmarks returned', result.data.length);
                     return result.data
                 }).catch(function (err) {
                     alert('You are not logged in');

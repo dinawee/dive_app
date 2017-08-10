@@ -63,9 +63,9 @@ module.exports = function (app, db, passport) {
 
     app.get('/logout', function (req, res) {
         req.logout();
-        console.log('Logged out, client re-directs to home page');
+        req.session.destroy(); 
         res.redirect('/');
-    })
+    });
 
 
     // passport.authenticate calls the passport.use(new FacebookStrategy()) in the auth.js
@@ -84,10 +84,8 @@ module.exports = function (app, db, passport) {
     // middleware to test auth
     function isUserAuth(req, res, next) {
         if (req.isAuthenticated()) {
-            console.log('\n >>>> User is auth');
             next();
-        } else {
-            console.log('\n >>>> Re-directing');
+        }else{
             res.status(401).send('Unauthorized');
         }
     }

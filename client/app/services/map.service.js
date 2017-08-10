@@ -3,9 +3,10 @@
         .module("MyApp")
         .service("MapSvc", MapSvc);
 
-    MapSvc.$inject = ["dbRouteService", "passportService", "$state", "MapdbRouteSvc", "$rootScope"];
+    MapSvc.$inject = ["fbService", "passportService", "$state", "MapdbRouteSvc", "$rootScope"];
 
-    function MapSvc(dbRouteService, passportService, $state, MapdbRouteSvc, $rootScope) {
+    function MapSvc(fbService, passportService, $state, MapdbRouteSvc, $rootScope) {
+
         var svc = this;
 
         //Initialiding map
@@ -16,12 +17,16 @@
 
         var takemethere = function () {
             return passportService.getAccessToken()
-                .then(function (aToken) {
-                    return dbRouteService.pingFb(aToken)
+                .then(function(aToken){
+                    return fbService.pingFb(aToken)
                 })
-                .then(function (result) {
-                    $state.go('show');
+                .then(function(result){
+                   console.log('Taken me there');
                 })
+                .catch(function (err) {
+                    alert('Takeme function says: You are not logged in');
+                    $state.go('login');
+                });
         }
 
         //Retrieving dive operators from db
@@ -52,10 +57,10 @@
         var setMarkerBehaviour = function (marker, info) {
             var infoWindow = new google.maps.InfoWindow();
             google.maps.event.addListener(marker, "click", function () {
-                dbRouteService.getSelected(info.fb_id);
-                console.log('The pin you selected has FB ID of: ' + dbRouteService.selected());
-                alert('0. Need a pre-check \n1. Need to show/ hide login/ logout - how does Ken do it? \n 2. if not defined, will insert null values');
-                //TO-DO: create DOM object for info-window
+
+                fbService.getSelected(info.fb_id);
+                    console.log('The pin you selected has FB ID of: ' + fbService.selected());
+
                 var origContent = '<h2>' + marker.title + '</h2>' + '<br/>' + marker.content;
                 var infoWindowContent = document.createElement('div');
                 infoWindowContent.innerHTML = origContent;
@@ -133,10 +138,10 @@
             polygon.set("polyName", polyName);
             // setPolyListener(polygon, polyName, polyBoundsCenter);
             google.maps.event.addListener(polygon, "click", function () {
-                $rootScope.$emit("polygon clicked", { 
+                $rootScope.$emit("polygon clicked", {
                     polyObj: polyObj,
                     polygon: polygon,
-                    rectangle: rectangle, 
+                    rectangle: rectangle,
                 });
             });
         };

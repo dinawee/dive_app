@@ -1,35 +1,35 @@
-<div>
-    </br>
-    <button class="btn btn-danger" ng-click="con.sendEmail()">Send Me Email</button>
-    </br>
-    </br>
-    <button class="btn btn-success" ng-click="con.bookmark()">Bookmark Me!</button>
-    <p>
+<div class="row">
+    <h2>Dive Operator</h2>
+    {{ con.object.name }}
+</div>
 
-        <h3>Dive Operator</h3>
-        {{ con.object.name }} </br>
-
-    </p>
-    <div ng-if="con.object.cover.source">
+<div class="row">
+    <!-- <div class="show-img" style="background-image:url('{{con.object.cover.source}}')">
+        </div> -->
+    <div ng-if="con.object.cover.source" class="show-img img-responsive">
         <img ng-src="{{con.object.cover.source}}">
     </div>
+</div>
 
-    <h3>Contact</h3>
-    <div ng-if="con.object.phone">
-        {{ con.object.phone }} </br>
+<div class="row">
+    <h2>Contact</h2>
+    {{ con.object.phone ? con.object.phone : "This page has no contact detail." }} </br>
+</div>
+
+<div class="row">
+    <h2>Description</h2>
+    {{ con.object.about ? con.object.about : "This page has no description." }} </br>
+</div>
+
+<div class="row">
+    <div ng-if="con.isAdded">
+        <button class="btn btn-danger" ng-click="con.undefined()">Remove Bookmark
+                &#8194; <i class="icon ion-ios-close"></i>
+                 </button>
     </div>
-    <div ng-if="!con.object.phone">
-        This page has no phone. </br>
+    <div ng-if="!(con.isAdded)">
+        <button class="btn btn-success" ng-click="con.bookmark()">Add Bookmark
+                &#8194; <i class="icon ion-bookmark"></i>
+                </button>
     </div>
-
-    <h3>Description</h3>
-    <div ng-if="con.object.about">
-        {{ con.object.about }} </br>
-    </div>
-    <div ng-if="!con.object.about">
-        This page has no description. </br>
-    </div>
-
-
-
 </div>
