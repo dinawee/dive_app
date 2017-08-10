@@ -1,7 +1,11 @@
 <div>
     <div class="row">
         <div id="selectedregion"></div>
+
+        <!--Modal view -->
+
         <div>
+
             <script type="text/ng-template" id="ctry-modal-template.html">
                 <div class="modal fade">
                     <div class="modal-dialog">
@@ -12,7 +16,7 @@
                             </div>
                             <div>
                                 <div class="modal-body align-center" ng-repeat="i in flickrFeed">
-                                    <img src="https://farm{{i.farm}}.staticflickr.com/{{i.server}}/{{i.id}}_{{i.secret}}_q.jpg" alt="picture">
+                                    <!-- <img src="https://farm{{i.farm}}.staticflickr.com/{{i.server}}/{{i.id}}_{{i.secret}}_q.jpg" alt="picture"> -->
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -22,7 +26,14 @@
                     </div>
                 </div>
             </script>
+
+
+
         </div>
+
+
+        <!-- End Modal -->
+
     </div>
 
     </br>
@@ -53,5 +64,4 @@
     </br>
 
     <div id="showresult"></div>
-
 </div>
