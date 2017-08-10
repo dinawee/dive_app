@@ -11,8 +11,10 @@
                                 <button type="button" class="close" ng-click="closeModal('x to close')" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 <h4 class="modal-title">{{divespotDetails.divespot_name}}</h4>
                             </div>
-                            <div class="modal-body align-center" ng-repeat="i in flickrFeed">
-                                 <img src="https://farm{{i.farm}}.staticflickr.com/{{i.server}}/{{i.id}}_{{i.secret}}_m.jpg" alt="picture"> 
+                            <div>
+                                <div class="modal-body align-center" ng-repeat="i in flickrFeed">
+                                    <img src="https://farm{{i.farm}}.staticflickr.com/{{i.server}}/{{i.id}}_{{i.secret}}_q.jpg" alt="picture">
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-info" ng-click="explore()" data-dismiss="modal">Explore</button>

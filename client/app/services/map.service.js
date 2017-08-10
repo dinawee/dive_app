@@ -41,7 +41,7 @@
                 position: new google.maps.LatLng(info.latitude, info.longitude),
                 title: info.name,
                 visible: false,
-                icon: "/app/images/orange_marker_min.png"
+                // icon: "/app/images/orange_marker_min.png"
             });
             marker.content = '<div class="infoWindowContent"> diveoperator_id:&nbsp' + info.id + '&nbsp(FB_id:&nbsp' + info.fb_id + ')<br/>' + 'lat:' + info.latitude + '&nbsp;' + 'lng:' + info.longitude + '</div>';
             setMarkerBehaviour(marker, info);

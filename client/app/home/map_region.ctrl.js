@@ -71,6 +71,9 @@
         $rootScope.$on("polygon clicked", function (event, data) {
             var flickrFeed = [];
             var tag = data.polyObj.divespot_name;
+            //Convert to array
+
+            
             console.log("tag: \n", tag);
 
             FlickrSvc
