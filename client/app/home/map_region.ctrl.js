@@ -119,7 +119,7 @@
                 .then(function (result) {
                     // console.log("Result from FlickrSvc.getFlickr: \n", result.data.photo);
                     flickrFeed = result.data.photo;
-                    console.log(flickrFeed);
+                    // console.log(flickrFeed);
                     loadModal(flickrFeed);
                 })
                 .catch(function (err) {
@@ -127,7 +127,6 @@
                 });
 
             function loadModal(flickrFeed) {
-                console.log(ModalService.showModal);
                 ModalService
                     .showModal({
                         templateUrl: "ctry-modal-template.html",
@@ -141,7 +140,6 @@
                     })
                     .then(function (modal) {
                         modal.element.modal();
-                        console.log(modal);
                         modal.close.then(function (result) {
                             console.log("Result from ModalService.showModal: \n", result);
                         });
@@ -162,7 +160,6 @@
 
         vm.divespotDetails = polyObj;
         vm.flickrFeed = FlickrFeed;
-        console.log(FlickrFeed);
 
         vm.closeModal = function (result) {
             close(result, 500);
