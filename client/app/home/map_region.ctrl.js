@@ -11,8 +11,6 @@
 
          
 
-
-
         function init () {
             // Toggle display - hide of injected show view 
             // toggled by watching from fbService, see below
@@ -24,11 +22,11 @@
         // Scroll Functions // 
         ctrl.toPlace = function(place){
             var offset = -300; // scroll 300 px lower than element to be safe
-            $document.scrollToElementAnimated(place, offset); // provided by duScroll library
+            $document.duScrollToElementAnimated(place, offset); // provided by duScroll library
         }
 
         ctrl.toShowMap = function(){
-            $document.scrollTopAnimated(0); // provided by duScroll library
+            $document.duScrollTopAnimated(0); // provided by duScroll library
             // the offset is how many pixels from window top
         }
 
