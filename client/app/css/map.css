@@ -1,5 +1,6 @@
 #map_country {
-    height: 520px;
+     height: 520px; 
+    /* height: 580px; */
     width: 100%;
     background-color: cornflowerblue;
 }

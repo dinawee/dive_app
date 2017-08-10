@@ -47,6 +47,10 @@ h1, h2, h3 {
     color: #199d8f; 
 }
 
+td {
+    padding: 15px 5px 25px 5px;
+}
+
 .btn-info {
     background-color: #ff7d40; 
     font-family: 'Lato', sans-serif;

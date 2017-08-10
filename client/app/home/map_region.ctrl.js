@@ -44,7 +44,7 @@
             console.log('Calling toggle');
             ctrl.toggleShow = true;
             var showresult = angular.element(document.getElementById('showresult')); 
-            ctrl.toPlace(showresult);
+            // ctrl.toPlace(showresult);
         });
 
 
