@@ -15,8 +15,7 @@
         }
         loadMapStyle();
 
-
-/*        
+     
         function init() {
             // Toggle display - hide of injected show view 
             // toggled by watching from fbService, see below
@@ -52,7 +51,7 @@
             // vm.toPlace(showresult);
         });
 
-*/
+
 
         // Map Functions, called on init //
         var plotOnMap = function (retrievedResults) {

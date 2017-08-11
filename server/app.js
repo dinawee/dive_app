@@ -16,7 +16,7 @@ const flash = require('connect-flash'); // by Jared Hason too, guess passport ne
 var app = express();
 var db = require('./db.js');
 
-var port = 3000;
+var port = process.env.NODE_PORT || 3000;
 
 const CLIENT_FOLDER = path.join(__dirname, '/../client');
 

@@ -1,18 +1,15 @@
 
 
-1. Change your config files
+*For development* 
+    note that FB prep references
+    /prep/map/config/development-cloud.js
+    note that map prep references 
+    /prep/map/config/development-cloud.js
 
-A. Config file for Amazon DB credentials 
-in: /prep/fb_data/config/development-cloud.js
-or /prep/map/config/development-cloud.js
-
-Referenced in: /server/db.js
-
-
-B. Config file for FB credentials 
-in  /prep/fb_data/config/development-cloud.js
-or /prep/map/config/development-cloud.js
-
-Referenced in /server/auth.js
+You need one or another.
 
 
+*For production*
+Set env NODE_PORT 
+Set env NODE_ENV
+Upload production credentials to /prep/map/config/production.js
