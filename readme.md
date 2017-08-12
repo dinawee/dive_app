@@ -1,5 +1,3 @@
-
-
 *For development* 
     note that FB prep references
     /prep/map/config/development-cloud.js

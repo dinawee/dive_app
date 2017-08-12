@@ -10,10 +10,12 @@ module.exports = function (sequelize, DataTypes) {
         user_id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false,
+            unique: 'compositeKey',
         },
         dive_operator_id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false,
+            unique: 'compositeKey',
         },
         comment: {
             type: DataTypes.TEXT,
