@@ -3,9 +3,9 @@
         .module("MyApp")
         .service("MapSvc", MapSvc);
 
-    MapSvc.$inject = ["fbService", "passportService", "$state", "MapdbRouteSvc", "$rootScope"];
+    MapSvc.$inject = ["fbService", "passportService", "$state", "MapdbRouteSvc", "$rootScope", "ModalService"];
 
-    function MapSvc(fbService, passportService, $state, MapdbRouteSvc, $rootScope) {
+    function MapSvc(fbService, passportService, $state, MapdbRouteSvc, $rootScope, ModalService) {
 
         var svc = this;
 
@@ -15,6 +15,29 @@
             return svc.map;
         }
 
+
+        var showModalOptions = {
+            templateUrl: '/app/home/show-modal.html',
+            controller:  'ShowC',
+            controllerAs: 'con',
+            // bodyClass: 'show-modal', // use show-modal styles
+        }
+
+        var takemethere = function () {
+            return passportService.getAccessToken()
+                .then(function(aToken){
+                    return fbService.pingFb(aToken);
+                })
+                .then(function(result){
+                   console.log('Taken me there');
+                })
+                .catch(function(err) {
+                    alert('Takeme function says: You are not logged in');
+                    $state.go('login');
+                });
+        }
+
+        /* Version with modal service 
         var takemethere = function () {
             return passportService.getAccessToken()
                 .then(function(aToken){
@@ -22,12 +45,22 @@
                 })
                 .then(function(result){
                    console.log('Taken me there');
+                   return ModalService.showModal(showModalOptions).catch(function(err){
+                       console.log('The error is ' + err);
+                   });
+                })
+                .then(function(modal){
+                    modal.close.then(function(result){
+                        console.log('Modal closed');
+                    });
                 })
                 .catch(function (err) {
                     alert('Takeme function says: You are not logged in');
                     $state.go('login');
                 });
         }
+        */
+            
 
         //Retrieving dive operators from db
         svc.markersDiveOperators = [];

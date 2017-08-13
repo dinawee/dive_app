@@ -2,12 +2,11 @@
     angular
         .module("MyApp")
         .controller("RegionCtrl", RegionCtrl)
-        .controller("ModalInstanceCtrl", ModalInstanceCtrl)
-        .value('duScrollDuration', 1200);
+        .controller("ModalInstanceCtrl", ModalInstanceCtrl);
 
-    RegionCtrl.$inject = ["$scope", "$document", "MapSvc", "MapdbRouteSvc", "MapStyleSvc", "$rootScope", "ModalService", "$state", "FlickrSvc", "fbService", "passportService"];
+    RegionCtrl.$inject = ["$scope", "$state", "$rootScope", "MapSvc", "MapdbRouteSvc", "MapStyleSvc", "ModalService", "FlickrSvc", "fbService", "passportService"];
 
-    function RegionCtrl($scope, $document, MapSvc, MapdbRouteSvc, MapStyleSvc, $rootScope, ModalService, $state, FlickrSvc, fbService, passportService) {
+    function RegionCtrl($scope, $state,  $rootScope, MapSvc, MapdbRouteSvc, MapStyleSvc, ModalService, FlickrSvc, fbService, passportService) {
         var vm = this;
 
         function loadMapStyle() {
@@ -16,24 +15,12 @@
         loadMapStyle();
 
      
-        function init() {
-            // Toggle display - hide of injected show view 
-            // toggled by watching from fbService, see below
-            vm.toggleShow = false;
+        /* For page-slider */
+        $scope.checked = null; // toggled by watcher
+        
+        vm.closeSlider = function(){
+            $scope.checked = false;
         }
-        init();
-
-        // Scroll Functions // 
-        vm.toPlace = function (place) {
-            var offset = -300; // scroll 300 px lower than element to be safe
-            $document.duScrollToElementAnimated(place, offset); // provided by duScroll library
-        }
-
-        vm.toShowMap = function () {
-            $document.duScrollTopAnimated(0); // provided by duScroll library
-            // the offset is how many pixels from window top
-        }
-
 
         // Watcher for toggle display //
         $scope.$watch(function () {
@@ -45,11 +32,9 @@
             if (newValue === oldValue) {
                 return;
             }
-            console.log('Calling toggle');
-            vm.toggleShow = true;
-            var showresult = angular.element(document.getElementById('showresult'));
-            // vm.toPlace(showresult);
+            $scope.checked = true;
         });
+        
 
 
 

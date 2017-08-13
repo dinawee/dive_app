@@ -28,11 +28,10 @@
             fbService.getSelected(fb_id);
             return passportService.getAccessToken()
                 .then(function (aToken) {
-                    return fbService.pingFb(aToken)
+                    return fbService.pingFb(aToken);
                 })
                 .then(function (result) {
                     con.toggleShow = true;
-                    console.log('Showed bookmark');
                 })
                 .catch(function (err) {
                     alert('Takeme function says: You are not logged in');

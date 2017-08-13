@@ -8,6 +8,9 @@
     function ShowC($scope, fbService, $stateParams, mailService, bookmarkService) {
         var con = this;
 
+        // // close property injected due to ModalService
+        // con.close = close;
+        
         // fb definition - next time define the whole thing here
         con.object = {
             id: "",

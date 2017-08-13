@@ -30,7 +30,7 @@
 -->
             <script type="text/ng-template" id="ctry-modal-template.html">
                 <div class="modal modal-fixed-footer fade">
-                    <div >
+                    <div>
                         <h4>Modal Header</h4>
                     </div>
                     <div class="modal-content">
@@ -46,21 +46,28 @@
             </script>
         </div>
 
-
         <!-- End Modal -->
 
     </div>
 
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+    <!-- New ng-slider -->
+    <div pageslide ps-open="checked" ps-speed="1.5" ps-class="show-sidebar" ps-size="500px">
+        <div class="container">
+            <div class="row">
+                <div class="col s5 offset-s7">
+                    <button class="btn" ng-click="vm.closeSlider()">Hide</button>
+                </div>
+                <div class="row">
+                    <div ui-view="show"></div>
+                </div>
+            </div>  
+        </div>
+    </div>
 
-    <div class="row" ng-show="ctrl.toggleShow">
+
+    <!-- Old toggle show -->
+
+    <!-- <div class="row" ng-show="ctrl.toggleShow">
         <div class="col s8 offset-s2">
             <div ui-view="show"></div>
             </br>
@@ -76,7 +83,7 @@
     </br>
     </br>
     </br>
-    </br>
+    </br> -->
 
-    <div id="showresult"></div>
+    <!-- <div class="show-modal"></div> -->
 </div>

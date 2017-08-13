@@ -66,6 +66,12 @@ td {
 Show Styles
 */
 
+.show-sidebar {
+    background: white;
+    /* no other properties needed they will be over-written  */
+}
+
+
 #show-box {
     padding-top: 40px;
 }
