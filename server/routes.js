@@ -12,8 +12,7 @@ var domain = 'sandbox2636603ac88c4b3d9a8bb7cbd14a4559.mailgun.org';
 
 
 // Exported modules
-module.exports = function (app, db, passport) {
-
+module.exports = (app, db, passport) => {
     var DiveOperators = require('./api/diveoperators.controller.js')(db);
     var Divespots = require("./api/divespots.controller.js")(db);
     var DiveRegions = require("./api/diveregions.controller.js")(db);
@@ -33,8 +32,8 @@ module.exports = function (app, db, passport) {
         Bookmark Routes
     */
     app.post('/api/bookmarks', isUserAuth, Bookmarks.create);
-
     app.get('/api/bookmarks', isUserAuth, Bookmarks.index);
+    app.delete('/api/bookmarks/:fb_id', isUserAuth, Bookmarks.destroy);
 
 
     /* 
@@ -100,5 +99,7 @@ module.exports = function (app, db, passport) {
     //prep
     app.post("/api/divespots", Divespots.create);
     app.post("/api/diveregions", DiveRegions.create);
+    
+    
 
 }

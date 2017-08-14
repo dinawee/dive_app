@@ -1,3 +1,40 @@
+
+module.exports = function (db) {
+    return {
+        index: getAll(db),
+        create: createOne(db),
+        destroy: destroyOne(db)
+    }
+};
+
+const destroyOne = (db) => {
+    return (req, res) => {
+        db.DiveOperators
+            .findOne({
+                // corresponds to naming of routes and calling service
+                where: { fb_id: req.params.fb_id }
+                // implied return of db.Bookmarks
+                // implied function braces
+            })
+            .then(operator => db.Bookmarks
+                .destroy({
+                    where : { 
+                        $and : {
+                            user_id: req.user.user_id, // taken from session 
+                            dive_operator_id: operator.id, // taken from return
+                        }
+                    }
+                })
+            )
+            .then(result => res.status(200).json(result))
+            .catch(err => console.log(err));
+    }
+}
+
+
+
+
+
 function getAll(db) {
     return function (req, res) {
         console.log('Req user is ' + req.user.user_id);
@@ -47,10 +84,3 @@ function createOne(db) {
     }
 }// close createOne
 
-
-module.exports = function (db) {
-    return {
-        index: getAll(db),
-        create: createOne(db)
-    }
-};

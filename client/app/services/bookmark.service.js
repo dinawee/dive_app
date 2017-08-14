@@ -15,10 +15,28 @@
 
         svc.createOne = function (fb_id) {
             body = { fb_id: fb_id };
-            $http.post('/api/bookmarks', body)
+            return $http.post('/api/bookmarks', body)
                 .then(function(newRecord){
                     alert('You have created a new bookmark' + JSON.stringify(newRecord));
-                }).catch(function (err) {
+                })
+                .catch(function (err) {
+                    alert('You are not logged in');
+                    $state.go('login');
+                    throw (JSON.stringify(err)); // terminate any calling promise
+                });
+        }
+
+        svc.destroyOne = function (fb_id) {
+            console.log('Client side fb_id to remove is' + fb_id);
+            return $http.delete('/api/bookmarks/' + fb_id)
+                .then(function(res){
+                    console.log('Result JS is' + JSON.stringify(res));
+                    alert('You have destroyed the bookmark');
+                    $state.go('bookmark'); 
+                    // state change doens't work
+                    
+                })
+                .catch(function (err) {
                     alert('You are not logged in');
                     $state.go('login');
                     throw (JSON.stringify(err)); // terminate any calling promise

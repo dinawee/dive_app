@@ -13,7 +13,7 @@
         
         // fb definition - next time define the whole thing here
         con.object = {
-            id: "",
+            id: "", // this is fb_id
             name: "",
             phone: "",
             cover: { source: "" },
@@ -44,9 +44,13 @@
             mailService.sendEmail();
         };
 
-        con.bookmark = function() {
+        con.create = function() {
             bookmarkService.createOne(con.object.id);
         };
+
+        con.destroy = function() {
+            bookmarkService.destroyOne(con.object.id);
+        }
 
 
     }; // end controller
