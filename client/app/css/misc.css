@@ -3,9 +3,11 @@
   templates compile.  The !important is important given that there may be 
   other selectors that are more specific or come later and might alter display.  
  */
+
 [ng\:cloak], [ng-cloak], .ng-cloak {
-  display: none !important;
+    display: none !important;
 }
+
 
 /* .bm-number {
     position: absolute;
@@ -19,8 +21,19 @@ body {
 }
 
 .nav-wrapper {
-    font-family: 'Lato', sans-serif;
-    background-color: #199d8f; 
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Lobster', sans-serif;
+    background-color: #199d8f;
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+}
+
+.nav-font {
+    font-size: 1.5em;
+}
+
+nav {
+    background-color: #199d8f;
 }
 
 a {
@@ -44,7 +57,7 @@ h3 {
 
 h1, h2, h3 {
     font-family: 'Lato', sans-serif;
-    color: #199d8f; 
+    color: #199d8f;
 }
 
 td {
@@ -52,13 +65,13 @@ td {
 }
 
 .btn-info {
-    background-color: #ff7d40; 
+    background-color: #ff7d40;
     font-family: 'Lato', sans-serif;
 }
 
 .btn-danger {
-    background-color:  #e62739;
-     font-family: 'Lato', sans-serif;
+    background-color: #e62739;
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -70,9 +83,11 @@ Show Styles
     padding-top: 40px;
 }
 
+
 /* not used */
+
 .show-clear {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     border: none;
 }
 
@@ -81,11 +96,32 @@ Show Styles
     height: auto;
 }
 
-.show-img img{
+.show-img img {
     max-width: 100%;
     max-height: 100%;
-} 
+}
 
 .show-back {
     float: right;
+}
+
+
+/* Animation  */
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

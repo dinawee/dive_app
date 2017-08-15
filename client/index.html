@@ -21,9 +21,11 @@
     <!-- Load Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
     <!-- Load custom stlyes -->
     <link href="app/css/map.css" rel="stylesheet">
+    <link href="app/css/search.css" rel="stylesheet">
     <link href="app/css/login.css" rel="stylesheet">
     <link href="app/css/misc.css" rel="stylesheet">
 
@@ -32,15 +34,19 @@
 <body>
     <!-- dont use data toggle when using ui-routing -->
     <!-- use ui-sref -->
+
     <nav>
         <div class="nav-wrapper" ng-controller="LoginC as con" ng-cloak>
             <a href="/" class="brand-logo">Dive Operator FB API</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
-                    <a ui-sref="home">Home</a>
+                    <a ui-sref="home" class="nav-font">Home</a>
                 </li>
                 <li>
-                    <a ui-sref="prepmap">Prep Map</a>
+                    <a ui-sref="search" class="nav-font">Search</a>
+                </li>
+                <li>
+                    <a ui-sref="prepmap" class="nav-font">Prep Map</a>
                 </li>
                 <li>
                     <a ui-sref="bookmark" ng-if="con.isLoggedIn">
@@ -48,11 +54,11 @@
                         </a>
                 </li>
                 <li>
-                    <a ui-sref="mapregion">Map Region</a>
+                    <a ui-sref="mapregion" class="nav-font">Map Region</a>
                 </li>
                 <!-- all the login routes based on LoginC -->
                 <li ng-if="!(con.isLoggedIn)">
-                    <a ui-sref="login">Login</a>
+                    <a ui-sref="login" class="nav-font">Login</a>
                     <!-- perform actual login on the login page -->
                 </li>
                 <li ng-if="con.isLoggedIn">
@@ -62,18 +68,19 @@
         </div>
     </nav>
 
+
+
     <!-- - replace show buttons with carat 
     - slide in instead of scroll down -->
 
     <!-- partials to load -->
     <br>
+    <div ui-view="mapsearch"></div>
     <div ui-view="mapcountry"></div>
     <div ui-view="mapregion"></div>
 
     <div class="container">
-        <div ui-view="modal"></div>
         <div ui-view="login"></div>
-        <div ui-view="map"></div>
         <div ui-view="show"></div>
         <div ui-view="prepmap"></div>
     </div>
@@ -113,6 +120,7 @@
     <!-- load controllers -->
     <script src="app/home/map_country.ctrl.js"></script>
     <script defer src="app/home/map_region.ctrl.js"></script>
+    <script defer src="app/home/map_search.ctrl.js"></script>
     <script src="app/login/login.controller.js"></script>
     <script src="app/home/show.controller.js"></script>
     <script src="app/home/bookmark.controller.js"></script>

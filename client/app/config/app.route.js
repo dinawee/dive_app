@@ -41,6 +41,15 @@
                     }
                 },
             })
+            .state('search', {
+                url: '/search',
+                views: {
+                    'mapsearch': {
+                        templateUrl: '/app/home/map_search.html',
+                        controller: 'SearchCtrl as ctrl'
+                    }
+                },
+            })
             .state("prepmap", {
                 url: "/map",
                 views: {
@@ -66,7 +75,7 @@
 
         // set catchall URL
         $urlRouterProvider
-            .otherwise('/home');
+            .otherwise('/search');
 
     }// close uiRouteConfig 
 

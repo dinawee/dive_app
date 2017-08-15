@@ -16,7 +16,7 @@
         loadMapStyle();
 
 
-/*        
+
         function init() {
             // Toggle display - hide of injected show view 
             // toggled by watching from fbService, see below
@@ -52,7 +52,7 @@
             // vm.toPlace(showresult);
         });
 
-*/
+
 
         // Map Functions, called on init //
         var plotOnMap = function (retrievedResults) {
@@ -87,8 +87,10 @@
                     zoom: 8,
                     center: clickedPolygon.polyBoundsCenter,
                     bounds: clickedPolygon.rectangle.getBounds(),
-                    scrollwheel: false,
                     styles: vm.mapStyle,
+                    scrollwheel: false,
+                    disableDefaultUI: true,
+                    zoomControl: true,
                 }
             }
             var map = MapSvc.initMap(mapName, mapOptions);
@@ -160,6 +162,7 @@
 
         vm.divespotDetails = polyObj;
         vm.flickrFeed = FlickrFeed;
+        console.log(polyObj);
 
         vm.closeModal = function (result) {
             close(result, 500);

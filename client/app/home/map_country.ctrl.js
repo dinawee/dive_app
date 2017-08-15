@@ -23,6 +23,8 @@
             center: { lat: 0.2000285, lng: 118.015776 },
             styles: vm.mapStyle,
             scrollwheel: false,
+            disableDefaultUI: true,
+            zoomControl: true,
         }
         const map = MapSvc.initMap(mapName, mapOptions);
 
