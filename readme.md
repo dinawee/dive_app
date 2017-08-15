@@ -1,3 +1,8 @@
+*Pending*
+
+Update both views - bookmarks.controller and show.controller - some global $scope apply
+The refresh doesn't quite work
+
 *For development* 
     note that FB prep references
     /prep/map/config/development-cloud.js

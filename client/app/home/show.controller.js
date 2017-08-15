@@ -49,7 +49,12 @@
         };
 
         con.destroy = function() {
-            bookmarkService.destroyOne(con.object.id);
+            bookmarkService
+                .destroyOne(con.object.id)
+                .then(function(res){
+                        // not sure why this doesn't update
+                        con.isAdded = false;
+                });
         }
 
 

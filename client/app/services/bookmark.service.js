@@ -19,6 +19,9 @@
                 .then(function(newRecord){
                     alert('You have created a new bookmark' + JSON.stringify(newRecord));
                 })
+                .then(function(){
+                    return svc.findAll();
+                })
                 .catch(function (err) {
                     alert('You are not logged in');
                     $state.go('login');
@@ -32,9 +35,9 @@
                 .then(function(res){
                     console.log('Result JS is' + JSON.stringify(res));
                     alert('You have destroyed the bookmark');
-                    $state.go('bookmark'); 
-                    // state change doens't work
-                    
+                }).
+                then(function(){
+                    return svc.findAll();
                 })
                 .catch(function (err) {
                     alert('You are not logged in');
@@ -50,7 +53,6 @@
                     // the array is result.data
                     console.log('Client service result is' + JSON.stringify(result.data));
                     svc.userBookmarks = result.data;
-                    console.log('%d bookmarks returned', result.data.length);
                     return result.data
                 }).catch(function (err) {
                     alert('You are not logged in');
