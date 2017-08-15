@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- <base href="/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -47,26 +48,26 @@
                     <a ui-sref="search" class="nav-font">Search</a>
                 </li>
                 <li>
-                    <a ui-sref="bookmark" ng-if="con.isLoggedIn">
-                        Bookmarks: <span class="bm-number">{{ con.bookmarks }} </span>
+                    <a ui-sref="bookmark" ng-if="con.isLoggedIn" class="nav-font">
+                        Bookmarks: <span class="bm-number">{{ con.bookmarkCnt }} </span>
                     </a>
                 </li>
                 <!-- all the login routes based on LoginC -->
-                <li ng-if="!(con.isLoggedIn)">
-                    <a ui-sref="login">Login</a>
+                <li ng-if="!(con.isLoggedIn)" >
+                    <a ui-sref="login" class="nav-font">Login</a>
                     <!-- perform actual login on the login page -->
                 </li>
-                <li ng-if="con.isLoggedIn">
-                    <a href="#" ng-click="con.logout()">Logout</a>
+                <li ng-if="con.isLoggedIn" >
+                    <a href="#" ng-click="con.logout()" class="nav-font">Logout</a>
                 </li>
             </ul>
             <ul class="side-nav" id="slide-out">
                 <li>
-                    <a ui-sref="home">Home</a>
+                    <a ui-sref="home" class="nav-font" class="nav-font">Home</a>
                 </li>
                 <li>
                     <a ui-sref="bookmark" ng-if="con.isLoggedIn">
-                            Bookmarks: <span class="bm-number">{{ con.bookmarks }} </span>
+                            Bookmarks: <span class="bm-number" class="nav-font">{{ con.bookmarkCnt }} </span>
                     </a>
                 </li>
                 <!-- all the login routes based on LoginC -->
@@ -75,7 +76,7 @@
                     <!-- perform actual login on the login page -->
                 </li>
                 <li ng-if="con.isLoggedIn">
-                    <a href="#" ng-click="con.logout()">Logout</a>
+                    <a href="#" ng-click="con.logout()" class="nav-font">Logout</a>
                 </li>
             </ul>
         </div>
@@ -112,7 +113,7 @@
     <!--<script src="bower_components/angular-messages/angular-messages.min.js"></script>-->
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
-    <script src="bower_components/angular-scroll//angular-scroll.min.js"></script>
+    <!-- <script src="bower_components/angular-scroll//angular-scroll.min.js"></script> -->
     <script src="bower_components/angular-pageslide-directive/dist/angular-pageslide-directive.min.js"></script>
 
     <!-- app scripts -->

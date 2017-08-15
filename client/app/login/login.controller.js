@@ -8,14 +8,10 @@
     function LoginC($scope, passportService, $state, bookmarkService) {
         var con = this;
 
-        con.isLoggedIn = false;
+        con.isLoggedIn = null;
+        con.bookmarkCnt = 0;
 
-        con.bookmarks = 0;
-
-        con.logout = function () {
-            passportService.logout();
-        }
-
+        // init with watchers
         $scope.$watch(function () {
             return passportService.isLoggedIn;
         }, function (newValue, oldValue) {
@@ -29,10 +25,13 @@
         $scope.$watch(function () {
             return bookmarkService.userBookmarks.length;
         }, function (newValue, oldValue) {
-                console.log('The old v is %d', oldValue);
-                console.log('The new v is %d', newValue);
-                con.bookmarks = newValue;
+            con.bookmarkCnt = newValue;
         });
+
+        con.logout = function () {
+            passportService.logout();
+        }
+
 
     }// close controller
 

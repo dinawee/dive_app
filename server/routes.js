@@ -1,6 +1,6 @@
 
-const HOME_PAGE = "/#!/home";
-const LOGIN_PAGE = "/#!/login";
+const HOME_PAGE = "/#/home";
+const LOGIN_PAGE = "/#/login";
 
 /*
     Mailgun config
@@ -31,9 +31,10 @@ module.exports = (app, db, passport) => {
     /*
         Bookmark Routes
     */
-    app.post('/api/bookmarks', isUserAuth, Bookmarks.create);
     app.get('/api/bookmarks', isUserAuth, Bookmarks.index);
-    app.delete('/api/bookmarks/:fb_id', isUserAuth, Bookmarks.destroy);
+    app.post('/api/bookmarks', isUserAuth, Bookmarks.create);
+    app.put('/api/bookmarks/:id', isUserAuth, Bookmarks.update);
+    app.delete('/api/bookmarks/:id', isUserAuth, Bookmarks.destroy);
 
 
     /* 
@@ -63,7 +64,7 @@ module.exports = (app, db, passport) => {
     app.get('/logout', function (req, res) {
         req.logout();
         req.session.destroy(); 
-        res.redirect('/');
+        res.redirect('/home');
     });
 
 

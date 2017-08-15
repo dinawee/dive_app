@@ -1,38 +1,31 @@
+// ES6
+// implied function braces when single expression (one ;) 
+    // -> no in between console.logs
+    // -> no in between comments
+// implied return when braces omitted
 
-module.exports = function (db) {
-    return {
-        index: getAll(db),
-        create: createOne(db),
-        destroy: destroyOne(db)
-    }
-};
+// be careful when returning objects or empty objects
 
-const destroyOne = (db) => {
-    return (req, res) => {
-        db.DiveOperators
-            .findOne({
-                // corresponds to naming of routes and calling service
-                where: { fb_id: req.params.fb_id }
-                // implied return of db.Bookmarks
-                // implied function braces
-            })
-            .then(operator => db.Bookmarks
-                .destroy({
-                    where : { 
-                        $and : {
-                            user_id: req.user.user_id, // taken from session 
-                            dive_operator_id: operator.id, // taken from return
-                        }
-                    }
-                })
-            )
-            .then(result => res.status(200).json(result))
-            .catch(err => console.log(err));
+
+// changeObject is first param
+const updateOne = (db) => {
+    return (req, res) => {db.Bookmarks
+        .update(
+            req.body, 
+            { where: { user_dive_operator_id : req.params.id} }
+        ).then(result => res.status(200).json(result) 
+        ).catch(err => res.status(500).json(err));
     }
 }
 
-
-
+const destroyOne = (db) => {
+    return (req, res) => {db.Bookmarks
+        .destroy(
+            { where: { user_dive_operator_id : req.params.id} }
+        ).then(result => res.status(200).json(result)
+        ).catch(err => res.status(500).json(err));
+    }
+}
 
 
 function getAll(db) {
@@ -41,11 +34,11 @@ function getAll(db) {
         db.Bookmarks
             .findAll({
                 where: { user_id: req.user.user_id },
-                attributes: ['user_dive_operator_id', 'user_id', 'dive_operator_id'],
+                attributes: ['user_dive_operator_id', 'user_id', 'dive_operator_id', 'comment'],
                 order: ['user_dive_operator_id'],
-                include: [{ 
+                include: [{
                     model: db.DiveOperators,
-                    attributes: [ 'fb_id', 'name']
+                    attributes: ['fb_id', 'name']
                 }],
                 // include eager loads the DiveOperator results
             }
@@ -84,3 +77,57 @@ function createOne(db) {
     }
 }// close createOne
 
+
+module.exports = function (db) {
+    return {
+        index: getAll(db),
+        create: createOne(db),
+        destroy: destroyOne(db),
+        update: updateOne(db)
+    }
+};
+
+/* Old functions when bookmarks id not directly available
+
+const destroyOne = (db) => {
+    return (req, res) => {
+        db.DiveOperators
+            .findOne({
+                where: { fb_id: req.params.fb_id }
+            })
+            .then(operator => db.Bookmarks
+                .destroy({
+                    where: {
+                        $and: {
+                            user_id: req.user.user_id, // taken from session 
+                            dive_operator_id: operator.id, // taken from return
+                        }
+                    }
+                })
+            )
+            .then(result => res.status(200).json(result))
+            .catch(err => res.status(500).json(err));
+    }
+}
+
+const updateOne = (db) => {
+    return (req, res) => {
+        db.DiveOperators
+            .findOne({
+                where: { fb_id: req.params.fb_id }
+            }).then(operator =>
+                db.Bookmarks.find({
+                    where: {
+                        $and: {
+                            user_id: req.user.user_id, // taken from session 
+                            dive_operator_id: operator.id, // taken from return
+                        }
+                    }
+                })
+            ).then(bookmark => bookmark.updateAttributes(req.body)
+            ).then(result => res.status(200).json(result)
+            ).catch(err => res.status(500).json(err));
+    }
+}
+
+*/

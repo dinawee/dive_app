@@ -1,6 +1,5 @@
-
 <div class="row">
-    <h2>Dive Operator</h2>
+    <h3>Dive Operator</h3>
     {{ con.object.name }}
 </div>
 
@@ -13,24 +12,53 @@
 </div>
 
 <div class="row">
-    <h2>Contact</h2>
+    <h3>Contact</h3>
     {{ con.object.phone ? con.object.phone : "This page has no contact detail." }} </br>
 </div>
 
+
 <div class="row">
-    <h2>Description</h2>
+    <h3>Description</h3>
     {{ con.object.about ? con.object.about : "This page has no description." }} </br>
 </div>
 
-<div class="row">
-    <div ng-if="con.isAdded">
-        <button class="btn btn-info" ng-click="con.destroy()">Remove Bookmark
-                &#8194; <i class="icon ion-ios-close"></i>
-                 </button>
-    </div>
-    <div ng-if="!(con.isAdded)">
-        <button class="btn btn-success" ng-click="con.create()">Add Bookmark
+
+<div class="row" ng-if="!(con.isAdded)">
+    <button class="btn btn-success" ng-click="con.create()">Add Bookmark
                 &#8194; <i class="icon ion-bookmark"></i>
                 </button>
+</div>
+
+<div class="row" ng-if="con.isAdded">
+    <button class="btn btn-info" ng-click="con.destroy()">Remove Bookmark
+                &#8194; <i class="icon ion-ios-close"></i>
+                 </button>
+</div>
+
+
+
+<div class="row" ng-if="con.isAdded">
+    <h3>My Comment</h3>
+    <div ng-show="!(con.isEditing)">
+        {{ con.object.comment ? con.object.comment : "No comment added." }}
     </div>
+    <div ng-show="con.isEditing" class="input-field">
+        <input placeholder="Type here" id="comment" type="text" ng-model="con.object.comment">
+        <br>
+        <button class="btn" ng-click="con.cancelEdit()">Cancel
+                    &#8194; <i class="icon ion-android-cancel"></i>
+        </button>
+    </div>
+</div>
+
+<div class="row" ng-if="con.isAdded && !(con.isEditing)">
+    <button class="btn" ng-click="con.openEdit()">Edit Comment
+                &#8194; <i class="icon ion-edit"></i>
+    </button>
+</div>
+
+<div class="row" ng-if="con.isAdded && con.isEditing">
+    <button class="btn" ng-click="con.updateComment()">Save Comment
+                &#8194; <i class="icon ion-ios-compose-outline"></i>
+    </button>
 </div>

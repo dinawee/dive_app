@@ -3,11 +3,21 @@
         .module("MyApp")
         .config(uiRouteConfig)
 
-    uiRouteConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
+    uiRouteConfig.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider"];
 
-    function uiRouteConfig($stateProvider, $urlRouterProvider) {
+    function uiRouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         // .state takes 2 params - state name string & object
+
         $stateProvider
+            .state('search', {
+                url: '/',
+                views: {
+                    'mapsearch': {
+                        templateUrl: '/app/home/map_search.html',
+                        controller: 'SearchCtrl as ctrl'
+                    }
+                },
+            })
             .state('login', {
                 url: '/login',
                 views: {
@@ -33,20 +43,10 @@
             })
             .state('home', {
                 url: '/home',
-                authenticate: "home", // special setting for Angular.run to know
                 views: {
                     'mapcountry': {
                         templateUrl: '/app/home/map_country.html',
                         controller: 'CountryCtrl as ctrl'
-                    }
-                },
-            })
-            .state('search', {
-                url: '/search',
-                views: {
-                    'mapsearch': {
-                        templateUrl: '/app/home/map_search.html',
-                        controller: 'SearchCtrl as ctrl'
                     }
                 },
             })
@@ -73,9 +73,10 @@
                 }
             });
 
-        // set catchall URL
-        $urlRouterProvider
-            .otherwise('/search');
+        // set catchall URL - default URL 
+        $urlRouterProvider.otherwise('/');
+
+        // $locationProvider.html5Mode(true);
 
     }// close uiRouteConfig 
 

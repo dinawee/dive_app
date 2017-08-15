@@ -16,7 +16,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="active" ng-repeat="each in con.selectedBookmarks" ng-click='con.getOneBookmark(each["dive_operator"]["fb_id"])'>
+                    <tr class="active" ng-repeat="each in con.userBookmarks" ng-click='con.getOneBookmark(each["dive_operator"]["fb_id"])'>
                         <td> {{ $index + 1 }} </td>
                         <td> {{ each["dive_operator"]["name"] }} </td>
                         <td>

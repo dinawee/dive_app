@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
 client/bower_components/
+stories.md
 
 prep/fb_data/config/development-cloud.js
 prep/map/config/development-cloud.js

@@ -29,30 +29,41 @@ body {
 }
 
 .nav-font {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 nav {
     background-color: #199d8f;
 }
 
-a {
-    background-color: #199d8f !important;
-    color: #b4dad7 !important;
+nav a {
+    background-color: #199d8f;
+    
 }
+
+nav ul a {
+    color: #b4dad7  
+}
+
+nav .brand-logo {
+    color: #b4dad7  
+}
+
+
 
 h1 {
     font-size: 3.375em;
+    margin: 0.71rem 0 0.56rem 0
 }
 
 h2 {
     font-size: 2.25em;
-    margin-bottom: 2px;
+    margin-bottom: 0.15rem;
 }
 
 h3 {
     font-size: 1.5em;
-    margin-bottom: 2px;
+    margin-bottom: 0.15rem;
 }
 
 h1, h2, h3 {
@@ -64,14 +75,20 @@ td {
     padding: 15px 5px 25px 5px;
 }
 
+.btn {
+    font-family: 'Lato', sans-serif;
+}
+
 .btn-info {
     background-color: #ff7d40;
-    font-family: 'Lato', sans-serif;
+}
+
+.btn-success {
+    background-color: #3A3E99;
 }
 
 .btn-danger {
     background-color: #e62739;
-    font-family: 'Lato', sans-serif;
 }
 
 
@@ -86,7 +103,7 @@ Show Styles
 
 
 #show-box {
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
 
