@@ -1,0 +1,269 @@
+#map_search {
+    /* position :relative; */
+    height: 520px;
+    width: 100%;
+    background-color: #f6fbfc;
+    animation: fadein 1s;
+    z-index: 0;
+}
+
+.quote-container {
+    /* border: 1px solid red; */
+    height: 520px;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    opacity: 0;
+    background-image: url(../images/quote.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    animation: quote-animate forwards;
+    -webkit-animation: quote-animate forwards;
+    animation-duration: 8s;
+    -webkit-animation-duration: 8s;
+    animation-delay: 3s;
+    -webkit-animation-delay: 1.5s;
+    z-index: 2;
+}
+
+.bubbles {
+    position: absolute;
+    top: 11%;
+    left: 0;
+    width: 100%;
+    height: 520px;
+    z-index: 1;
+    transform: translateZ(0);
+    overflow: hidden;
+}
+
+.bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    background-color: #FFFF00;
+    bottom: -100px;
+    animation: square 20s infinite;
+    -webkit-animation: bubbles-moving 20s infinite;
+    transition-timing-function: linear;
+    border-radius: 50%;
+}
+
+.bubbles li:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 20%;
+}
+
+.bubbles li:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    left: 40%;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-duration: 17s;
+    -webkit-animation-duration: 17s;
+}
+
+.bubbles li:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    left: 60%;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+    animation-duration: 13s;
+    -webkit-animation-duration: 13s;
+}
+
+.bubbles li:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    left: 80%;
+    animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+    animation-duration: 25s;
+    -webkit-animation-duration: 25s;
+}
+
+.bubbles li:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    left: 48%;
+    animation-delay: 7s;
+    -webkit-animation-delay: 7s;
+    animation-duration: 12s;
+    -webkit-animation-duration: 12s;
+}
+
+.bubbles li:nth-child(6) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-delay: 9s;
+    -webkit-animation-delay: 9s;
+    animation-duration: 17s;
+    -webkit-animation-duration: 17s;
+}
+
+.bubbles li:nth-child(7) {
+    width: 60px;
+    height: 60px;
+    left: 70%;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    animation-duration: 17s;
+    -webkit-animation-duration: 17s;
+}
+
+.bubbles li:nth-child(8) {
+    width: 10px;
+    height: 10px;
+    left: 30%;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-duration: 13s;
+    -webkit-animation-duration: 13s;
+}
+
+.bubbles li:nth-child(9) {
+    width: 80px;
+    height: 80px;
+    left: 25%;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    animation-duration: 22s;
+    -webkit-animation-duration: 22s;
+}
+
+.bubbles li:nth-child(10) {
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+    animation-duration: 12s;
+    -webkit-animation-duration: 12s;
+}
+
+.bubbles li:nth-child(11) {
+    width: 10px;
+    height: 10px;
+    left: 56%;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    animation-duration: 11s;
+    -webkit-animation-duration: 11s;
+}
+
+.bubbles li:nth-child(12) {
+    width: 10px;
+    height: 10px;
+    left: 66%;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-duration: 15s;
+    -webkit-animation-duration: 15s;
+}
+
+.bubbles li:nth-child(13) {
+    width: 10px;
+    height: 10px;
+    left: 44%;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-duration: 13s;
+    -webkit-animation-duration: 13s;
+}
+
+.bubbles li:nth-child(14) {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-delay: 8s;
+    -webkit-animation-delay: 8s;
+    animation-duration: 20s;
+    -webkit-animation-duration: 20s;
+}
+
+.bubbles li:nth-child(15) {
+    width: 10px;
+    height: 10px;
+    left: 3%;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-duration: 13s;
+    -webkit-animation-duration: 13s;
+}
+
+.bubbles li:nth-child(16) {
+    width: 20px;
+    height: 20px;
+    left: 3%;
+    animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+    animation-duration: 19s;
+    -webkit-animation-duration: 19s;
+}
+
+.search-card {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    z-index: 3;
+    opacity: 0;
+    animation: card-animate forwards;
+    -webkit-animation: card-animate forwards;
+    animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+}
+.card-title {
+    font-family: 'Merriweather', serif;
+}
+
+.card-button {
+    font-family: Lobster, sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.card-button-color {
+      color: #199d8f;  
+}
+
+@keyframes bubbles-moving {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-800px) rotate(630deg);
+        transform: translateY(-800px) rotate(630deg);
+    }
+}
+
+@keyframes quote-animate {
+    0% {
+        left: 25%;
+        opacity: 0;
+    }
+    25% {
+        left: 25%;
+        opacity: 1;
+    }
+    100% {
+        left: 10%;
+        opacity: 1;
+    }
+}
+
+@keyframes card-animate {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}

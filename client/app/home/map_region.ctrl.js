@@ -13,7 +13,6 @@
             vm.mapStyle = MapStyleSvc.loadMapStyle();
         }
         loadMapStyle();
-
      
         /* For page-slider */
         $scope.checked = null; // toggled by watcher
@@ -71,8 +70,10 @@
                     zoom: 8,
                     center: clickedPolygon.polyBoundsCenter,
                     bounds: clickedPolygon.rectangle.getBounds(),
-                    scrollwheel: false,
                     styles: vm.mapStyle,
+                    scrollwheel: false,
+                    disableDefaultUI: true,
+                    zoomControl: true,
                 }
             }
             var map = MapSvc.initMap(mapName, mapOptions);
@@ -144,6 +145,7 @@
 
         vm.divespotDetails = polyObj;
         vm.flickrFeed = FlickrFeed;
+        console.log(polyObj);
 
         vm.closeModal = function (result) {
             close(result, 500);

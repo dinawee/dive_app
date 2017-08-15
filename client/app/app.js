@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module("MyApp", ["ui.router", "angularModalService", "pageslide-directive"])
+        .module("MyApp", ["ui.router", "angularModalService", "pageslide-directive", "ngAnimate"])
         .run(init);
 
     init.$inject = ['$transitions', '$state', 'passportService', "bookmarkService"];

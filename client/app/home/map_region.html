@@ -4,48 +4,21 @@
 
         <!--Modal view -->
 
-        <div>
-
-            <!--
-            <script type="text/ng-template" id="ctry-modal-template.html">
-                <div class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" ng-click="closeModal('x to close')" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">{{divespotDetails.divespot_name}}</h4>
-                            </div>
-                            <div>
-                                <div class="modal-body align-center" ng-repeat="i in flickrFeed">
-                                     <img src="https://farm{{i.farm}}.staticflickr.com/{{i.server}}/{{i.id}}_{{i.secret}}_q.jpg" alt="picture"> 
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-info" ng-click="explore()" data-dismiss="modal">Explore</button>
-                            </div>
-                        </div>
+        <script type="text/ng-template" id="ctry-modal-template.html">
+            <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <div class="right-align"><i class="medium material-icons close icon-clickable" ng-click="closeModal('x to close')">&times;</i></div>
+                    <div class="center-align">
+                        <h2>{{divespotDetails.divespot_name}}</h2>
+                        <br>
+                        <gallery ng-repeat="i in flickrFeed">
+                            <photo-grid>
+                                <img class="photo-img" src="https://farm{{i.farm}}.staticflickr.com/{{i.server}}/{{i.id}}_{{i.secret}}_q.jpg" alt="picture">
+                            </photo-grid>
+                        </gallery>
                     </div>
                 </div>
-            </script>
--->
-            <script type="text/ng-template" id="ctry-modal-template.html">
-                <div class="modal modal-fixed-footer fade">
-                    <div>
-                        <h4>Modal Header</h4>
-                    </div>
-                    <div class="modal-content">
-                        <p>A bunch of text</p>
-                        <div ng-repeat="i in flickrFeed">
-                            <img src="https://farm{{i.farm}}.staticflickr.com/{{i.server}}/{{i.id}}_{{i.secret}}_q.jpg" alt="picture">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn waves-effect waves-light" ng-click="explore()" data-dismiss="modal">Explore</button>
-                    </div>
-                </div>
-            </script>
-        </div>
-
+        </script>
         <!-- End Modal -->
 
     </div>
@@ -77,13 +50,34 @@
                     <i class="icon ion-chevron-up"></i>
                 </div>
             </div>
+             <<div id="fade"></div> 
+    </script>
+
+    <!-- End Modal -->
+
+</div>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+<div class="row" ng-show="ctrl.toggleShow">
+    <div class="col s8 offset-s2">
+        <div ui-view="show"></div>
+        </br>
+        <div class="row">
+            <div class="button btn btn-info btn-sm" ng-click="ctrl.toShowMap()">
+                Back to map &#8194;
+                <i class="icon ion-chevron-up"></i>
+            </div>
         </div>
     </div>
-
-    </br>
-    </br>
-    </br>
-    </br> -->
+</div>
 
     <!-- <div class="show-modal"></div> -->
 </div>
