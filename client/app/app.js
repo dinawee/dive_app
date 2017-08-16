@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module("MyApp", ["ui.router", "angularModalService", "duScroll", "ngAnimate"])
+        .module("MyApp", ["ui.router", "angularModalService", "pageslide-directive", "ngAnimate"])
         .run(init);
 
     init.$inject = ['$transitions', '$state', 'passportService', "bookmarkService"];
@@ -8,21 +8,21 @@
     function init($transitions, $state, passportService, bookmarkService) {
         $transitions.onStart({ to: '**' },
             function (trans) {
-                var nextState = trans.to(); // is this pass by reference?
-                // check if user is logged in; they will have accessToken
-                if (nextState.authenticate) {
-                    return passportService.getAccessToken()
+                var nextState = trans.to(); 
+                // to optimise, check local then check global 
+                // pass by ref? hackable?
+                // at every state, check whether user logged in - to toggle nav bar
+                return passportService.getAccessToken()
                         .then(function (token) {
-                            return bookmarkService.findAll();
+                            return bookmarkService.findAll(); // fetch latest bookmarks
                         })
                         .catch(function (err) {
-                            if (nextState.authenticate === "home") {
-                                return; // allow default to go through still
+                            if (!(nextState.authenticate)) {
+                                return; // for non-protected states, go through
                             }
                             $state.transitionTo("login");
                             event.preventDefault();
                         });
-                }
             });
     }
 

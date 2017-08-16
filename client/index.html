@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- <base href="/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -38,7 +39,8 @@
     <nav>
         <div class="nav-wrapper" ng-controller="LoginC as con" ng-cloak>
             <a href="/" class="brand-logo">Dive Operator FB API</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="icon ion-navicon"></i></a>
+            <ul class="right hide-on-med-and-down">
                 <li>
                     <a ui-sref="home" class="nav-font">Home</a>
                 </li>
@@ -46,15 +48,9 @@
                     <a ui-sref="search" class="nav-font">Search</a>
                 </li>
                 <li>
-                    <a ui-sref="prepmap" class="nav-font">Prep Map</a>
-                </li>
-                <li>
-                    <a ui-sref="bookmark" ng-if="con.isLoggedIn">
-                            Bookmarks: <span class="bm-number">{{ con.bookmarks }} </span>
-                        </a>
-                </li>
-                <li>
-                    <a ui-sref="mapregion" class="nav-font">Map Region</a>
+                    <a ui-sref="bookmark" ng-if="con.isLoggedIn" class="nav-font">
+                        Bookmarks: <span class="bm-number">{{ con.bookmarkCnt }} </span>
+                    </a>
                 </li>
                 <!-- all the login routes based on LoginC -->
                 <li ng-if="!(con.isLoggedIn)">
@@ -62,7 +58,25 @@
                     <!-- perform actual login on the login page -->
                 </li>
                 <li ng-if="con.isLoggedIn">
-                    <a href="#" ng-click="con.logout()">Logout</a>
+                    <a href="#" ng-click="con.logout()" class="nav-font">Logout</a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="slide-out">
+                <li>
+                    <a ui-sref="home" class="nav-font" class="nav-font">Home</a>
+                </li>
+                <li>
+                    <a ui-sref="bookmark" ng-if="con.isLoggedIn">
+                            Bookmarks: <span class="bm-number" class="nav-font">{{ con.bookmarkCnt }} </span>
+                    </a>
+                </li>
+                <!-- all the login routes based on LoginC -->
+                <li ng-if="!(con.isLoggedIn)">
+                    <a ui-sref="login" class="nav-font">Login</a>
+                    <!-- perform actual login on the login page -->
+                </li>
+                <li ng-if="con.isLoggedIn">
+                    <a href="#" ng-click="con.logout()" class="nav-font">Logout</a>
                 </li>
             </ul>
         </div>
@@ -90,14 +104,17 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <!-- <script src="bower_components/materialize/dist/js/materialize.min.js"></script> -->
+
+
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-touch/angular-touch.min.js"></script>
     <!--<script src="bower_components/angular-messages/angular-messages.min.js"></script>-->
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="bower_components\angular-modal-service\dst\angular-modal-service.min.js"></script>
-    <script src="bower_components/angular-scroll//angular-scroll.min.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
+    <!-- <script src="bower_components/angular-scroll//angular-scroll.min.js"></script> -->
+    <script src="bower_components/angular-pageslide-directive/dist/angular-pageslide-directive.min.js"></script>
 
     <!-- load module -->
     <script src="app/app.js"></script>
@@ -131,6 +148,20 @@
     <script defer src="app/prep/prepmap.ctrl.js"></script>
     <script defer src="app/prep/prepmap.svc.js"></script>
     <script src="app/prep/prepdbroute.svc.js"></script>
+
+    <script>
+        (function ($) {
+            $(function () {
+                $('.button-collapse').sideNav();
+            }); // init side nav
+            $(document).ready(function () {
+                $('.tooltipped').tooltip({ delay: 20 });
+            }); // init tool tip
+        })(jQuery); // end of jQuery name space
+
+    </script>
+
+
 </body>
 
 </html>

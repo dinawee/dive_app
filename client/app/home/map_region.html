@@ -22,6 +22,39 @@
                     <button type="button" class="btn waves-effect waves-light" ng-click="explore()" data-dismiss="modal">Explore</button>
                 </div>
             </div>
+            <!-- <<div id="fade"></div> -->
+    </script>
+    <!-- End Modal -->
+
+</div>
+
+<!-- New ng-slider -->
+<div pageslide ps-open="checked" ps-speed="1.5" ps-class="show-sidebar" ps-size="500px">
+    <div class="container">
+        <div class="row">
+            <div class="col s5 offset-s7">
+                <button class="btn" ng-click="vm.closeSlider()">Hide</button>
+            </div>
+            <div class="row">
+                <div ui-view="show"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Old toggle show -->
+
+<!-- <div class="row" ng-show="ctrl.toggleShow">
+        <div class="col s8 offset-s2">
+            <div ui-view="show"></div>
+            </br>
+            <div class="row">
+                <div class="button btn btn-info btn-sm" ng-click="ctrl.toShowMap()">
+                    Back to map &#8194;
+                    <i class="icon ion-chevron-up"></i>
+                </div>
+            </div>
              <<div id="fade"></div> 
     </script>
 
@@ -51,10 +84,5 @@
     </div>
 </div>
 
-</br>
-</br>
-</br>
-</br>
-
-<div id="showresult"></div>
+<!-- <div class="show-modal"></div> -->
 </div>

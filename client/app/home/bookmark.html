@@ -1,11 +1,9 @@
+
 <div class="container">
 
     <div class="row">
+        <div class="col s12 m5">
         <h1>My Bookmarks</h1>
-    </div>
-
-    <div class="row">
-        <div class="col s5">
             <table class="table highlight">
                 <thead>
                     <tr>
@@ -15,7 +13,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="active" ng-repeat="each in con.selectedBookmarks" ng-click='con.getOneBookmark(each["dive_operator"]["fb_id"])'>
+                    <tr class="active" ng-repeat="each in con.userBookmarks" ng-click='con.getOneBookmark(each["dive_operator"]["fb_id"])'>
                         <td> {{ $index + 1 }} </td>
                         <td> {{ each["dive_operator"]["name"] }} </td>
                         <td>
@@ -26,12 +24,14 @@
             </table>
         </div>
         <!-- end md-5 -->
-        <div class="col s6 offset-s1">
-            <div id="show-box">
-                <div ng-if="!(con.toggleShow)">You have not selected any bookmark</div>
+        <div class="col s12 m6 offset-m1">
+                <div ng-if="!(con.toggleShow)">
+                    <h3>
+                        Select a bookmark.
+                    </h3>
+                </div>
                 <div ui-view="show" ng-if="con.toggleShow"></div>
-            </div>
         </div>
-    </div>
+    </div><!-- close row -->
 
 </div>

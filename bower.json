@@ -19,12 +19,12 @@
     "angular": "^1.6.5",
     "angular-ui-router": "^1.0.5",
     "angular-modal-service": "^0.12.1",
-    "angular-scroll": "^1.0.2",
     "materialize": "^0.100.1",
     "angular-animate": "1.6.5",
     "angular-touch": "1.6.5",
     "bootstrap": "3.3.7",
-    "jquery": "3.2.1"
+    "jquery": "3.2.1",
+    "angular-pageslide-directive": "^2.1.4"
   },
   "resolutions": {
     "angular": "~1.5.x"

@@ -1,6 +1,6 @@
 
-const HOME_PAGE = "/#!/home";
-const LOGIN_PAGE = "/#!/login";
+const HOME_PAGE = "/#/home";
+const LOGIN_PAGE = "/#/login";
 
 /*
     Mailgun config
@@ -12,8 +12,7 @@ var domain = 'sandbox2636603ac88c4b3d9a8bb7cbd14a4559.mailgun.org';
 
 
 // Exported modules
-module.exports = function (app, db, passport) {
-
+module.exports = (app, db, passport) => {
     var DiveOperators = require('./api/diveoperators.controller.js')(db);
     var Divespots = require("./api/divespots.controller.js")(db);
     var DiveRegions = require("./api/diveregions.controller.js")(db);
@@ -32,9 +31,10 @@ module.exports = function (app, db, passport) {
     /*
         Bookmark Routes
     */
-    app.post('/api/bookmarks', isUserAuth, Bookmarks.create);
-
     app.get('/api/bookmarks', isUserAuth, Bookmarks.index);
+    app.post('/api/bookmarks', isUserAuth, Bookmarks.create);
+    app.put('/api/bookmarks/:id', isUserAuth, Bookmarks.update);
+    app.delete('/api/bookmarks/:id', isUserAuth, Bookmarks.destroy);
 
 
     /* 
@@ -64,7 +64,7 @@ module.exports = function (app, db, passport) {
     app.get('/logout', function (req, res) {
         req.logout();
         req.session.destroy(); 
-        res.redirect('/');
+        res.redirect('/home');
     });
 
 
@@ -100,5 +100,7 @@ module.exports = function (app, db, passport) {
     //prep
     app.post("/api/divespots", Divespots.create);
     app.post("/api/diveregions", DiveRegions.create);
+    
+    
 
 }

@@ -1,14 +1,44 @@
+// ES6
+// implied function braces when single expression (one ;) 
+    // -> no in between console.logs
+    // -> no in between comments
+// implied return when braces omitted
+
+// be careful when returning objects or empty objects
+
+
+// changeObject is first param, sent as req.body
+const updateOne = (db) => {
+    return (req, res) => {db.Bookmarks
+        .update(
+            req.body, 
+            { where: { user_dive_operator_id : req.params.id} }
+        ).then(result => res.status(200).json(result) 
+        ).catch(err => res.status(500).json(err));
+    }
+}
+
+const destroyOne = (db) => {
+    return (req, res) => {db.Bookmarks
+        .destroy(
+            { where: { user_dive_operator_id : req.params.id} }
+        ).then(result => res.status(200).json(result)
+        ).catch(err => res.status(500).json(err));
+    }
+}
+
+
 function getAll(db) {
     return function (req, res) {
         console.log('Req user is ' + req.user.user_id);
         db.Bookmarks
             .findAll({
                 where: { user_id: req.user.user_id },
-                attributes: ['user_dive_operator_id', 'user_id', 'dive_operator_id'],
+                attributes: ['user_dive_operator_id', 'user_id', 'dive_operator_id', 'comment', 'is_visited'],
                 order: ['user_dive_operator_id'],
-                include: [{ 
+                include: [{
                     model: db.DiveOperators,
-                    attributes: [ 'fb_id', 'name']
+                    attributes: ['fb_id', 'name']
                 }],
                 // include eager loads the DiveOperator results
             }
@@ -51,6 +81,53 @@ function createOne(db) {
 module.exports = function (db) {
     return {
         index: getAll(db),
-        create: createOne(db)
+        create: createOne(db),
+        destroy: destroyOne(db),
+        update: updateOne(db)
     }
 };
+
+/* Old functions when bookmarks id not directly available
+
+const destroyOne = (db) => {
+    return (req, res) => {
+        db.DiveOperators
+            .findOne({
+                where: { fb_id: req.params.fb_id }
+            })
+            .then(operator => db.Bookmarks
+                .destroy({
+                    where: {
+                        $and: {
+                            user_id: req.user.user_id, // taken from session 
+                            dive_operator_id: operator.id, // taken from return
+                        }
+                    }
+                })
+            )
+            .then(result => res.status(200).json(result))
+            .catch(err => res.status(500).json(err));
+    }
+}
+
+const updateOne = (db) => {
+    return (req, res) => {
+        db.DiveOperators
+            .findOne({
+                where: { fb_id: req.params.fb_id }
+            }).then(operator =>
+                db.Bookmarks.find({
+                    where: {
+                        $and: {
+                            user_id: req.user.user_id, // taken from session 
+                            dive_operator_id: operator.id, // taken from return
+                        }
+                    }
+                })
+            ).then(bookmark => bookmark.updateAttributes(req.body)
+            ).then(result => res.status(200).json(result)
+            ).catch(err => res.status(500).json(err));
+    }
+}
+
+*/

@@ -29,30 +29,41 @@ body {
 }
 
 .nav-font {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 nav {
     background-color: #199d8f;
 }
 
-a {
-    background-color: #199d8f !important;
-    color: #b4dad7 !important;
+nav a {
+    background-color: #199d8f;
+    
 }
 
+nav ul a {
+    color: #b4dad7  
+}
+
+nav .brand-logo {
+    color: #b4dad7  
+}
+
+
+
 h1 {
-    font-size: 3.375em;
+    font-size: 3.375rem;
+    margin: 0.71rem 0 0.56rem 0
 }
 
 h2 {
-    font-size: 2.25em;
-    margin-bottom: 2px;
+    font-size: 2.25rem;
+    margin-bottom: 0.15rem;
 }
 
 h3 {
-    font-size: 1.5em;
-    margin-bottom: 2px;
+    font-size: 1.5rem;
+    margin-bottom: 0.15rem;
 }
 
 h1, h2, h3 {
@@ -64,23 +75,60 @@ td {
     padding: 15px 5px 25px 5px;
 }
 
+.btn {
+    font-family: 'Lato', sans-serif;
+}
+
 .btn-info {
     background-color: #ff7d40;
-    font-family: 'Lato', sans-serif;
+}
+
+.btn-success {
+    background-color: #3A3E99;
 }
 
 .btn-danger {
     background-color: #e62739;
-    font-family: 'Lato', sans-serif;
 }
+
+.italic {
+    font-style: italic;
+}
+
+
 
 
 /* 
 Show Styles
 */
 
-#show-box {
-    padding-top: 40px;
+.show-sidebar {
+    background: white;
+    /* no other properties needed they will be over-written  */
+}
+
+.show-bookmarks {
+    /* font-family: 'Lobster', sans-serif ; */
+    /* font-size: 1.2rem; */
+    display: inline;
+}
+
+.show-bookmarks h3 {
+    display: inline;
+    /* margin: 0 0 0.15rem 0 */
+    margin: 0;
+}
+
+.show-bookmarks i {
+    line-height: 110%; 
+    display: inline;
+}
+
+#toast-container {
+  top: auto !important;
+  right: 8%;
+  bottom: 10%;
+  left: auto !important;  
 }
 
 
@@ -92,8 +140,8 @@ Show Styles
 }
 
 .show-img {
-    width: 400px;
-    height: auto;
+    width: auto;
+    height: 270px;
 }
 
 .show-img img {
