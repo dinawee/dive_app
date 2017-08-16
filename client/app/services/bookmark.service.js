@@ -19,8 +19,8 @@
         svc.createOne = function (fb_id) {
             body = { fb_id: fb_id };
             return $http.post('/api/bookmarks', body)
-                .then(function(newRecord){
-                    alert('You have added a new bookmark');
+                .then(function(res){
+                    console.log('You have created' + res.data);
                 })
                 .then(function(){
                     return svc.findAll();
@@ -51,7 +51,6 @@
         svc.destroyOne = function (id) {
             return $http.delete('/api/bookmarks/' + id)
                 .then(function(res){
-                    alert('You have destroyed the bookmark');
                     console.log('Destroy result is' + JSON.stringify(res));
                 })
                 .then(function(){

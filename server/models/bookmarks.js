@@ -19,6 +19,10 @@ module.exports = function (sequelize, DataTypes) {
         },
         comment: {
             type: DataTypes.TEXT,
+        },
+        is_visited: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
         }
     }, {
             // timestamps: false,

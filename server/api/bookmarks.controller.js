@@ -7,7 +7,7 @@
 // be careful when returning objects or empty objects
 
 
-// changeObject is first param
+// changeObject is first param, sent as req.body
 const updateOne = (db) => {
     return (req, res) => {db.Bookmarks
         .update(
@@ -34,7 +34,7 @@ function getAll(db) {
         db.Bookmarks
             .findAll({
                 where: { user_id: req.user.user_id },
-                attributes: ['user_dive_operator_id', 'user_id', 'dive_operator_id', 'comment'],
+                attributes: ['user_dive_operator_id', 'user_id', 'dive_operator_id', 'comment', 'is_visited'],
                 order: ['user_dive_operator_id'],
                 include: [{
                     model: db.DiveOperators,

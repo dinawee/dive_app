@@ -8,7 +8,9 @@
     function init($transitions, $state, passportService, bookmarkService) {
         $transitions.onStart({ to: '**' },
             function (trans) {
-                var nextState = trans.to(); // pass by ref? hackable?
+                var nextState = trans.to(); 
+                // to optimise, check local then check global 
+                // pass by ref? hackable?
                 // at every state, check whether user logged in - to toggle nav bar
                 return passportService.getAccessToken()
                         .then(function (token) {

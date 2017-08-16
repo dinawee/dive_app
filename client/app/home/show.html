@@ -23,42 +23,84 @@
 </div>
 
 
+<!-- !(con.isAdded)  -->
+
 <div class="row" ng-if="!(con.isAdded)">
     <button class="btn btn-success" ng-click="con.create()">Add Bookmark
                 &#8194; <i class="icon ion-bookmark"></i>
                 </button>
 </div>
 
-<div class="row" ng-if="con.isAdded">
-    <button class="btn btn-info" ng-click="con.destroy()">Remove Bookmark
+
+<!-- con.isAdded  -->
+<div ng-if="con.isAdded">
+
+    <div class="row">
+        <button class="btn btn-info tooltipped" ng-click="con.destroy()" data-position="bottom" data-delay="20" data-tooltip="Remove bookmark">Remove Bookmark
                 &#8194; <i class="icon ion-ios-close"></i>
-                 </button>
-</div>
-
-
-
-<div class="row" ng-if="con.isAdded">
-    <h3>My Comment</h3>
-    <div ng-show="!(con.isEditing)">
-        {{ con.object.comment ? con.object.comment : "No comment added." }}
-    </div>
-    <div ng-show="con.isEditing" class="input-field">
-        <input placeholder="Type here" id="comment" type="text" ng-model="con.object.comment">
-        <br>
-        <button class="btn" ng-click="con.cancelEdit()">Cancel
-                    &#8194; <i class="icon ion-android-cancel"></i>
-        </button>
-    </div>
-</div>
-
-<div class="row" ng-if="con.isAdded && !(con.isEditing)">
-    <button class="btn" ng-click="con.openEdit()">Edit Comment
-                &#8194; <i class="icon ion-edit"></i>
     </button>
+    </div>
+
+    <div class="show-bookmarks">
+        <div class="row">
+            <h3>My Comment</h3>
+            <i ng-if="!(con.isEditing)" class="material-icons tooltipped" ng-click="con.openEdit()" data-position="bottom" data-delay="20"
+                data-tooltip="Edit comment">create</i>
+
+            <div ng-show="!(con.isEditing)">
+                <div ng-class="{ 'italic': !(con.object.comment) }">
+                    {{ con.object.comment ? con.object.comment : "No comment added." }}
+                </div>
+            </div>
+            <div ng-show="con.isEditing" class="input-field">
+                <input placeholder="Type here" id="comment" type="text" ng-model="con.object.comment">
+            </div>
+
+            <i ng-if="con.isEditing" class="material-icons tooltipped" ng-click="con.updateComment()" data-position="bottom" data-delay="20"
+                data-tooltip="Save comment">save</i>
+            <i ng-if="con.isEditing" class="material-icons tooltipped" ng-click="con.cancelEdit()" data-position="bottom" data-delay="20"
+                data-tooltip="Cancel comment">cancel</i>
+        </div>
+
+        <div class="row">
+            <div ng-if="con.object.is_visited">
+                <!-- <div class="col s7"> -->
+                <!-- <div class="valign-wrapper"> -->
+                <h3>Visited</h3> <i class="material-icons" ng-click="con.updateVisited()">
+                check_box
+        </i>
+                <!-- </div> -->
+                <!-- </div> -->
+            </div>
+            <div ng-if="!(con.object.is_visited)">
+                <!-- <div class="col s7"> -->
+                <!-- <div class="valign-wrapper"> -->
+                <h3>Visit me</h3> <i class="material-icons" ng-click="con.updateVisited()">
+                     check_box_outline_blank
+        </i>
+                <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+        <!-- check in row -->
+
+    </div>
+    <!-- show bookmarks -->
+
+</div>
+<!-- isAdded -->
+
+
+
+
+<!-- <div class="row" ng-if="con.isAdded && !(con.isEditing)">
+     <button class="btn" ng-click="con.openEdit()"> 
+        <i class="material-icons" ng-click="con.openEdit()">create</i>
+     </button> 
 </div>
 
 <div class="row" ng-if="con.isAdded && con.isEditing">
-    <button class="btn" ng-click="con.updateComment()">Save Comment
-                &#8194; <i class="icon ion-ios-compose-outline"></i>
-    </button>
-</div>
+     <button class="btn" ng-click="con.updateComment()"> 
+        <i class="material-icons" ng-click="con.updateComment()">save</i>
+     </button> 
+</div> -->

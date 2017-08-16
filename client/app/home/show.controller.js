@@ -80,6 +80,7 @@
             bookmarkService
                 .createOne(con.object.id) // only one that uses fbId
                 .then(function (res) {
+                    Materialize.toast('Added your bookmark', 1500);
                     syncObject();
                 });
         };
@@ -92,7 +93,7 @@
             bookmarkService
                 .updateOne(con.object.user_dive_operator_id, commentObject)
                 .then(function (res) {
-                    alert('You have updated your comment.');
+                    Materialize.toast('Updated your comment', 1500);
                     syncObject();
                     con.toggleEdit();
                 });
@@ -100,11 +101,17 @@
 
         con.updateVisited = function () {
             var visitedObject = {
-                is_visited: con.object.is_visited,
+                is_visited: Boolean(!(con.object.is_visited)),
             }
             bookmarkService
                 .updateOne(con.object.user_dive_operator_id, visitedObject)
                 .then(function (res) {
+                    if (visitedObject.is_visited){
+                        Materialize.toast('Ticked off bucket list', 1500);
+                    } 
+                    if (!(visitedObject.is_visited)) {
+                        Materialize.toast('Ticked off bucket list', 1500);
+                    }
                     syncObject();
                 });
         };
@@ -113,6 +120,7 @@
             bookmarkService
                 .destroyOne(con.object.user_dive_operator_id)
                 .then(function (res) {
+                    Materialize.toast('Deleted your bookmark', 1500);
                     syncObject();
                 });
         }

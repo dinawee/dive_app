@@ -52,17 +52,17 @@ nav .brand-logo {
 
 
 h1 {
-    font-size: 3.375em;
+    font-size: 3.375rem;
     margin: 0.71rem 0 0.56rem 0
 }
 
 h2 {
-    font-size: 2.25em;
+    font-size: 2.25rem;
     margin-bottom: 0.15rem;
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-bottom: 0.15rem;
 }
 
@@ -91,6 +91,12 @@ td {
     background-color: #e62739;
 }
 
+.italic {
+    font-style: italic;
+}
+
+
+
 
 /* 
 Show Styles
@@ -101,9 +107,28 @@ Show Styles
     /* no other properties needed they will be over-written  */
 }
 
+.show-bookmarks {
+    /* font-family: 'Lobster', sans-serif ; */
+    /* font-size: 1.2rem; */
+    display: inline;
+}
 
-#show-box {
-    padding-top: 30px;
+.show-bookmarks h3 {
+    display: inline;
+    /* margin: 0 0 0.15rem 0 */
+    margin: 0;
+}
+
+.show-bookmarks i {
+    line-height: 110%; 
+    display: inline;
+}
+
+#toast-container {
+  top: auto !important;
+  right: 8%;
+  bottom: 10%;
+  left: auto !important;  
 }
 
 
@@ -115,8 +140,8 @@ Show Styles
 }
 
 .show-img {
-    width: 400px;
-    height: auto;
+    width: auto;
+    height: 270px;
 }
 
 .show-img img {
