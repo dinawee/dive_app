@@ -17,11 +17,11 @@
 
         var takemethere = function () {
             return passportService.getAccessToken()
-                .then(function(aToken){
+                .then(function (aToken) {
                     return fbService.pingFb(aToken)
                 })
-                .then(function(result){
-                   console.log('Taken me there');
+                .then(function (result) {
+                    console.log('Taken me there');
                 })
                 .catch(function (err) {
                     alert('Takeme function says: You are not logged in');
@@ -44,11 +44,9 @@
             var marker = new google.maps.Marker({
                 map: svc.map,
                 position: new google.maps.LatLng(info.latitude, info.longitude),
-                title: info.name,
+                // title: info.name,
                 visible: false,
-                // icon: "/app/images/orange_marker_min.png"
             });
-            marker.content = '<div class="infoWindowContent"> diveoperator_id:&nbsp' + info.id + '&nbsp(FB_id:&nbsp' + info.fb_id + ')<br/>' + 'lat:' + info.latitude + '&nbsp;' + 'lng:' + info.longitude + '</div>';
             setMarkerBehaviour(marker, info);
             svc.markersDiveOperators.push(marker);
         };
@@ -59,20 +57,42 @@
             google.maps.event.addListener(marker, "click", function () {
 
                 fbService.getSelected(info.fb_id);
-                    console.log('The pin you selected has FB ID of: ' + fbService.selected());
+                console.log('The pin you selected has FB ID of: ' + fbService.selected());
 
-                var origContent = '<h2>' + marker.title + '</h2>' + '<br/>' + marker.content;
-                var infoWindowContent = document.createElement('div');
-                infoWindowContent.innerHTML = origContent;
-                var button = infoWindowContent.appendChild(document.createElement('input'));
+                var infoBubbleDiv = document.createElement('info-div');
+                infoBubbleDiv.setAttribute("class", "center-align");
+                var content =
+                    '<h2>' + info.name + '</h2>' +
+                    '<h3 style="color:black">' + 'Coordinates: [' + info.longitude + ', ' + info.latitude + '] </h3> </br>';
+                infoBubbleDiv.innerHTML = content;
+
+                infoBubble = new InfoBubble({
+                    maxWidth: 400,
+                    content: infoBubbleDiv,
+                    shadowStyle: 1,
+                });
+
+
+                var buttonDiv = infoBubbleDiv.appendChild(document.createElement('div'));
+                buttonDiv.setAttribute("class", "center-align");
+
+                var button = buttonDiv.appendChild(document.createElement('input'));
                 button.type = 'button';
                 button.id = 'takeMeThere';
                 button.value = 'Take Me There';
+                // button.class = 'waves-effect waves-light btn';
+                button.setAttribute("class", "waves-effect waves-light btn");
                 button.addEventListener('click', takemethere.bind());
-                infoWindow.setContent(infoWindowContent);
-                infoWindow.open(svc.map, marker);
+
+                infoBubble.open(svc.map, marker);
+
+                google.maps.event.addListener(svc.map, 'click', function () {
+                    infoBubble.close();
+                });
+
             });
         }
+
 
         var setPolyBounds = function (polygon) {
             //Set bounds of polygon
@@ -106,15 +126,27 @@
 
         //Set listener for polygon
         var setPolyListener = function (polygon, polyName, polyBoundsCenter) {
-            var infoWindow = new google.maps.InfoWindow();
+            
+            var polygonName = polygon.get("polyName");
+            var infoBubbleDiv = document.createElement('info-div');
+            var content = '<span style="font-family:Lato;font-size:1.3em;text-align:center">' + polygonName + '</span>';
+            infoBubbleDiv.innerHTML = content;
+
+            var infoBubble = new InfoBubble({
+                minHeight: 40,
+                content: infoBubbleDiv,
+                position: polyBoundsCenter,
+                shadowStyle: 1,
+                disableAutoPan: true,
+                hideCloseButton: true,
+            });
             google.maps.event.addListener(polygon, "mouseover", function () {
-                infoWindow.setContent(polygon.get("polyName"));
-                infoWindow.setPosition(polyBoundsCenter);
-                infoWindow.open(svc.map);
+                infoBubble.open(svc.map);
             });
             google.maps.event.addListener(polygon, "mouseout", function () {
-                infoWindow.close();
+                infoBubble.close();
             });
+
         };
 
         svc.exploreMe = function (polygon, rectangle) {
@@ -165,11 +197,11 @@
         var createDivespotPoly = function (polyObj) {
             var DivespotPoly = new google.maps.Polygon({
                 paths: JSON.parse(polyObj.divespot_array),
-                strokeColor: "#CD661D",
-                strokeOpactity: 0.8,
-                strokeWeight: 3,
+                // strokeColor: "#CD661D",
+                strokeOpactity: 0.5,
+                strokeWeight: 0,
                 fillColor: "#FF7D40",
-                fillOpacity: 0.35,
+                fillOpacity: 0.5,
                 zIndex: 1,
             });
             DivespotPoly.setMap(svc.map);
@@ -182,11 +214,11 @@
         var createDiveRegionPoly = function (polyObj) {
             var DiveRegionPoly = new google.maps.Polygon({
                 paths: JSON.parse(polyObj.region_array),
-                strokeColor: "#CD661D",
-                strokeOpactity: 0.8,
-                strokeWeight: 3,
+                // strokeColor: "#CD661D",
+                strokeOpactity: 0.5,
+                strokeWeight: 0,
                 fillColor: "#FF7D40",
-                fillOpacity: 0.35,
+                fillOpacity: 0.5,
                 zIndex: 1,
             });
             DiveRegionPoly.setMap(svc.map);

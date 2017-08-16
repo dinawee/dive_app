@@ -28,6 +28,7 @@
 }
 
 .bubbles {
+    border: 1px solid red;
     position: absolute;
     top: 11%;
     left: 0;
