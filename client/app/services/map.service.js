@@ -95,12 +95,13 @@
                 var infoBubbleDiv = document.createElement('info-div');
                 infoBubbleDiv.setAttribute("class", "center-align");
                 var content =
-                    '<h2>' + info.name + '</h2>' +
-                    '<h3 style="color:black">' + 'Coordinates: [' + info.longitude + ', ' + info.latitude + '] </h3> </br>';
+                    '<h3>' + info.name + '</h3>' +
+                    '<h3 style="color:black;font-size:1.3rem">' + 'Coordinates: [' + info.longitude + ', ' + info.latitude + '] </h3> </br>';
                 infoBubbleDiv.innerHTML = content;
 
                 infoBubble = new InfoBubble({
-                    maxWidth: 400,
+                    maxWidth: 500,
+                    minHeight: 200,
                     content: infoBubbleDiv,
                     shadowStyle: 1,
                 });
