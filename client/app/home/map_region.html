@@ -1,13 +1,12 @@
 <div>
     <div class="row">
 
-        <button ng-click="ctrl.loadingTemplate()">Load Loading Template</button>
-        <!-- <script type="text/ng-template" id="loading-template.html"> -->
-            <div id="loading-page">
+
+            <div id="loading-page" ng-if="ctrl.isLoading" class="animationIf">
                 <div id="preloader"></div>
                 <div id="faded-background"></div>
             </div>
-        <!-- </script> -->
+
 
         <div id="selectedregion"></div>
 

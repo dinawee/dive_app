@@ -4,9 +4,9 @@
         .controller("RegionCtrl", RegionCtrl)
         .controller("ModalInstanceCtrl", ModalInstanceCtrl);
 
-    RegionCtrl.$inject = ["$scope", "$state", "$rootScope", "MapSvc", "MapdbRouteSvc", "MapStyleSvc", "ModalService", "FlickrSvc", "fbService", "passportService"];
+    RegionCtrl.$inject = ["$scope", "$state", "$rootScope", "MapSvc", "MapdbRouteSvc", "MapStyleSvc", "ModalService", "FlickrSvc", "fbService", "passportService", "$timeout"];
 
-    function RegionCtrl($scope, $state, $rootScope, MapSvc, MapdbRouteSvc, MapStyleSvc, ModalService, FlickrSvc, fbService, passportService) {
+    function RegionCtrl($scope, $state, $rootScope, MapSvc, MapdbRouteSvc, MapStyleSvc, ModalService, FlickrSvc, fbService, passportService, $timeout) {
         var vm = this;
 
         function loadMapStyle() {
@@ -92,12 +92,17 @@
                 })
         };
 
-        vm.loadingTemplate = function () {
-            console.log("Loading template now");
+        vm.isLoading = false;
+
+        var togglePreloader = function () {
+            vm.isLoading = !vm.isLoading;
         }
 
-
         $rootScope.$on("polygon clicked", function (event, data) {
+            //toggle preloader
+            togglePreloader();
+            $timeout(togglePreloader, 10000);
+
             var flickrFeed = [];
             var tag = data.polyObj.divespot_name;
             //Convert to array

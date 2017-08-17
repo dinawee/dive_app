@@ -20,7 +20,7 @@
     "angular-ui-router": "^1.0.5",
     "angular-modal-service": "^0.12.1",
     "materialize": "^0.100.1",
-    "angular-animate": "1.6.5",
+    "angular-animate": "1.5.x",
     "angular-touch": "1.6.5",
     "bootstrap": "3.3.7",
     "jquery": "3.2.1"
