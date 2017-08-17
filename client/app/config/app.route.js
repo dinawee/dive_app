@@ -64,7 +64,7 @@
                 views: {
                     "mapregion": {
                         templateUrl: "app/home/map_region.html",
-                        controller: "RegionCtrl as vm"
+                        controller: "RegionCtrl as ctrl"
                     },
                     'show@mapregion': {
                         templateUrl: '/app/home/show.html',

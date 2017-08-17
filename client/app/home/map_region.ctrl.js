@@ -6,18 +6,18 @@
 
     RegionCtrl.$inject = ["$scope", "$state", "$rootScope", "MapSvc", "MapdbRouteSvc", "MapStyleSvc", "ModalService", "FlickrSvc", "fbService", "passportService"];
 
-    function RegionCtrl($scope, $state,  $rootScope, MapSvc, MapdbRouteSvc, MapStyleSvc, ModalService, FlickrSvc, fbService, passportService) {
+    function RegionCtrl($scope, $state, $rootScope, MapSvc, MapdbRouteSvc, MapStyleSvc, ModalService, FlickrSvc, fbService, passportService) {
         var vm = this;
 
         function loadMapStyle() {
             vm.mapStyle = MapStyleSvc.loadMapStyle();
         }
         loadMapStyle();
-     
+
         /* For page-slider */
         $scope.checked = null; // toggled by watcher
-        
-        vm.closeSlider = function(){
+
+        vm.closeSlider = function () {
             $scope.checked = false;
         }
 
@@ -33,7 +33,7 @@
             }
             $scope.checked = true;
         });
-        
+
 
 
 
@@ -91,6 +91,11 @@
                     console.log("Error from RegionCtrl : retrieveDiveOperators: \n", err);
                 })
         };
+
+        vm.loadingTemplate = function () {
+            console.log("Loading template now");
+        }
+
 
         $rootScope.$on("polygon clicked", function (event, data) {
             var flickrFeed = [];

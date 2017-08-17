@@ -3,6 +3,7 @@
     width: 100%;
     background-color: cornflowerblue;
     animation: fadein 1.5s;
+    z-index: 0;
 }
 
 #prepmap {
@@ -15,17 +16,38 @@
     height: 520px;
     width: 100%;
     background-color: cornflowerblue;
+    z-index: 0;
 }
 
 
-/*sets infoWindow style */
+/*sets preloader style */
+
+#faded-background {
+    position: fixed;
+    width: 100%;
+    height: 520px;
+    z-index: 1;
+    background-color: purple;
+    opacity: 0.5;
+}
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 520px;
+    z-index: 2;
+    background-image: url(../images/img_whale.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
 
 /*sets modal position  */
 
 .modal {
     bottom: 0;
     top: 0;
-    z-index: 100;
+    z-index: 3;
     width: 55%;
     border-radius: 10px;
 }
