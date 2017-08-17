@@ -64,13 +64,9 @@
 
         <div class="row">
             <div ng-if="con.object.is_visited">
-                <!-- <div class="col s7"> -->
-                <!-- <div class="valign-wrapper"> -->
                 <h3>Visited</h3> <i class="material-icons" ng-click="con.updateVisited()">
                 check_box
         </i>
-                <!-- </div> -->
-                <!-- </div> -->
             </div>
             <div ng-if="!(con.object.is_visited)">
                 <!-- <div class="col s7"> -->
@@ -90,17 +86,3 @@
 </div>
 <!-- isAdded -->
 
-
-
-
-<!-- <div class="row" ng-if="con.isAdded && !(con.isEditing)">
-     <button class="btn" ng-click="con.openEdit()"> 
-        <i class="material-icons" ng-click="con.openEdit()">create</i>
-     </button> 
-</div>
-
-<div class="row" ng-if="con.isAdded && con.isEditing">
-     <button class="btn" ng-click="con.updateComment()"> 
-        <i class="material-icons" ng-click="con.updateComment()">save</i>
-     </button> 
-</div> -->

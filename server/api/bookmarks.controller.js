@@ -66,6 +66,7 @@ function createOne(db) {
                     .create({
                         user_id: req.user.user_id, // taken from session 
                         dive_operator_id: operator.id, // taken from return
+                        is_visited: false // cannot leave blank 
                     })
             }).then(function (newRecord) {
                 console.log("new r is " + JSON.stringify(newRecord));

@@ -51,7 +51,11 @@ require('./routes.js')(app, db, passport);
 
 
 app.listen(port, function(){
-    console.log("Server now running on localhost: %d", port);
+    if (process.env.NODE_ENV === "production") {
+        console.log("Server now running on production server: %d", port);
+    } else {
+        console.log("Server now running on localhost: %d", port);
+    }
 });
 
 

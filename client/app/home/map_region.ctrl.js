@@ -27,7 +27,7 @@
             // when a new pin data is returned the value changes
             return fbService.success;
         }, function (newValue, oldValue) {
-            // equality prevents it from firing when init
+            // don't fire on init
             if (newValue === oldValue) {
                 return;
             }

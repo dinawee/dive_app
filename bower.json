@@ -23,8 +23,7 @@
     "angular-animate": "1.6.5",
     "angular-touch": "1.6.5",
     "bootstrap": "3.3.7",
-    "jquery": "3.2.1",
-    "angular-pageslide-directive": "^2.1.4"
+    "jquery": "3.2.1"
   },
   "resolutions": {
     "angular": "~1.5.x"
