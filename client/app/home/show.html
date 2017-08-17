@@ -36,46 +36,64 @@
 <div ng-if="con.isAdded">
 
     <div class="row">
-        <button class="btn btn-info tooltipped" ng-click="con.destroy()" data-position="bottom" data-delay="20" data-tooltip="Remove bookmark">Remove Bookmark
+        <button class="btn btn-info tooltipped" ng-click="con.destroy()">Remove Bookmark
                 &#8194; <i class="icon ion-ios-close"></i>
     </button>
     </div>
+    <br>
 
     <div class="show-bookmarks">
         <div class="row">
-            <h3>My Comment</h3>
-            <i ng-if="!(con.isEditing)" class="material-icons tooltipped" ng-click="con.openEdit()" data-position="bottom" data-delay="20"
-                data-tooltip="Edit comment">create</i>
+            <h3><em>My Comment</em></h3>
 
-            <div ng-show="!(con.isEditing)">
+            <div ng-if="!(con.isEditing)">
                 <div ng-class="{ 'italic': !(con.object.comment) }">
                     {{ con.object.comment ? con.object.comment : "No comment added." }}
                 </div>
             </div>
-            <div ng-show="con.isEditing" class="input-field">
+
+            <div class="tooltipped" ng-if="!(con.isEditing)">
+                <i class="clickable material-icons" ng-click="con.openEdit()">create</i>
+                <span class="tooltiptext"> Add comment </span>
+            </div>
+
+            <div ng-if="con.isEditing" class="input-field">
                 <input placeholder="Type here" id="comment" type="text" ng-model="con.object.comment">
             </div>
 
-            <i ng-if="con.isEditing" class="material-icons tooltipped" ng-click="con.updateComment()" data-position="bottom" data-delay="20"
-                data-tooltip="Save comment">save</i>
-            <i ng-if="con.isEditing" class="material-icons tooltipped" ng-click="con.cancelEdit()" data-position="bottom" data-delay="20"
-                data-tooltip="Cancel comment">cancel</i>
+            <div class="tooltipped" ng-if="con.isEditing">
+                <i class="clickable material-icons" ng-click="con.updateComment()">save</i>
+                <span class="tooltiptext">Edit comment</span>
+            </div>
+
+            <div class="tooltipped" ng-if="con.isEditing">
+                <i class="clickable material-icons" ng-click="con.cancelEdit()">cancel</i>
+                <span class="tooltiptext">Cancel</span>
+            </div>
+
         </div>
 
         <div class="row">
             <div ng-if="con.object.is_visited">
-                <h3>Visited</h3> <i class="material-icons" ng-click="con.updateVisited()">
-                check_box
-        </i>
+
+               
+                <h3><em>Visited</em></h3>
+                <div class="tooltipped">
+                    <i class="clickable material-icons" ng-click="con.updateVisited()">check_box</i>
+                    <span class="tooltiptext"> Un-check-in</span>
+                </div>
+
             </div>
             <div ng-if="!(con.object.is_visited)">
-                <!-- <div class="col s7"> -->
-                <!-- <div class="valign-wrapper"> -->
-                <h3>Visit me</h3> <i class="material-icons" ng-click="con.updateVisited()">
-                     check_box_outline_blank
-        </i>
-                <!-- </div> -->
-                <!-- </div> -->
+
+                 <!-- <div class="col s7">  -->
+                <h3><em>Visit me</em></h3>
+                <div class="tooltipped">
+                    <i class="clickable material-icons" ng-click="con.updateVisited()">check_box_outline_blank </i>
+                    <span class="tooltiptext">Check in! </span>
+                </div>
+                 <!-- </div>  -->
+
             </div>
         </div>
         <!-- check in row -->
@@ -85,4 +103,3 @@
 
 </div>
 <!-- isAdded -->
-

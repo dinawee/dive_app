@@ -32,7 +32,7 @@
                    console.log('Taken me there');
                 })
                 .catch(function(err) {
-                    alert('Takeme function says: You are not logged in');
+                    alert('Please login to access divespot information from Facebook :)');
                     $state.go('login');
                 });
         }

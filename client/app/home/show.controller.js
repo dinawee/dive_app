@@ -14,18 +14,6 @@
     function ShowC($scope, fbService, $stateParams, mailService, bookmarkService) {
         var con = this;
 
-        /* 
-            Tooltips not working as Angular only attaches the DOM elements after ng-if 
-            Need to wait until ng-if fully resolves
-
-        // create listener to attach jQuery tooltip
-        $scope.$on('$viewContentLoaded', addTooltips);
-
-        function addTooltips() {
-            jQuery('.tooltipped').tooltip({ delay: 20 });
-        }
-        */ 
-
         // init composite object 
         function init() {
             con.object = {
