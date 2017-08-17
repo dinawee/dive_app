@@ -92,7 +92,7 @@
                 })
         };
 
-        vm.isLoading = false;
+        // vm.isLoading = false;
 
         var togglePreloader = function () {
             vm.isLoading = !vm.isLoading;
@@ -102,6 +102,7 @@
             //toggle preloader
             togglePreloader();
             $timeout(togglePreloader, 10000);
+
 
             var flickrFeed = [];
             var tag = data.polyObj.divespot_name;

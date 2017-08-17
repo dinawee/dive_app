@@ -100,7 +100,7 @@
                 infoBubbleDiv.innerHTML = content;
 
                 infoBubble = new InfoBubble({
-                    maxWidth: 500,
+                    minWidth: 500,
                     minHeight: 200,
                     content: infoBubbleDiv,
                     shadowStyle: 1,
