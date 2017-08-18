@@ -14,18 +14,6 @@
     function ShowC($scope, fbService, $stateParams, mailService, bookmarkService) {
         var con = this;
 
-        /* 
-            Tooltips not working as Angular only attaches the DOM elements after ng-if 
-            Need to wait until ng-if fully resolves
-
-        // create listener to attach jQuery tooltip
-        $scope.$on('$viewContentLoaded', addTooltips);
-
-        function addTooltips() {
-            jQuery('.tooltipped').tooltip({ delay: 20 });
-        }
-        */ 
-
         // init composite object 
         function init() {
             con.object = {
@@ -92,7 +80,7 @@
             bookmarkService
                 .createOne(con.object.id) // only one that uses fbId
                 .then(function (res) {
-                    Materialize.toast('Added bookmark', 1200);
+                    Materialize.toast('Added bookmark', 900);
                     syncObject();
                 });
         };
@@ -105,7 +93,7 @@
             bookmarkService
                 .updateOne(con.object.user_dive_operator_id, commentObject)
                 .then(function (res) {
-                    Materialize.toast('Updated comment', 1200);
+                    Materialize.toast('Updated comment', 900);
                     syncObject();
                     con.toggleEdit();
                 });
@@ -119,10 +107,10 @@
                 .updateOne(con.object.user_dive_operator_id, visitedObject)
                 .then(function (res) {
                     if (visitedObject.is_visited){
-                        Materialize.toast('Awesome! You checked in!', 1200);
+                        Materialize.toast('Awesome! You checked in!', 900);
                     } 
                     if (!(visitedObject.is_visited)) {
-                        Materialize.toast('You just un-checked-in', 1200);
+                        Materialize.toast('Sorry to see you go', 900);
                     }
                     syncObject();
                 });
@@ -132,7 +120,7 @@
             bookmarkService
                 .destroyOne(con.object.user_dive_operator_id)
                 .then(function (res) {
-                    Materialize.toast('Deleted bookmark', 1200);
+                    Materialize.toast('Deleted bookmark', 900);
                     syncObject();
                 });
         }

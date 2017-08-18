@@ -46,7 +46,7 @@
                     param.size = scope.psSize || '500px';
                     param.zindex = scope.psZindex || 1000;
                     param.className = scope.psClass || 'ng-pageslide';
-                    param.push = true;
+                    param.push = false;
                     param.clickOutside = true;
                     param.autoClose = true;
 

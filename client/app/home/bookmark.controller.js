@@ -4,16 +4,16 @@
         Shows the entire listing of bookmarks 
         View only changes when the number of bookmarks change (array length) - create or destroy
         Cannot edit the title
-    */ 
+    */
 
 
     angular
         .module("MyApp")
         .controller("BookmarkC", BookmarkC);
 
-    BookmarkC.$inject = ["bookmarkService", "$scope", "passportService", "fbService"];
+    BookmarkC.$inject = ["bookmarkService", "$scope", "passportService", "fbService", "$timeout"];
 
-    function BookmarkC(bookmarkService, $scope, passportService, fbService) {
+    function BookmarkC(bookmarkService, $scope, passportService, fbService, $timeout) {
         var con = this;
 
         con.userBookmarks = [];
@@ -23,11 +23,11 @@
         // Init done by watcher, when fire the first time
         // Controller state always changes as triggered by bookmarkService
         // Is this a deep watcher?
-        $scope.$watch( function () {
+        $scope.$watch(function () {
             return bookmarkService.userBookmarks.length;
         }, function (newValue, oldValue) {
-           con.userBookmarks = bookmarkService.userBookmarks;
-           con.toggleShow = false;
+            con.userBookmarks = bookmarkService.userBookmarks;
+            con.toggleShow = false;
         });
 
         // getOneBookMark invokes the fbService function 
@@ -45,10 +45,6 @@
                     $state.go('login');
                 });
         }
-
-
-
-
     }; // end controller
 
 })();

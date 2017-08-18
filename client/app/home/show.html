@@ -36,53 +36,91 @@
 <div ng-if="con.isAdded">
 
     <div class="row">
-        <button class="btn btn-info tooltipped" ng-click="con.destroy()" data-position="bottom" data-delay="20" data-tooltip="Remove bookmark">Remove Bookmark
+        <button class="btn btn-info tooltipped" ng-click="con.destroy()">Remove Bookmark
                 &#8194; <i class="icon ion-ios-close"></i>
-    </button>
+        </button>
     </div>
+    <br>
 
     <div class="show-bookmarks">
         <div class="row">
+            <!-- <div class="col s6"> -->
             <h3>My Comment</h3>
-            <i ng-if="!(con.isEditing)" class="material-icons tooltipped" ng-click="con.openEdit()" data-position="bottom" data-delay="20"
-                data-tooltip="Edit comment">create</i>
 
-            <div ng-show="!(con.isEditing)">
-                <div ng-class="{ 'italic': !(con.object.comment) }">
-                    {{ con.object.comment ? con.object.comment : "No comment added." }}
+            <div ng-if="!(con.isEditing)">
+                <div ng-class="{ 'italic': con.object.comment }">
+                    {{ con.object.comment ? con.object.comment : "" }}
                 </div>
             </div>
-            <div ng-show="con.isEditing" class="input-field">
+
+            <!-- <div class="tooltipped" ng-if="!(con.isEditing)">
+                <i class="clickable material-icons" ng-click="con.openEdit()">create</i>
+                <span class="tooltiptext"> Add comment </span>
+            </div> -->
+
+            <div class="tooltip clickable" ng-if="!(con.isEditing)" ng-click="con.openEdit()">
+                &#8194; <i class="icon ion-edit"></i>
+                Add Comment
+            </div>
+
+            <div ng-if="con.isEditing" class="input-field">
                 <input placeholder="Type here" id="comment" type="text" ng-model="con.object.comment">
             </div>
 
-            <i ng-if="con.isEditing" class="material-icons tooltipped" ng-click="con.updateComment()" data-position="bottom" data-delay="20"
-                data-tooltip="Save comment">save</i>
-            <i ng-if="con.isEditing" class="material-icons tooltipped" ng-click="con.cancelEdit()" data-position="bottom" data-delay="20"
-                data-tooltip="Cancel comment">cancel</i>
+            <!-- <div class="tooltipped" ng-if="con.isEditing">
+                <i class="clickable material-icons" ng-click="con.updateComment()">save</i>
+                <span class="tooltiptext">Edit comment</span>
+            </div> -->
+
+            <div class="tooltip clickable" ng-if="con.isEditing" ng-click="con.updateComment()">
+                &#8194; <i class="icon ion-ios-refresh-outline"></i>
+                Save comment
+            </div>
+            &#8194; &#8194; 
+            <!-- <div class="tooltipped" ng-if="con.isEditing">
+                <i class="clickable material-icons" ng-click="con.cancelEdit()">cancel</i>
+                <span class="tooltiptext">Cancel</span>
+            </div> -->
+
+            <div class="tooltip clickable" ng-if="con.isEditing" ng-click="con.cancelEdit()">
+                &#8194; <i class="icon ion-close-round"></i>
+                Cancel
+            </div>
+
         </div>
 
         <div class="row">
+            <!-- <div class="col s6 offset-s6"> -->
             <div ng-if="con.object.is_visited">
-                <h3>Visited</h3> <i class="material-icons" ng-click="con.updateVisited()">
-                check_box
-        </i>
-            </div>
-            <div ng-if="!(con.object.is_visited)">
-                <!-- <div class="col s7"> -->
-                <!-- <div class="valign-wrapper"> -->
-                <h3>Visit me</h3> <i class="material-icons" ng-click="con.updateVisited()">
-                     check_box_outline_blank
-        </i>
-                <!-- </div> -->
-                <!-- </div> -->
-            </div>
-        </div>
-        <!-- check in row -->
+                <h3>Visited</h3><br>
 
+                <!-- <div class="tooltipped">
+                    <i class="clickable material-icons" ng-click="con.updateVisited()">check_box</i>
+                    <span class="tooltiptext"> Un-check-in</span>
+                </div> -->
+                <div class="tooltip clickable" ng-click="con.updateVisited()">
+                    &#8194; <i class="icon ion-close-round"></i>
+                    Unvisit
+                </div>
+            </div>
+
+
+            <div ng-if="!(con.object.is_visited)">
+                <h3>Visit me</h3><br>
+                <!-- <div class="tooltipped">
+                    <i class="clickable material-icons" ng-click="con.updateVisited()">check_box_outline_blank </i>
+                    <span class="tooltiptext">Check in! </span>
+                </div> -->
+                <div class="tooltip clickable" ng-click="con.updateVisited()">
+                    &#8194; <i class="icon ion-checkmark-round"></i>
+                    Check in
+                </div>
+            </div>
+
+        </div><!--- div for row --->
+        
     </div>
     <!-- show bookmarks -->
 
 </div>
 <!-- isAdded -->
-
