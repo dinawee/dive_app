@@ -91,12 +91,13 @@ td {
 .tooltip {
     font-family: 'Lato', sans-serif;
     width: 150px;
-    background-color: rgb(199, 251, 247);
+    background-color: rgb(170, 251, 247);
     color: black;
     text-align: center;
-    padding: 5px 0;
+    padding: 4px 0;
     border-radius: 6px;
-    display: block;
+    display: inline-block;
+    margin-top: 5px;
 }
 
 
