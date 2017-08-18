@@ -1,0 +1,17 @@
+ /* land */
+ body {
+    background-color: #b4dad7;  
+
+      /* label  */
+    background-color: #635c45;
+      /* water  */
+
+    background-color: #199d8f;   
+
+    /* show button color */
+    background-color: #ff7d40;   
+
+    /* remove button color  */
+    color:  #e62739;
+
+}

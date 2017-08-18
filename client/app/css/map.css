@@ -2,6 +2,8 @@
     height: 520px;
     width: 100%;
     background-color: cornflowerblue;
+    animation: fadein 1.5s;
+    z-index: 0;
 }
 
 #prepmap {
@@ -10,14 +12,236 @@
     background-color: cornflowerblue;
 }
 
-#wrapper {
-    position: relative;
-}
-
 #selectedregion {
     height: 520px;
     width: 100%;
     background-color: cornflowerblue;
+    z-index: 0;
 }
 
-  
+
+/*sets preloader style */
+
+.preloader-background {
+    position: fixed;
+    width: 100%;
+    height: 520px;
+    z-index: 1;
+    background-color: #2D87D7;
+    background: linear-gradient(#66C7EA,#007DFF);
+    opacity: 0;
+    animation: preloader-background-opacity;
+    animation-duration: 9.5s;
+}
+
+@keyframes preloader-background-opacity {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#preloader {
+    position: fixed;
+    width: 570px;
+    height: 500px;
+    z-index: 2;
+    background-image: url(../images/img_whale.svg);
+    background-size: auto 150%;
+    transform-origin: 50% 50%;
+    background-repeat: no-repeat;
+    animation: rotate, move;
+    animation-duration: 11s;
+}
+
+#preloader2 {
+    position: fixed;
+    width: 300px;
+    height: 250px;
+    z-index: 2;
+    opacity: 0;
+    background-image: url(../images/img_whale.svg);
+    background-size: auto 150%;
+    transform-origin: 50% 50%;
+    background-repeat: no-repeat;
+    background-position-y: 30%;
+    animation: rotate, move;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+#trivia {
+    position: fixed;
+    width: 700px;
+    height: 250px;
+    z-index: 2;
+    opacity: 0;
+    background-image: url(../images/trivia.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    animation: trivia-fade;
+    animation-duration: 4s;
+    animation-delay: 3.4s;
+}
+
+@keyframes trivia-fade {
+    0% {
+        left: 40%;
+        top: 180px;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        left: 40%;
+        top: 180px;
+        opacity: 0;
+    }
+}
+
+/*whale animation*/
+@keyframes rotate {
+    0% {
+        transform: rotate(-5deg);
+    }
+    15% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        left:100%;
+        top: -20px;
+    }
+    5% {
+        opacity: 1;
+    }
+    30% {
+        top: 150px;
+    }
+    55% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        left: -50%;
+        top: -20px;
+    }
+}
+
+
+/*sets modal position  */
+
+.modal {
+    bottom: 0;
+    top: 0;
+    z-index: 3;
+    width: 55%;
+    border-radius: 10px;
+    opacity: 0;
+    animation: modal-fade forwards;
+    animation-duration: 10s;
+}
+
+@keyframes modal-fade {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*dims background when modal is active  */
+
+#fade {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+
+/*animation for entry exit of modal  */
+
+#modal1.ng-enter {
+    transition: opacity .5s ease-out;
+    opacity: 0;
+}
+
+#modal1.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+#modal1.ng-leave {
+    transition: opacity .5s ease-out;
+    opacity: 1;
+}
+
+#modal1.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+#fade.ng-enter {
+    transition: opacity .5s ease-out;
+    opacity: 0;
+}
+
+#fade.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+#fade.ng-leave {
+    transition: opacity .5s ease-out;
+    opacity: 1;
+}
+
+#fade.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+gallery {
+    font-size: 0;
+}
+
+photo-grid {
+    display: inline-block;
+}
+
+.photo-img {
+    margin: 5px;
+}
+
+.icon-clickable {
+    cursor: pointer;
+}

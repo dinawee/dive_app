@@ -15,7 +15,7 @@ var sequelize = new Sequelize('dive_app',
 		pool: {
 			max: 5,
 			min: 0,
-			idle: 10000,
+			idle: 30000,
 		},
 	}
 );

@@ -9,12 +9,12 @@
         var svc = this;
 
         svc.retrieveDiveOperators = function () {
-            console.log("reached mapdbroute.svc.retrieveDiveOperators");
+            console.log("MapdbRouteSvc : retrieveDiveOperators");
             return $http.get("/api/diveoperators");
         };
 
         svc.displayDivespots = function (region_id) {
-            console.log("reached mapdbroute.svc.displayDivespots");
+            console.log("MapdbRouteSvc : displayDivespots");
             return $http.get("/api/divespots", {
                 params: {
                     region_id: region_id
@@ -23,9 +23,9 @@
         };
 
         svc.displayDiveRegions = function () {
-            console.log("reached mapdbroute.svc.displayDiveRegions");
+            console.log("MapdbRouteSvc : displayDiveRegions");
             return $http.get("/api/diveregions");
         };
 
     }//End of MapdbRouteSvc
-})();//End of IIFE
+})();

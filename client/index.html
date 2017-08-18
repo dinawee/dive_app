@@ -3,90 +3,121 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- <base href="/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Finding Blu</title>
 
     <!-- load bootstrap before your styles -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">   -->
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Load Materialize-->
+    <!-- <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css" media="screen,projection" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link href="app/fonts/ionicons.min.css" rel="stylesheet">
+
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <!-- Load custom stlyes -->
     <link href="app/css/map.css" rel="stylesheet">
+    <link href="app/css/search.css" rel="stylesheet">
+    <link href="app/css/login.css" rel="stylesheet">
+    <link href="app/css/misc.css" rel="stylesheet">
 
 </head>
 
 <body>
+    <!-- dont use data toggle when using ui-routing -->
+    <!-- use ui-sref -->
 
-    <!-- Sets navigation bar classes -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <!-- Defines navigation bar button -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Dive Operator FB API</a>
-            </div>
-
-            <!-- dont use data toggle when using ui-routing -->
-            <!-- use ui-sref -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a ui-sref="home">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a ui-sref="prepmap">Prep Map <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a ui-sref="show">Show View <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a ui-sref="login">Login<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="/logout">Logout<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a ui-sref="bookmark">Bookmarks<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item-active">
-                        <a ui-sref="mapregion">Map Region <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+    <nav>
+        <div class="nav-wrapper" ng-controller="LoginC as con" ng-cloak>
+            <a href="/#/home" class="brand-logo">Finding Blu</a>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="icon ion-navicon"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a ui-sref="home" class="nav-font">Home</a>
+                </li>
+                <li>
+                    <a ui-sref="bookmark" ng-if="con.isLoggedIn" class="nav-font">
+                        Bookmarks: <span class="bm-number">{{ con.bookmarkCnt }} </span>
+                    </a>
+                </li>
+                <!-- all the login routes based on LoginC -->
+                <li ng-if="!(con.isLoggedIn)">
+                    <a ui-sref="login" class="nav-font">Login</a>
+                    <!-- perform actual login on the login page -->
+                </li>
+                <li ng-if="con.isLoggedIn">
+                    <a href="#" ng-click="con.logout()" class="nav-font">Logout</a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="slide-out">
+                <li>
+                    <a ui-sref="home" class="nav-font" class="nav-font">Home</a>
+                </li>
+                <li>
+                    <a ui-sref="bookmark" ng-if="con.isLoggedIn">
+                            Bookmarks: <span class="bm-number" class="nav-font">{{ con.bookmarkCnt }} </span>
+                    </a>
+                </li>
+                <!-- all the login routes based on LoginC -->
+                <li ng-if="!(con.isLoggedIn)">
+                    <a ui-sref="login" class="nav-font">Login</a>
+                    <!-- perform actual login on the login page -->
+                </li>
+                <li ng-if="con.isLoggedIn">
+                    <a href="#" ng-click="con.logout()" class="nav-font">Logout</a>
+                </li>
+            </ul>
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
-    <!-- partials to load -->
 
-        <div ui-view="mapcountry"></div>
-        <div ui-view="mapregion"></div>
+
+    <!-- - replace show buttons with carat 
+    - slide in instead of scroll down -->
+
+    <!-- partials to load -->
+    <br>
+    <div ui-view="mapsearch"></div>
+    <div ui-view="mapcountry"></div>
+    <div ui-view="mapregion"></div>
 
     <div class="container">
         <div ui-view="login"></div>
-        <div ui-view="map"></div>
         <div ui-view="show"></div>
-        <!-- <div ui-view="show"></div>  -->
         <div ui-view="prepmap"></div>
-        <div ui-view="bookmark"></div>
     </div>
+    <div ui-view="bookmark"></div>
 
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <!-- <script src="bower_components/materialize/dist/js/materialize.min.js"></script> -->
+
+
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.min.js"></script>
     <!--<script src="bower_components/angular-messages/angular-messages.min.js"></script>-->
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
+    <!-- <script src="bower_components/angular-scroll//angular-scroll.min.js"></script> -->
+    <!-- <script src="bower_components/angular-pageslide-directive/dist/angular-pageslide-directive.min.js"></script> -->
 
-    <!-- app scripts -->
+    <!-- load custom libraries -->
+    <script src="app/custom/pageslide-directive.js"></script> 
 
     <!-- load module -->
-    <script src="app/app.js"></script>
+    <script src="app/app.js"></script> 
 
     <!-- load routes -->
     <script src="app/config/app.route.js"></script>
@@ -95,24 +126,39 @@
     <script src="app/services/passport.service.js"></script>
     <script src="app/services/mail.service.js"></script>
     <script src="app/services/bookmark.service.js"></script>
-    <script src="app/services/dbroute.service.js"></script>
+    <script src="app/services/fb.service.js"></script>
     <script src="app/services/map.service.js"></script>
     <script src="app/services/mapdbroute.service.js"></script>
+    <script src="app/services/map-style.service.js"></script>
+    <script src="app/services/flickr.service.js"></script>
 
     <!-- load controllers -->
     <script src="app/home/map_country.ctrl.js"></script>
     <script defer src="app/home/map_region.ctrl.js"></script>
+    <script defer src="app/home/map_search.ctrl.js"></script>
     <script src="app/login/login.controller.js"></script>
-    <script src="app/home/show.controller.js"></script> 
+    <script src="app/home/show.controller.js"></script>
     <script src="app/home/bookmark.controller.js"></script>
 
-    <!-- load google maps api -->
+    <!-- load google map scripts -->
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQYQrDMpPGwIBOos_2HHV2pacKurBmVY&libraries=geometry"></script>
+    <script src="app/scripts/infobubble.js"></script>
 
     <!-- load prep ctrl and svcs -->
     <script defer src="app/prep/prepmap.ctrl.js"></script>
     <script defer src="app/prep/prepmap.svc.js"></script>
     <script src="app/prep/prepdbroute.svc.js"></script>
+
+    <script>
+        (function ($) {
+            $(function () {
+                $('.button-collapse').sideNav();
+            }); // init side nav
+        })(jQuery); // end of jQuery name space
+
+    </script>
+
+
 </body>
 
 </html>

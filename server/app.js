@@ -16,7 +16,7 @@ const flash = require('connect-flash'); // by Jared Hason too, guess passport ne
 var app = express();
 var db = require('./db.js');
 
-var port = 3000;
+var port = process.env.NODE_PORT || 3000;
 
 const CLIENT_FOLDER = path.join(__dirname, '/../client');
 
@@ -51,7 +51,11 @@ require('./routes.js')(app, db, passport);
 
 
 app.listen(port, function(){
-    console.log("Server now running on localhost: %d", port);
+    if (process.env.NODE_ENV === "production") {
+        console.log("Server now running on production server: %d", port);
+    } else {
+        console.log("Server now running on localhost: %d", port);
+    }
 });
 
 

@@ -1,21 +1,7 @@
-/*
-*
-*
-* CHANGE THE CONFIG PATH
-*/
+var configPath = "../prep/map/config";
 
 var fs = require("fs");
-
-var configPath = function () {
-    try {
-        fs.accessSync(__dirname + "/../prep/fb_data/config/development-cloud.js");
-        return (__dirname + "/../prep/fb_data/config/development-cloud.js");
-    } catch (e) {
-        return (__dirname + "/../prep/map/config/development-cloud.js");
-    }
-}
-
-var config = require(configPath());
+var config = require(configPath);
 
 var Sequelize = require("sequelize");
 

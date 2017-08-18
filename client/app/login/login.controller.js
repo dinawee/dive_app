@@ -1,34 +1,39 @@
-(function() {
-  angular
-    .module('MyApp')
-    .controller('LoginC', LoginC);
+(function () {
+    angular
+        .module('MyApp')
+        .controller('LoginC', LoginC);
 
-  LoginC.$inject = [ 'passportService', '$state' ];
+    LoginC.$inject = ["$scope", "passportService", "$state", "bookmarkService"];
 
-  function LoginC(passportService, $state) {
-    var con = this;
+    function LoginC($scope, passportService, $state, bookmarkService) {
+        var con = this;
 
-    // con.user = {
-    //   username: '',
-    //   password: '',
-    // }
-    // con.msg = '';
+        con.isLoggedIn = null;
+        con.bookmarkCnt = 0;
 
-    // con.login = login;
+        // init with watchers
+        $scope.$watch(function () {
+            return passportService.isLoggedIn;
+        }, function (newValue, oldValue) {
+            if (newValue === true) {
+                con.isLoggedIn = true;
+                return;
+            }
+            con.isLoggedIn = false;
+        });
 
-    // function login() {
-    //   passportService.login(con.user)
-    //     .then(function(result) {
-    //       $state.go('home');
-    //       return true;
-    //     })
-    //     .catch(function(err) {
-    //       con.msg = 'Invalid Username or Password!';
-    //       con.user.username = con.user.password = '';
-    //       return false;
-    //     });
-    // }
+        $scope.$watch(function () {
+            return bookmarkService.userBookmarks.length;
+        }, function (newValue, oldValue) {
+            con.bookmarkCnt = newValue;
+        });
 
-  }// close controller
+        con.logout = function () {
+            passportService.logout();
+        }
+
+
+    }// close controller
 
 })();
+

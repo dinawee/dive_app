@@ -1,26 +1,14 @@
 
+*For development* 
+    note that FB prep references
+    /prep/map/config/development-cloud.js
+    note that map prep references 
+    /prep/map/config/development-cloud.js
+
+You need one or another.
 
 
-1. Change your Access Tokens 
-
-Get from here: https://developers.facebook.com/tools/explorer
-
-Update the tokens in 
-/client/app/services/dbroute.service.js
-
-
-
-2. Change your config files
-
-A. Config file for Amazon DB credentials 
-in: /prep/fb_data/config/development-cloud.js
-or /prep/map/config/development-cloud.js
-
-Referenced in: /server/db.js
-
-
-B. Config file for FB credentials 
-in  /prep/fb_data/config/development-cloud.js
-or /prep/map/config/development-cloud.js
-
-Referenced in /server/auth.js
+*For production*
+Set env NODE_PORT 
+Set env NODE_ENV
+Upload production credentials to /prep/map/config/production.js
