@@ -31,7 +31,7 @@
     background: linear-gradient(#66C7EA,#007DFF);
     opacity: 0;
     animation: preloader-background-opacity;
-    animation-duration: 10s;
+    animation-duration: 9.5s;
 }
 
 @keyframes preloader-background-opacity {
@@ -41,7 +41,7 @@
     10% {
         opacity: 1;
     }
-    90% {
+    85% {
         opacity: 1;
     }
     100% {
@@ -56,9 +56,59 @@
     z-index: 2;
     background-image: url(../images/img_whale.svg);
     background-size: auto 150%;
+    transform-origin: 50% 50%;
     background-repeat: no-repeat;
     animation: rotate, move;
     animation-duration: 11s;
+}
+
+#preloader2 {
+    position: fixed;
+    width: 300px;
+    height: 250px;
+    z-index: 2;
+    opacity: 0;
+    background-image: url(../images/img_whale.svg);
+    background-size: auto 150%;
+    transform-origin: 50% 50%;
+    background-repeat: no-repeat;
+    background-position-y: 30%;
+    animation: rotate, move;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+#trivia {
+    position: fixed;
+    width: 700px;
+    height: 250px;
+    z-index: 2;
+    opacity: 0;
+    background-image: url(../images/trivia.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    animation: trivia-fade;
+    animation-duration: 4s;
+    animation-delay: 3.4s;
+}
+
+@keyframes trivia-fade {
+    0% {
+        left: 40%;
+        top:30%;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        left: 40%;
+        top: 30%;
+        opacity: 0;
+    }
 }
 
 /*whale animation*/
@@ -79,13 +129,24 @@
 
 @keyframes move {
     0% {
+        opacity: 0;
         left:100%;
         top: -20px;
+    }
+    5% {
+        opacity: 1;
     }
     30% {
         top: 150px;
     }
+    55% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
     100% {
+        opacity: 0;
         left: -50%;
         top: -20px;
     }

@@ -101,7 +101,7 @@
         $rootScope.$on("polygon clicked", function (event, data) {
             //toggle preloader
             togglePreloader();
-            $timeout(togglePreloader, 10000);
+            $timeout(togglePreloader, 9500);
 
 
             var flickrFeed = [];
