@@ -59,7 +59,7 @@
     transform-origin: 50% 50%;
     background-repeat: no-repeat;
     animation: rotate, move;
-    animation-duration: 11s;
+    animation-duration: 5s;
 }
 
 #preloader2 {
@@ -74,7 +74,7 @@
     background-repeat: no-repeat;
     background-position-y: 30%;
     animation: rotate, move;
-    animation-duration: 9s;
+    animation-duration: 4s;
     animation-delay: 1s;
 }
 
@@ -88,7 +88,7 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     animation: trivia-fade;
-    animation-duration: 4s;
+    animation-duration: 2s;
     animation-delay: 3.4s;
 }
 
@@ -163,7 +163,7 @@
     border-radius: 10px;
     opacity: 0;
     animation: modal-fade forwards;
-    animation-duration: 10s;
+    animation-duration: 6s;
 }
 
 @keyframes modal-fade {

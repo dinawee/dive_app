@@ -20,8 +20,8 @@
     background-position: 50%;
     animation: quote-animate forwards;
     -webkit-animation: quote-animate forwards;
-    animation-duration: 8s;
-    -webkit-animation-duration: 8s;
+    animation-duration: 6s;
+    -webkit-animation-duration: 6s;
     animation-delay: 3s;
     -webkit-animation-delay: 1.5s;
     z-index: 2;
