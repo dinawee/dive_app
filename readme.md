@@ -8,8 +8,8 @@
 - MySQL / AWS
 
 ## Screenshots
-![Dive Regions](/git.images/img1.png)
-![Divespots](/git.images/img2.png)
+![Dive Regions](dinawee/dive_app/blob/update/git.images/img1.PNG)
+![Divespots](dinawee/dive_app/blob/update/git.images/img2.PNG)
 
 ## Contributors
 - 2 person team over 40 days
@@ -17,9 +17,9 @@
 
 ## Notes
 1. dev
-- path: /prep/map/config/development-cloud.js
+    - path: /prep/map/config/development-cloud.js
 
 2. production
-- Set env NODE_PORT 
-- Set env NODE_ENV
-- path: /prep/map/config/production.js
+    - Set env NODE_PORT 
+    - Set env NODE_ENV
+    - path: /prep/map/config/production.js
