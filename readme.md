@@ -8,8 +8,8 @@
 - MySQL / AWS
 
 ## Screenshots
-![Dive Regions](dinawee/dive_app/blob/update/git.images/img1.PNG)
-![Divespots](dinawee/dive_app/blob/update/git.images/img2.PNG)
+![Dive Regions](git.images/img1.PNG)
+![Divespots](git.images/img1.PNG)
 
 ## Contributors
 - 2 person team over 40 days
