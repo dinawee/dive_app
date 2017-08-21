@@ -31,7 +31,7 @@
     background: linear-gradient(#66C7EA,#007DFF);
     opacity: 0;
     animation: preloader-background-opacity;
-    animation-duration: 9.5s;
+    animation-duration: 11s;
 }
 
 @keyframes preloader-background-opacity {
@@ -88,8 +88,8 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     animation: trivia-fade;
-    animation-duration: 2s;
-    animation-delay: 3.4s;
+    animation-duration: 2.5s;
+    animation-delay: 2.5s;
 }
 
 @keyframes trivia-fade {

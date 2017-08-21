@@ -184,6 +184,7 @@
         };
 
         svc.exploreMe = function (polygon, rectangle) {
+            console.log("Hello from map service");
             var rectangle = setPolyBounds(polygon);
             var polyBoundsCenter = setPolyBoundsCenter(rectangle);
             polygon.setOptions({ visible: false });
