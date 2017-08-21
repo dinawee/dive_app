@@ -8,8 +8,8 @@
 - MySQL / AWS
 
 ## Screenshots
-![Dive Regions](./git.images/img1.png)
-![Divespots](./git.images/img2.png)
+![Dive Regions](/git.images/img1.png)
+![Divespots](/git.images/img2.png)
 
 ## Contributors
 - 2 person team over 40 days
