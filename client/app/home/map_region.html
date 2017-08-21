@@ -3,7 +3,7 @@
 
         <div id="loading-page" ng-if="ctrl.isLoading" class="animate">
             <div id="preloader"></div>
-            <!-- <div id="preloader2"></div> -->
+            <div id="preloader2"></div>
             <div id="trivia"></div>
             <div id="preloader-background" class="preloader-background"></div>
         </div>
@@ -15,7 +15,7 @@
         <script type="text/ng-template" id="ctry-modal-template.html">
             <div id="modal1" class="modal modal-fixed-footer">
                 <div class="modal-content">
-                    <!-- <div class="right-align"><i class="medium material-icons close icon-clickable" ng-click="closeModal('x to close')">&times;</i></div> -->
+                    <div class="right-align"><a class="icon-clickable" ng-click="closeModal('x to close')">&times;</a></div>
                     <div class="center-align">
                         <h2>{{divespotDetails.divespot_name}}</h2>
                         <br>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn waves-effect waves-light" ng-click="ctrl.explore()" data-dismiss="modal">Explore</button>
+                    <button type="button" class="btn waves-effect waves-light" ng-click="explore()" data-dismiss="modal">Explore</button>
                 </div>
             </div>
             <!-- <div id="fade"></div> -->
