@@ -9,7 +9,8 @@
 
 ## Screenshots
 ![Dive Regions](git.images/img1.PNG)
-![Divespots](git.images/img1.PNG)
+![Divespots](git.images/img2.PNG)
+![Bookmarks](git.images/img3.PNG)
 
 ## Contributors
 - 2 person team over 40 days

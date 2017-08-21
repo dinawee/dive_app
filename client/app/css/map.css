@@ -31,7 +31,7 @@
     background: linear-gradient(#66C7EA,#007DFF);
     opacity: 0;
     animation: preloader-background-opacity;
-    animation-duration: 11s;
+    animation-duration: 9s;
 }
 
 @keyframes preloader-background-opacity {
@@ -41,7 +41,7 @@
     10% {
         opacity: 1;
     }
-    85% {
+    55% {
         opacity: 1;
     }
     100% {
@@ -58,8 +58,8 @@
     background-size: auto 150%;
     transform-origin: 50% 50%;
     background-repeat: no-repeat;
-    animation: rotate, move;
-    animation-duration: 5s;
+    animation: rotate, move forwards;
+    animation-duration: 6s;
 }
 
 #preloader2 {
@@ -73,8 +73,8 @@
     transform-origin: 50% 50%;
     background-repeat: no-repeat;
     background-position-y: 30%;
-    animation: rotate, move;
-    animation-duration: 4s;
+    animation: rotate, move forwards;
+    animation-duration: 5s;
     animation-delay: 1s;
 }
 
@@ -89,7 +89,7 @@
     background-repeat: no-repeat;
     animation: trivia-fade;
     animation-duration: 2.5s;
-    animation-delay: 2.5s;
+    animation-delay: 2.3s;
 }
 
 @keyframes trivia-fade {
@@ -101,7 +101,7 @@
     20% {
         opacity: 1;
     }
-    80% {
+    85% {
         opacity: 1;
     }
     100% {
@@ -163,14 +163,14 @@
     border-radius: 10px;
     opacity: 0;
     animation: modal-fade forwards;
-    animation-duration: 6s;
+    animation-duration: 5s;
 }
 
 @keyframes modal-fade {
     0% {
         opacity: 0;
     }
-    70% {
+    65% {
         opacity: 0;
     }
     100% {
